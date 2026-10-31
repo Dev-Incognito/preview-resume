@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghazal Bhatnagar — Resume Selection & Interactive Preview Portal</title>
+  <meta name="description" content="Interactive preview and selection portal for Ghazal Bhatnagar's 3-Page Executive Resumes: Edition v2 (Dark Luxury & Antique Gold) and Edition v1 (Warm Ivory & Metallic Gold)." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Cinzel & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/preview-app.css" />
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ============================================================
+         TOP APP HEADER
+         ============================================================ -->
+    <header class="top-header" role="banner">
+      <div class="brand-section">
+        <div class="brand-emblem" aria-hidden="true">GB</div>
+        <div class="brand-titles">
+          <h1 class="brand-name">Ghazal Bhatnagar</h1>
+          <div class="brand-subtitle">
+            Executive Resume Dossier
+            <span class="brand-badge" id="activeEditionBadge">Edition v2 • Dark Luxury</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segmented Control for Edition Switching -->
+      <nav class="edition-segmented-control" role="tablist" aria-label="Resume Editions">
+        <button class="edition-btn active" id="btnDarkLuxury" role="tab" aria-selected="true" title="Switch to Edition v2 (Deepika Dark Luxury Aesthetic)">
+          <span class="edition-dot"></span>
+          <span>✦ Edition v2 (Dark Luxury)</span>
+        </button>
+        <button class="edition-btn" id="btnWarmIvory" role="tab" aria-selected="false" title="Switch to Edition v1 (Warm Ivory & Gold Editorial)">
+          <span class="edition-dot"></span>
+          <span>✧ Edition v1 (Warm Ivory)</span>
+        </button>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="btnCompare" title="Compare both editions side-by-side (Press C)">
+          <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          <span>Compare</span>
+        </button>
+
+        <a class="action-btn" id="btnOpenStandalone" href="editions/dark-luxury.html" target="_blank" rel="noopener" title="Open full screen in a new tab">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>Standalone</span>
+        </a>
+
+        <button class="action-btn" id="btnDownload" title="Download standalone HTML file">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download HTML</span>
+        </button>
+
+        <button class="action-btn btn-primary" id="btnPrint" title="Print to exact A4 PDF (Press P)">
+          <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Print / Save PDF</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         SUB-TOOLBAR (VIEW, PAGE JUMP & ZOOM)
+         ============================================================ -->
+    <div class="sub-toolbar" role="toolbar" aria-label="Viewer Controls">
+      <div class="toolbar-left">
+        <!-- Page Jump Navigation -->
+        <div class="page-jump-group">
+          <span class="tool-label">Jump:</span>
+          <button class="tool-pill page-pill active" data-page="1">Page 1: Identity & Milestones</button>
+          <button class="tool-pill page-pill" data-page="2">Page 2: 7× World Records</button>
+          <button class="tool-pill page-pill" data-page="3">Page 3: Capabilities & Repertoire</button>
+        </div>
+      </div>
+
+      <div class="toolbar-right">
+        <!-- Zoom Controller -->
+        <div class="zoom-controls" aria-label="Zoom Controls">
+          <span class="tool-label" style="margin-left: 4px;">Zoom</span>
+          <button class="zoom-btn" id="btnZoomOut" title="Zoom Out (-)" aria-label="Zoom out">−</button>
+          <span class="zoom-val" id="zoomDisplay">95%</span>
+          <button class="zoom-btn" id="btnZoomIn" title="Zoom In (+)" aria-label="Zoom in">+</button>
+        </div>
+
+        <button class="tool-pill" id="btnZoomFit" title="Fit to screen width">Fit Screen</button>
+        <button class="tool-pill" id="btnZoomActual" title="100% actual A4 scale">100%</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MAIN PREVIEW VIEWPORT & STAGE
+         ============================================================ -->
+    <main class="preview-viewport" id="previewViewport">
+      <div class="preview-stage" id="previewStage">
+
+        <!-- Primary Active Resume Card -->
+        <div class="iframe-card" id="mainIframeCard">
+          <div class="iframe-header-label">
+            <strong id="mainIframeTitle">Edition v2 — Dark Luxury & Antique Gold</strong>
+            <span>3 Pages • A4 Portrait • Print Optimized</span>
+          </div>
+          <iframe 
+            id="mainIframe" 
+            class="resume-iframe" 
+            src="editions/dark-luxury.html" 
+            title="Ghazal Bhatnagar Resume Preview" 
+            loading="eager">
+          </iframe>
+        </div>
+
+        <!-- Secondary Resume Card (Compare Mode Only) -->
+        <div class="iframe-card" id="compareIframeCard" style="display: none;">
+          <div class="iframe-header-label">
+            <strong>Edition v1 — Warm Ivory & Metallic Gold</strong>
+            <span>3 Pages • A4 Portrait • Print Optimized</span>
+          </div>
+          <iframe 
+            id="compareIframe" 
+            class="resume-iframe" 
+            src="editions/warm-ivory.html" 
+            title="Ghazal Bhatnagar Warm Ivory Resume Preview" 
+            loading="lazy" 
+            style="background: #fdfbf7;">
+          </iframe>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ============================================================
+         BOTTOM PRINT TIP BAR
+         ============================================================ -->
+    <aside class="print-tip-bar" id="printTipBar" role="note" aria-label="Print Instructions">
+      <svg class="print-tip-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div>
+        <strong>PDF Export Tip:</strong> In the browser print dialog, choose Destination: <span class="tip-pill">Save as PDF</span>, Paper size: <span class="tip-pill">A4</span>, Margins: <span class="tip-pill">None</span>, and check <span class="tip-pill">Background graphics</span>.
+      </div>
+      <button class="tip-close-btn" id="closeTipBtn" title="Dismiss tip" aria-label="Dismiss tip">✕</button>
+    </aside>
+
+  </div>
+
+  <script src="js/preview-app.js"></script>
+</body>
+</html>
