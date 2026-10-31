@@ -543,12 +543,12 @@
     }
 
     .sb-lang-flag {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border-radius: 4px;
       flex-shrink: 0;
-      object-fit: cover;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     }
 
     .sb-lang-info {
@@ -701,6 +701,74 @@
     .work-bullets li strong {
       color: #ffffff;
       font-weight: 700;
+    }
+
+        /* Declaration Section in Page 2 Main Column (Zero Borders) */
+    .p2-declaration-block {
+      margin-top: 1mm;
+    }
+
+    .declaration-heading {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .declaration-heading::before {
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
+    }
+
+    .declaration-card {
+      background: linear-gradient(90deg, #131926 0%, #161c2a 100%);
+      padding: 3.2mm 4.6mm;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8mm;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+    }
+
+    .declaration-text {
+      font-size: 8.5px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .declaration-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.8mm;
+    }
+
+    .decl-name {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 9.4px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .decl-loc {
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 8.2px;
+      font-weight: 700;
+      color: var(--accent-light);
     }
 
     /* Athletic Honors Strip on Page 2 */
@@ -1209,7 +1277,7 @@
           </div>
         </div>
 
-                <!-- 4. Languages and Stuff (Languages & Vocabulary) -->
+                        <!-- 4. Languages and Stuff (Languages & Vocabulary) -->
         <div class="sb-block">
           <div class="sb-header-enlarged">Languages &amp; Vocabulary</div>
           <div class="sb-lang-list">
@@ -1228,21 +1296,21 @@
               </div>
             </div>
             <div class="sb-lang-tile">
-              <img src="../assets/flag-rj.svg" alt="Rajasthani" class="sb-lang-flag" />
+              <img src="../assets/logo-rajasthan.png" alt="Rajasthani" class="sb-lang-flag" />
               <div class="sb-lang-info">
                 <div class="sb-lang-name">Rajasthani Dialects</div>
                 <div class="sb-lang-level">80% Regional Fluency</div>
               </div>
             </div>
             <div class="sb-lang-tile">
-              <img src="../assets/flag-pb.svg" alt="Punjabi" class="sb-lang-flag" />
+              <img src="../assets/logo-punjab.png" alt="Punjabi" class="sb-lang-flag" />
               <div class="sb-lang-info">
                 <div class="sb-lang-name">Punjabi</div>
                 <div class="sb-lang-level">60% Conversational Fluency</div>
               </div>
             </div>
             <div class="sb-lang-tile">
-              <img src="../assets/flag-gj.svg" alt="Gujarati" class="sb-lang-flag" />
+              <img src="../assets/logo-gujarat.png" alt="Gujarati" class="sb-lang-flag" />
               <div class="sb-lang-info">
                 <div class="sb-lang-name">Gujarati</div>
                 <div class="sb-lang-level">50% Working Knowledge</div>
@@ -1329,6 +1397,20 @@
 
           </div>
         </div>
+
+          <!-- Declaration Section (Filling remaining empty space) -->
+          <div class="p2-declaration-block">
+            <div class="declaration-heading">Declaration</div>
+            <div class="declaration-card">
+              <p class="declaration-text">
+                I hereby declare that all information, athletic records, professional credentials, and work experience stated in this document are true, authentic, and complete to the best of my knowledge and verified achievements.
+              </p>
+              <div class="declaration-meta">
+                <span class="decl-name">Ghazal Bhatnagar</span>
+                <span class="decl-loc">Udaipur, Rajasthan &bull; Verified Dossier</span>
+              </div>
+            </div>
+          </div>
 
       </main>
 
