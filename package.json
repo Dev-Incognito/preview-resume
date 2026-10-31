@@ -1,0 +1,14 @@
+{
+  "name": "preview-resume",
+  "version": "1.0.0",
+  "description": "Ghazal Bhatnagar Executive Resume Selection & Customizer Portal",
+  "scripts": {},
+  "keywords": [
+    "resume",
+    "portfolio",
+    "executive",
+    "ghazal-bhatnagar"
+  ],
+  "author": "Ghazal Bhatnagar",
+  "license": "MIT"
+}
