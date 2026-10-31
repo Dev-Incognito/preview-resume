@@ -584,27 +584,40 @@
       background: transparent;
     }
 
-        .section-title-bold {
+            /* Work Experience Huge Heading (Matches INTRODUCTION) */
+    .p2-work-heading-huge {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 13.5px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--accent-light);
+      margin-bottom: 4mm;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
-    .section-title-bold::before {
+    .p2-work-heading-huge::before {
       content: '';
       display: inline-block;
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       background-color: var(--accent);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
       flex-shrink: 0;
+    }
+
+    .p2-main-column {
+      flex: 1;
+      height: 297mm;
+      padding: 13mm 14mm 12mm 14mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 4mm;
+      background: transparent;
     }
 
     .work-timeline {
@@ -615,44 +628,47 @@
 
     .work-entry {
       background: linear-gradient(90deg, #131926 0%, #161c2a 100%);
-      padding: 3.5mm 4.5mm;
+      padding: 3.8mm 4.8mm;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
+      gap: 1.6mm;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
     }
 
     .work-header-row {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1mm;
+      align-items: center;
+      margin-bottom: 0.5mm;
     }
 
     .work-role {
-      font-family: var(--font-heading);
-      font-size: 10.5px;
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 12.2px;
       font-weight: 800;
       color: #ffffff;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
 
     .work-date {
-      font-family: var(--font-mono);
-      font-size: 7.8px;
+      font-family: var(--font-mono), monospace;
+      font-size: 8px;
       font-weight: 700;
       color: var(--accent-light);
       background: var(--accent-dim);
-      padding: 1.5px 6px;
+      padding: 1.5px 6.5px;
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
 
     .work-company {
-      font-size: 8.8px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1.8mm;
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 9.4px;
+      font-weight: 700;
+      color: var(--accent-light);
+      margin-bottom: 1.2mm;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -666,10 +682,10 @@
     }
 
     .work-bullets li {
-      font-size: 8.3px;
+      font-size: 8.6px;
       color: var(--text-secondary);
       line-height: 1.45;
-      padding-left: 3.5mm;
+      padding-left: 3.8mm;
       position: relative;
     }
 
@@ -1237,66 +1253,77 @@
 
       </aside>
 
-      <!-- RIGHT MAIN WORK COLUMN -->
+            <!-- RIGHT MAIN WORK COLUMN -->
       <main class="p2-main-column">
         
         <div>
-          <div class="section-title-bold" style="margin-bottom: 3mm;">Professional Work Experience</div>
+          <div class="p2-work-heading-huge">Work Experience</div>
           
           <div class="work-timeline">
             
-            <!-- Ragnar Fitness -->
+            <!-- 1. Fitness Influencer -->
             <article class="work-entry">
               <div class="work-header-row">
-                <div class="work-role">Fitness Coach & Strength Specialist</div>
+                <div class="work-role">Fitness Influencer</div>
+                <div class="work-date">Active Engagements</div>
+              </div>
+              <div class="work-company">Digital Media &amp; Brand Partnerships</div>
+              <ul class="work-bullets">
+                <li>Produce high-retention fitness video reels, lifting form breakdowns, and athletic storytelling reaching hundreds of thousands across digital platforms.</li>
+                <li>Partner with fitness and lifestyle brands to communicate verified strength training principles and positive physical transformations.</li>
+              </ul>
+            </article>
+
+            <!-- 2. Professional Athlete -->
+            <article class="work-entry">
+              <div class="work-header-row">
+                <div class="work-role">Professional Athlete</div>
+                <div class="work-date">Active Pursuits</div>
+              </div>
+              <div class="work-company">Competitive Strength Sports &amp; World Record Feats</div>
+              <ul class="work-bullets">
+                <li>Set and hold 7 verified World Records officially recognized across Guinness World Records, Limca Book of Records, and India Book of Records.</li>
+                <li>Represented Rajasthan at National Championships, earning National Medals in Strength Lifting and Ice Stock Sport competition.</li>
+                <li>Multiple Gold and Silver Medalist across State and District Powerlifting meets (Squat, Bench, Deadlift) and Weightlifting tournaments.</li>
+              </ul>
+            </article>
+
+            <!-- 3. Personal Trainer & Conditioning Specialist -->
+            <article class="work-entry">
+              <div class="work-header-row">
+                <div class="work-role">Personal Trainer &amp; Conditioning Specialist</div>
+                <div class="work-date">Ongoing Engagements</div>
+              </div>
+              <div class="work-company">Independent Practice &bull; Private Clientele</div>
+              <ul class="work-bullets">
+                <li>Deliver customized 1-on-1 personal training protocols, hypertrophy programming, and strength conditioning for private clientele.</li>
+                <li>Drive long-term body transformations and habit consistency through structured progressive overload, nutritional guidance, and lifestyle accountability.</li>
+              </ul>
+            </article>
+
+            <!-- 4. Fitness Coach -->
+            <article class="work-entry">
+              <div class="work-header-row">
+                <div class="work-role">Fitness Coach</div>
                 <div class="work-date">Sep 2025 - May 2026</div>
               </div>
               <div class="work-company">Ragnar Fitness &bull; Udaipur, Rajasthan</div>
               <ul class="work-bullets">
                 <li>Instructed clients across barbell fundamentals, compound lifts, strength progressions, and functional training regimens with strict anatomical safety.</li>
                 <li>Formulated tailored workout splits and progressive overload structures for weight loss, muscle gain, and conditioning goals.</li>
-                <li>Monitored training execution, corrected lifting form, and motivated clients to achieve sustained consistency and physical transformations.</li>
               </ul>
             </article>
 
-            <!-- Anytime Fitness -->
+            <!-- 5. Sales Executive & Advisor -->
             <article class="work-entry">
               <div class="work-header-row">
-                <div class="work-role">Sales Executive & Membership Advisor</div>
+                <div class="work-role">Sales Executive &amp; Advisor</div>
                 <div class="work-date">Nov 2024 - Sep 2025</div>
               </div>
               <div class="work-company">Anytime Fitness &bull; Udaipur, Rajasthan</div>
               <ul class="work-bullets">
                 <li>Conducted consultative prospective member assessments, understanding personal health targets and presenting customized annual membership tiers.</li>
-                <li>Consistently exceeded outbound lead conversion targets via structured telephone and in-person consultative sales dialogues.</li>
-                <li>Handled customer questions, conflict resolution, and escalated service concerns with high emotional intelligence and empathy.</li>
-                <li>Fostered strong member community relationships, driving member retention benchmarks and recurring referral streams across club operations.</li>
-              </ul>
-            </article>
-
-            <!-- Independent Client Engagements -->
-            <article class="work-entry">
-              <div class="work-header-row">
-                <div class="work-role">Elite Personal Trainer & Conditioning Specialist</div>
-                <div class="work-date">Ongoing Engagements</div>
-              </div>
-              <div class="work-company">Independent Practice &bull; Private Clientele</div>
-              <ul class="work-bullets">
-                <li>Delivered personalized 1-on-1 personal training engagements, athletic conditioning, and body transformation protocols for discerning private clients.</li>
-                <li>Cultivated long-term client retention through holistic lifestyle accountability, nutritional discipline guidance, and habit engineering.</li>
-              </ul>
-            </article>
-
-            <!-- Creative Media & Content Creation -->
-            <article class="work-entry">
-              <div class="work-header-row">
-                <div class="work-role">Fitness Content Creator & Athlete</div>
-                <div class="work-date">Active Engagements</div>
-              </div>
-              <div class="work-company">Digital Media & Athletic Branding</div>
-              <ul class="work-bullets">
-                <li>Produced high-retention fitness reels, training breakdowns, and lifestyle storytelling for digital platforms.</li>
-                <li>Built a growing audience through educational demonstrations of lifting techniques, mental resilience, and holistic fitness habits.</li>
+                <li>Consistently exceeded outbound lead conversion targets via structured telephone and in-person consultative sales dialogues and member community retention.</li>
               </ul>
             </article>
 
