@@ -947,14 +947,14 @@
       font-weight: 700;
     }
 
-    /* Page 3 Bottom Tile (Enlarged Contact & Designer QR Monolith) */
+    /* Page 3 Bottom Tile (Enlarged Get In Touch & Horizontal Designer QRs) */
     .p3-bottom-tile {
       width: 100%;
-      height: 154mm;
+      height: 156mm;
       background: 
         radial-gradient(ellipse 80% 90% at 50% 0%, rgba(184, 134, 11, 0.22) 0%, transparent 72%),
         linear-gradient(180deg, #131926 0%, #101520 60%, #0d111a 100%);
-      padding: 7mm 18mm 7mm 18mm;
+      padding: 6.5mm 18mm 6.5mm 18mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -975,21 +975,35 @@
     .p3-qr-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.5mm;
+      align-items: center;
+      margin-bottom: 1mm;
     }
 
     .p3-qr-title {
-      font-family: var(--font-heading);
-      font-size: 11.5px;
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 18px;
       font-weight: 900;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .p3-qr-title::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
     }
 
     .p3-qr-subtitle {
-      font-family: var(--font-mono);
+      font-family: var(--font-mono), monospace;
       font-size: 7.8px;
       color: var(--accent-light);
       letter-spacing: 1px;
@@ -997,121 +1011,148 @@
       font-weight: 700;
     }
 
-    /* Vertical Stack of Separate Info & Designer QR Tiles */
-    .p3-social-tiles-vertical {
+    /* Personal Information Tile */
+    .p3-personal-info-tile {
+      background: linear-gradient(135deg, #151c2a 0%, #182233 100%);
+      padding: 3mm 5.5mm;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
-      gap: 2.6mm;
+      gap: 2mm;
+      border: none !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .p3-pi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .p3-pi-name {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .p3-pi-tag {
+      font-family: var(--font-mono), monospace;
+      font-size: 7.8px;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .p3-pi-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr 1.2fr 1.2fr;
+      gap: 3mm;
+      background: rgba(0, 0, 0, 0.18);
+      padding: 2.2mm 3.5mm;
+      border-radius: 6px;
+    }
+
+    .p3-pi-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .p3-pi-label {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 7.5px;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .p3-pi-val {
+      font-family: var(--font-mono), monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 4 Designer QR Code Tiles Stacked Horizontally */
+    .p3-qr-grid-horizontal {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4mm;
       width: 100%;
     }
 
-    .p3-social-tile {
-      background: linear-gradient(90deg, #161c2a 0%, #192233 100%);
-      padding: 2.2mm 4.5mm;
+    .p3-qr-col-card {
+      background: linear-gradient(135deg, #151c2a 0%, #182233 100%);
+      padding: 3.5mm 3mm;
       border-radius: 8px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 4mm;
+      text-align: center;
       border: none !important;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
-    .p3-qr-box {
-      width: 22.5mm;
-      height: 22.5mm;
+    .p3-qr-big-box {
+      width: 32mm;
+      height: 32mm;
       background: #ffffff;
-      padding: 1.2mm;
       border-radius: 6px;
+      padding: 1.5mm;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    .p3-qr-box img {
+    .p3-qr-big-box img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: contain;
     }
 
-    .p3-social-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6mm;
-    }
-
-    .p3-social-name-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .p3-social-title {
-      font-family: var(--font-heading);
-      font-size: 11.5px;
+    .p3-qr-col-title {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 11px;
       font-weight: 800;
       color: var(--accent-light);
-      letter-spacing: 1.1px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin: 0;
+      margin-top: 2.2mm;
     }
 
-    .p3-social-val {
-      font-family: var(--font-mono);
-      font-size: 10.2px;
+    .p3-qr-col-link {
+      font-family: var(--font-mono), monospace;
+      font-size: 8.5px;
       font-weight: 700;
       color: #ffffff;
+      margin-top: 1mm;
       text-decoration: none;
+      word-break: break-all;
     }
 
-    .p3-social-desc {
-      font-size: 8.5px;
-      color: var(--text-secondary);
-      line-height: 1.35;
-    }
-
-    .p3-social-action-badge {
-      font-family: var(--font-mono);
-      font-size: 8px;
+    .p3-qr-col-pill {
+      font-family: var(--font-mono), monospace;
+      font-size: 7.5px;
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       color: var(--accent-light);
-      background: rgba(184, 134, 11, 0.14);
-      padding: 3.5px 8.5px;
+      background: rgba(184, 134, 11, 0.15);
+      padding: 3px 8px;
       border-radius: 4px;
+      margin-top: 2mm;
       border: none !important;
-      flex-shrink: 0;
-    }
-
-    /* Meta Strip for Location & Status */
-    .p3-meta-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--tile-bg-alt);
-      padding: 2.2mm 4.5mm;
-      border-radius: 6px;
-      font-size: 8.4px;
-      color: var(--text-secondary);
-      border: none !important;
-    }
-
-    .p3-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .p3-meta-item strong {
-      color: var(--accent-light);
-      font-family: var(--font-heading);
-      font-size: 8px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
     }
   </style>
 </head>
@@ -1511,90 +1552,84 @@
 
     </div>
 
-    <!-- FULL-WIDTH BOTTOM TILE (Enlarged Monolith with Vertical Designer QR Tiles) -->
+    <!-- FULL-WIDTH BOTTOM TILE (Enlarged Get In Touch + Personal Info + 4 Horizontal Designer QR Tiles) -->
     <div class="p3-bottom-tile">
       
-      <!-- Top Title of Tile -->
+      <!-- Top Title: GET IN TOUCH -->
       <div class="p3-qr-header">
-        <div class="p3-qr-title">Verified Credentials &amp; Instant Connectivity</div>
-        <div class="p3-qr-subtitle">Scan Designer QR Codes for Direct Access</div>
+        <div class="p3-qr-title">Get In Touch</div>
+        <div class="p3-qr-subtitle">Scan Designer QR Codes For Direct Access</div>
       </div>
 
-      <!-- 4 Separate Dedicated Tiles Stacked Vertically -->
-      <div class="p3-social-tiles-vertical">
+      <!-- One Vertical Tile: Personal Information -->
+      <div class="p3-personal-info-tile">
+        <div class="p3-pi-header">
+          <div class="p3-pi-name">Ghazal Bhatnagar</div>
+          <div class="p3-pi-tag">7x World Record Holder &bull; National Medalist &bull; Fitness &amp; Media</div>
+        </div>
+        <div class="p3-pi-grid">
+          <div class="p3-pi-item">
+            <span class="p3-pi-label">Phone</span>
+            <a class="p3-pi-val" href="tel:+917976331654">+91 79763 31654</a>
+          </div>
+          <div class="p3-pi-item">
+            <span class="p3-pi-label">Email</span>
+            <a class="p3-pi-val" href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a>
+          </div>
+          <div class="p3-pi-item">
+            <span class="p3-pi-label">Address</span>
+            <span class="p3-pi-val">Udaipur, Rajasthan, India</span>
+          </div>
+          <div class="p3-pi-item">
+            <span class="p3-pi-label">Status</span>
+            <span class="p3-pi-val" style="color: var(--accent-light);">Open to Opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Designer QR Code Tiles Stacked Horizontally -->
+      <div class="p3-qr-grid-horizontal">
         
-        <!-- Tile 1: WhatsApp -->
-        <div class="p3-social-tile">
-          <div class="p3-qr-box">
+        <!-- QR 1: WhatsApp -->
+        <div class="p3-qr-col-card">
+          <div class="p3-qr-big-box">
             <img src="../assets/WHATSAPP.png" alt="WhatsApp QR Code" />
           </div>
-          <div class="p3-social-info">
-            <div class="p3-social-name-row">
-              <span class="p3-social-title">WhatsApp &amp; Direct Line</span>
-            </div>
-            <a class="p3-social-val" href="tel:+917976331654">+91 79763 31654</a>
-            <div class="p3-social-desc">Instant Messaging, Priority Calls &amp; Direct Consultation</div>
-          </div>
-          <div class="p3-social-action-badge">Direct Chat</div>
+          <div class="p3-qr-col-title">WhatsApp</div>
+          <a class="p3-qr-col-link" href="tel:+917976331654">+91 79763 31654</a>
+          <div class="p3-qr-col-pill">Direct Chat</div>
         </div>
 
-        <!-- Tile 2: Gmail -->
-        <div class="p3-social-tile">
-          <div class="p3-qr-box">
+        <!-- QR 2: Gmail -->
+        <div class="p3-qr-col-card">
+          <div class="p3-qr-big-box">
             <img src="../assets/GMAIL.png" alt="Gmail QR Code" />
           </div>
-          <div class="p3-social-info">
-            <div class="p3-social-name-row">
-              <span class="p3-social-title">Gmail &amp; Official Inquiries</span>
-            </div>
-            <a class="p3-social-val" href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a>
-            <div class="p3-social-desc">Professional Proposals, Commercial Brand Partnerships &amp; Sponsorships</div>
-          </div>
-          <div class="p3-social-action-badge">Send Email</div>
+          <div class="p3-qr-col-title">Gmail</div>
+          <a class="p3-qr-col-link" href="mailto:Livewithghazal@gmail.com">Livewithghazal</a>
+          <div class="p3-qr-col-pill">Send Email</div>
         </div>
 
-        <!-- Tile 3: LinkedIn -->
-        <div class="p3-social-tile">
-          <div class="p3-qr-box">
+        <!-- QR 3: LinkedIn -->
+        <div class="p3-qr-col-card">
+          <div class="p3-qr-big-box">
             <img src="../assets/LINKEDIN.png" alt="LinkedIn QR Code" />
           </div>
-          <div class="p3-social-info">
-            <div class="p3-social-name-row">
-              <span class="p3-social-title">LinkedIn Network</span>
-            </div>
-            <a class="p3-social-val" href="https://linkedin.com/in/ghazal-bhatnagar" target="_blank" rel="noopener">linkedin.com/in/ghazal-bhatnagar</a>
-            <div class="p3-social-desc">Executive Career Profile, Athletic Endorsements &amp; Professional Network</div>
-          </div>
-          <div class="p3-social-action-badge">Connect</div>
+          <div class="p3-qr-col-title">LinkedIn</div>
+          <a class="p3-qr-col-link" href="https://linkedin.com/in/ghazal-bhatnagar" target="_blank" rel="noopener">ghazal-bhatnagar</a>
+          <div class="p3-qr-col-pill">Connect</div>
         </div>
 
-        <!-- Tile 4: Instagram -->
-        <div class="p3-social-tile">
-          <div class="p3-qr-box">
+        <!-- QR 4: Instagram -->
+        <div class="p3-qr-col-card">
+          <div class="p3-qr-big-box">
             <img src="../assets/INSTAGRAM.png" alt="Instagram QR Code" />
           </div>
-          <div class="p3-social-info">
-            <div class="p3-social-name-row">
-              <span class="p3-social-title">Instagram Media</span>
-            </div>
-            <span class="p3-social-val">@ghazalbhatnagar</span>
-            <div class="p3-social-desc">Athletic Lifestyle, Strength Training Reels &amp; Fitness Content Creation</div>
-          </div>
-          <div class="p3-social-action-badge">Follow</div>
+          <div class="p3-qr-col-title">Instagram</div>
+          <span class="p3-qr-col-link">@ghazalbhatnagar</span>
+          <div class="p3-qr-col-pill">Follow</div>
         </div>
 
-      </div>
-
-      <!-- Bottom Meta Strip for Location & Status -->
-      <div class="p3-meta-strip">
-        <div class="p3-meta-item">
-          <strong>Location:</strong>
-          <span>Udaipur, Rajasthan, India</span>
-        </div>
-        <div class="p3-meta-item">
-          <strong>Status:</strong>
-          <span style="color: var(--accent-light); font-weight: 700;">Open to Select Opportunities</span>
-        </div>
       </div>
 
     </div>
