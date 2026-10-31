@@ -855,61 +855,59 @@
       flex-shrink: 0;
     }
 
-    /* Dedicated Horizontally Stacked Tiles */
+    /* Dedicated Horizontally Stacked Tiles (4 Separate Tiles: 2x2 Grid) */
     .p3-skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6mm;
+      gap: 3.5mm 5mm;
       width: 100%;
     }
 
     .p3-skill-tile {
       background: linear-gradient(135deg, #131926 0%, #161d2c 100%);
-      padding: 7mm 7.5mm;
-      border-radius: 10px;
+      padding: 4.5mm 5.5mm;
+      border-radius: 9px;
       display: flex;
       flex-direction: column;
-      gap: 3.5mm;
+      gap: 2mm;
       border: none !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
     }
 
     .p3-skill-title-row {
       display: flex;
-      flex-direction: column;
-      gap: 1.5mm;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5mm;
     }
 
     .p3-skill-title {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: var(--accent-light);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       margin: 0;
     }
 
-    .p3-skill-badge {
-      font-family: var(--font-mono), monospace;
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(184, 134, 11, 0.12);
-      padding: 3px 8px;
-      border-radius: 4px;
-      align-self: flex-start;
-      border: none !important;
+    .p3-skill-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      transform: rotate(45deg);
+      border-radius: 1px;
+      flex-shrink: 0;
     }
 
     .p3-skill-lead {
-      font-size: 11.2px;
-      line-height: 1.58;
+      font-size: 10.6px;
+      line-height: 1.48;
       color: var(--text-secondary);
       font-weight: 500;
       margin: 0;
@@ -919,16 +917,16 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 3.2mm;
-      margin-top: 1.5mm;
+      gap: 2mm;
+      margin-top: 1mm;
       padding: 0;
     }
 
     .p3-skill-list li {
-      font-size: 10.8px;
+      font-size: 10.2px;
       color: var(--text-secondary);
-      line-height: 1.54;
-      padding-left: 15px;
+      line-height: 1.45;
+      padding-left: 14px;
       position: relative;
     }
 
@@ -936,9 +934,9 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 6px;
-      width: 5px;
-      height: 5px;
+      top: 5px;
+      width: 4px;
+      height: 4px;
       background: var(--accent);
       transform: rotate(45deg);
       border-radius: 1px;
@@ -1416,45 +1414,74 @@
       <!-- Dedicated Horizontally Stacked Tiles -->
       <div class="p3-skills-grid">
         
-        <!-- Tile 1: Photography & Videography -->
+        <!-- Tile 1: PHOTOGRAPHY -->
         <article class="p3-skill-tile">
           <div class="p3-skill-title-row">
-            <h2 class="p3-skill-title">Photography &amp; Videography</h2>
+            <h2 class="p3-skill-title">Photography</h2>
           </div>
           <p class="p3-skill-lead">
-            I shoot, direct, and produce athletic photography and strength cinematography. My visual work focuses on capturing raw training intensity, lifting form, and physique conditioning with precision framing and dynamic camera movement.
+            I capture high-impact action sports photography, physique conditioning, and athletic movement with deliberate visual composition.
           </p>
           <ul class="p3-skill-list">
             <li>
-              <strong>4K Cinematography &amp; Motion Tracking:</strong> Operating gimbal rigs, fluid tracking shots, and dynamic low-angle sequences during heavy compound lifts to showcase technical execution.
+              <strong>Action Sports &amp; High-Shutter Capture:</strong> Freezing explosive power, barbell lifts, and high-speed motion with precision timing.
             </li>
             <li>
-              <strong>Action Sports &amp; Physique Photography:</strong> Framing high-shutter athletic movement, muscular definition, and gym ambiance with high-contrast directional lighting.
-            </li>
-            <li>
-              <strong>Post-Production &amp; Precision Color Grading:</strong> Editing in Adobe Premiere Pro and DaVinci Resolve with customized film tone LUTs, rhythmic pacing, and impactful audio design.
+              <strong>Studio &amp; Natural Gym Lighting:</strong> Shaping muscular definition, contrast, and athletic form with directional key lighting.
             </li>
           </ul>
         </article>
 
-        <!-- Tile 2: Media & Production (Marketing & Promotion) -->
+        <!-- Tile 2: VIDEOGRAPHY -->
         <article class="p3-skill-tile">
           <div class="p3-skill-title-row">
-            <h2 class="p3-skill-title">Media &amp; Production</h2>
-            <span class="p3-skill-badge">Marketing &amp; Promotion</span>
+            <h2 class="p3-skill-title">Videography</h2>
           </div>
           <p class="p3-skill-lead">
-            I strategize and execute end-to-end digital media campaigns, high-retention fitness content, and brand partnerships that convert audience attention into engaged community loyalty.
+            I shoot and direct 4K strength cinematography, training breakdowns, and dynamic gym sequences with fluid camera movement.
           </p>
           <ul class="p3-skill-list">
             <li>
-              <strong>Content Strategy &amp; Viral Distribution:</strong> Producing high-retention short-form video content across Instagram and YouTube, translating training discipline into relatable fitness education.
+              <strong>4K Cinematography &amp; Gimbal Rigs:</strong> Operating stabilized tracking shots, compound lift sequences, and low-angle angles.
             </li>
             <li>
-              <strong>Brand Partnerships &amp; Product Promotion:</strong> Collaborating with athletic apparel, fitness equipment, and nutrition brands to deliver authentic integrations and campaign ROI.
+              <strong>Post-Production &amp; Color Grading:</strong> Editing in Adobe Premiere Pro and DaVinci Resolve with custom film tone LUTs and dynamic sound.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Tile 3: MEDIA AND PRODUCTION -->
+        <article class="p3-skill-tile">
+          <div class="p3-skill-title-row">
+            <h2 class="p3-skill-title">Media And Production</h2>
+          </div>
+          <p class="p3-skill-lead">
+            I manage end-to-end digital media production pipelines from concept drafting and scripting to final multi-platform delivery.
+          </p>
+          <ul class="p3-skill-list">
+            <li>
+              <strong>Full Production Pipeline:</strong> Directing camera setups, lighting rigs, audio capture, and high-standard exports.
             </li>
             <li>
-              <strong>Audience Growth &amp; Community Building:</strong> Architecting organic outreach, comment engagement, and motivational communication that builds strong personal brand equity.
+              <strong>High-Retention Video Editing:</strong> Crafting fast-paced fitness storytelling with frame-accurate cuts and audience retention.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Tile 4: MARKETING & PROMOTION -->
+        <article class="p3-skill-tile">
+          <div class="p3-skill-title-row">
+            <h2 class="p3-skill-title">Marketing &amp; Promotion</h2>
+          </div>
+          <p class="p3-skill-lead">
+            I strategize and execute targeted digital marketing campaigns, viral content distribution, and authentic fitness brand sponsorships.
+          </p>
+          <ul class="p3-skill-list">
+            <li>
+              <strong>Brand Collaborations &amp; Sponsorships:</strong> Partnering with fitness apparel, gym gear, and supplement brands for campaign ROI.
+            </li>
+            <li>
+              <strong>Organic Community Growth:</strong> Converting athletic discipline and world record credibility into loyal follower engagement.
             </li>
           </ul>
         </article>
