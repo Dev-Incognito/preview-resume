@@ -947,7 +947,7 @@
       font-weight: 700;
     }
 
-    /* Page 3 Bottom Tile (Enlarged Get In Touch & Horizontal Designer QRs) */
+    /* Page 3 Bottom Tile (Huge GET IN TOUCH + Even 3-Tile Grid + Clean Designer QRs) */
     .p3-bottom-tile {
       width: 100%;
       height: 154mm;
@@ -972,49 +972,17 @@
       opacity: 0.8;
     }
 
-    .p3-qr-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1mm;
-    }
-
-    .p3-qr-title {
+    /* Huge GET IN TOUCH Title - Full Width, No Symbol */
+    .p3-get-in-touch-huge {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 18px;
+      font-size: 26px;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--accent-light);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .p3-qr-title::before {
-      content: '';
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background-color: var(--accent);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      flex-shrink: 0;
-    }
-
-    /* Small badge tile on the side: Scan QR Codes For Direct Access */
-    .p3-qr-badge-tile {
-      font-family: var(--font-mono), monospace;
-      font-size: 8.5px;
-      font-weight: 700;
-      color: var(--accent-light);
-      background: linear-gradient(135deg, #182233 0%, #1e293b 100%);
-      padding: 4px 12px;
-      border-radius: 5px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      border: none !important;
+      text-align: center;
+      width: 100%;
+      margin: 0;
     }
 
     /* Personal Information Tile (Tile-in-Tile) */
@@ -1040,17 +1008,17 @@
       text-align: center;
     }
 
-    /* Subtiles: Tile in Tile */
+    /* 3 Subtiles: Phone, Email, Address Evenly Distributed */
     .p3-pi-subtiles-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3mm;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5mm;
       width: 100%;
     }
 
     .p3-pi-subtile {
       background: linear-gradient(135deg, #101622 0%, #131a28 100%);
-      padding: 2.2mm 3mm;
+      padding: 2.2mm 3.5mm;
       border-radius: 6px;
       display: flex;
       flex-direction: column;
@@ -1072,7 +1040,7 @@
 
     .p3-pi-subval {
       font-family: var(--font-mono), monospace;
-      font-size: 8.8px;
+      font-size: 9.2px;
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
@@ -1082,7 +1050,60 @@
       max-width: 100%;
     }
 
-    /* 4 Designer QR Code Tiles Stacked Horizontally */
+    /* Underneath Personal Info: Status Tile + Scan QR Code Badge Tile */
+    .p3-subrow-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5mm;
+      width: 100%;
+    }
+
+    .p3-status-subtile {
+      background: linear-gradient(135deg, #151c2a 0%, #182233 100%);
+      padding: 2.2mm 4mm;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .p3-status-sublabel {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 7.5px;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .p3-status-subval {
+      font-family: var(--font-mono), monospace;
+      font-size: 8.8px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .p3-scan-badge-subtile {
+      background: linear-gradient(135deg, #182233 0%, #1e293b 100%);
+      padding: 2.2mm 4mm;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono), monospace;
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    /* 4 Designer QR Code Tiles (Just QR Image + Tile Name) */
     .p3-qr-grid-horizontal {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1092,7 +1113,7 @@
 
     .p3-qr-col-card {
       background: linear-gradient(135deg, #151c2a 0%, #182233 100%);
-      padding: 3.5mm 3mm;
+      padding: 4mm 3mm;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
@@ -1103,8 +1124,8 @@
     }
 
     .p3-qr-big-box {
-      width: 32mm;
-      height: 32mm;
+      width: 35mm;
+      height: 35mm;
       background: #ffffff;
       border-radius: 6px;
       padding: 1.5mm;
@@ -1123,36 +1144,12 @@
 
     .p3-qr-col-title {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       color: var(--accent-light);
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-top: 2.2mm;
-    }
-
-    .p3-qr-col-link {
-      font-family: var(--font-mono), monospace;
-      font-size: 8.5px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-top: 1mm;
-      text-decoration: none;
-      word-break: break-all;
-    }
-
-    .p3-qr-col-pill {
-      font-family: var(--font-mono), monospace;
-      font-size: 7.5px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      background: rgba(184, 134, 11, 0.15);
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-top: 2mm;
-      border: none !important;
+      margin-top: 2.5mm;
     }
   </style>
 </head>
@@ -1552,16 +1549,13 @@
 
     </div>
 
-    <!-- FULL-WIDTH BOTTOM TILE (Enlarged Get In Touch + Centered Name + Tile-in-Tile + 4 Horizontal Designer QR Tiles) -->
+    <!-- FULL-WIDTH BOTTOM TILE (Huge GET IN TOUCH + Centered Name + Even 3-Tile Grid + Status & QR Badges + 4 Clean QR Cards) -->
     <div class="p3-bottom-tile">
       
-      <!-- Top Title: GET IN TOUCH + Small Badge Tile on Side -->
-      <div class="p3-qr-header">
-        <div class="p3-qr-title">Get In Touch</div>
-        <div class="p3-qr-badge-tile">Scan QR Codes For Direct Access</div>
-      </div>
+      <!-- Huge GET IN TOUCH - Full Width, No Symbol -->
+      <h2 class="p3-get-in-touch-huge">Get In Touch</h2>
 
-      <!-- One Vertical Tile: Personal Information (Name Centered + Tile-in-Tile) -->
+      <!-- One Vertical Tile: Personal Information (Name Centered + Even 3 Subtiles) -->
       <div class="p3-personal-info-tile">
         <div class="p3-pi-name-center">Ghazal Bhatnagar</div>
         
@@ -1585,16 +1579,21 @@
             <span class="p3-pi-subval">Udaipur, Rajasthan, India</span>
           </div>
 
-          <!-- Subtile 4: Status -->
-          <div class="p3-pi-subtile">
-            <span class="p3-pi-sublabel">Status</span>
-            <span class="p3-pi-subval" style="color: var(--accent-light);">Open to Opportunities</span>
-          </div>
-
         </div>
       </div>
 
-      <!-- 4 Designer QR Code Tiles Stacked Horizontally -->
+      <!-- Underneath Personal Info: Status Tile + Scan QR Code Badge Tile -->
+      <div class="p3-subrow-strip">
+        <div class="p3-status-subtile">
+          <span class="p3-status-sublabel">Status</span>
+          <span class="p3-status-subval" style="color: var(--accent-light);">Open to Opportunities</span>
+        </div>
+        <div class="p3-scan-badge-subtile">
+          Scan QR Codes For Direct Access
+        </div>
+      </div>
+
+      <!-- 4 Designer QR Code Tiles (Just QR Code Image and Tile Name) -->
       <div class="p3-qr-grid-horizontal">
         
         <!-- QR 1: WhatsApp -->
@@ -1603,8 +1602,6 @@
             <img src="../assets/WHATSAPP.png" alt="WhatsApp QR Code" />
           </div>
           <div class="p3-qr-col-title">WhatsApp</div>
-          <a class="p3-qr-col-link" href="tel:+917976331654">+91 79763 31654</a>
-          <div class="p3-qr-col-pill">Direct Chat</div>
         </div>
 
         <!-- QR 2: Gmail -->
@@ -1613,8 +1610,6 @@
             <img src="../assets/GMAIL.png" alt="Gmail QR Code" />
           </div>
           <div class="p3-qr-col-title">Gmail</div>
-          <a class="p3-qr-col-link" href="mailto:Livewithghazal@gmail.com">Livewithghazal</a>
-          <div class="p3-qr-col-pill">Send Email</div>
         </div>
 
         <!-- QR 3: LinkedIn -->
@@ -1623,8 +1618,6 @@
             <img src="../assets/LINKEDIN.png" alt="LinkedIn QR Code" />
           </div>
           <div class="p3-qr-col-title">LinkedIn</div>
-          <a class="p3-qr-col-link" href="https://linkedin.com/in/ghazal-bhatnagar" target="_blank" rel="noopener">ghazal-bhatnagar</a>
-          <div class="p3-qr-col-pill">Connect</div>
         </div>
 
         <!-- QR 4: Instagram -->
@@ -1633,8 +1626,6 @@
             <img src="../assets/INSTAGRAM.png" alt="Instagram QR Code" />
           </div>
           <div class="p3-qr-col-title">Instagram</div>
-          <span class="p3-qr-col-link">@ghazalbhatnagar</span>
-          <div class="p3-qr-col-pill">Follow</div>
         </div>
 
       </div>
