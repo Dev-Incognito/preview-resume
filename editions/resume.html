@@ -123,7 +123,7 @@
     }
 
     /* ============================================================
-       PAGE 1: COMPACT TOP TILE + FULL GOLDEN LINE + ACHIEVEMENTS TILE
+       PAGE 1: COMPACT TOP TILE + PORTRAIT BLEND + ACHIEVEMENTS TILES
        ============================================================ */
     .p1-top-tile {
       width: 100%;
@@ -137,16 +137,36 @@
       overflow: hidden;
     }
 
+    /* Blended Portrait Eyes View */
+    .p1-tile-portrait-eyes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center 50%;
+      background-repeat: no-repeat;
+      opacity: 0.38;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* Subtle luxury geometric background design */
     .p1-tile-bg-pattern {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       pointer-events: none;
-      opacity: 0.12;
+      opacity: 0.08;
       background: 
-        radial-gradient(circle at 10% 50%, var(--accent-light) 0%, transparent 45%),
-        radial-gradient(circle at 90% 50%, var(--accent) 0%, transparent 45%),
+        radial-gradient(circle at 15% 50%, var(--accent-light) 0%, transparent 45%),
+        radial-gradient(circle at 85% 50%, var(--accent) 0%, transparent 45%),
         repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px);
+      z-index: 1;
     }
 
     .p1-tile-name {
@@ -159,7 +179,8 @@
       text-transform: uppercase;
       text-align: center;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
     }
 
     .p1-tile-name span {
@@ -177,53 +198,62 @@
       height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
       box-shadow: 0 0 12px var(--accent-glow);
+      z-index: 3;
     }
 
     /* Page 1 Body Canvas */
     .p1-body-canvas {
       flex: 1;
-      padding: 12mm 18mm 12mm 18mm;
+      padding: 11mm 18mm 12mm 18mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       background: var(--page-bg);
     }
 
-    /* Big Font Heading: INTRODUCTION */
-    .p1-intro-heading {
+    /* Uniform Section Headings: INTRODUCTION and ACHIEVEMENTS */
+    .p1-section-heading {
       font-family: var(--font-heading);
       font-size: 20px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 4mm;
+      margin-bottom: 3.5mm;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .p1-intro-heading::before {
+    .p1-section-heading::before {
       content: '■';
       font-size: 11px;
       color: var(--accent);
     }
 
+    .p1-intro-section {
+      margin-bottom: 3mm;
+    }
+
+    /* Readable, Perfect Font Size for Introduction Body */
     .p1-lead-quote {
-      font-size: 13px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
       font-weight: 600;
       color: #ffffff;
       line-height: 1.6;
-      margin-bottom: 3.5mm;
+      margin-bottom: 3mm;
       letter-spacing: 0.1px;
     }
 
     .p1-narrative-p {
-      font-size: 10.4px;
+      font-family: var(--font-body);
+      font-size: 11.5px;
       font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.65;
-      margin-bottom: 4mm;
+      margin-bottom: 2.8mm;
+      letter-spacing: 0.15px;
     }
 
     .p1-narrative-p strong {
@@ -231,173 +261,77 @@
       font-weight: 700;
     }
 
-    /* ACHIEVEMENTS TILE (Frameless Architectural Tile on Page 1) */
-    .p1-achievements-tile {
-      background: var(--tile-bg);
-      padding: 6mm 7mm 6mm 7mm;
-      border-radius: 12px;
+    /* ACHIEVEMENTS VERTICAL TILES */
+    .p1-achievements-section {
       display: flex;
       flex-direction: column;
-      gap: 4mm;
-      position: relative;
     }
 
-    .p1-achievements-header {
+    .p1-achievements-list {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+      flex-direction: column;
+      gap: 2mm;
     }
 
-    .p1-achievements-title {
-      font-family: var(--font-heading);
-      font-size: 12.5px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .p1-achievements-title::before {
-      content: '★';
-      font-size: 12px;
-      color: var(--accent-light);
-    }
-
-    .p1-achievements-tag {
-      font-family: var(--font-mono);
-      font-size: 8px;
-      font-weight: 700;
-      color: var(--accent-light);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: var(--accent-dim);
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-
-    /* 5 Logos Row */
-    .p1-logos-row {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      align-items: stretch;
-    }
-
-    .p1-logo-card {
-      background: #ffffff;
-      padding: 6px 7px;
+    /* Individual Horizontal Tile */
+    .p1-achieve-tile {
+      background: var(--tile-bg);
+      padding: 2.6mm 4mm;
       border-radius: 8px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s ease;
+    }
+
+    /* Logo Box: Single non-background transparent logo */
+    .p1-achieve-logo-box {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
     }
 
-    .p1-logo-card img {
+    .p1-achieve-logo-box img {
       max-width: 100%;
-      max-height: 34px;
+      max-height: 100%;
       object-fit: contain;
       display: block;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
     }
 
-    .p1-logo-label {
-      font-family: var(--font-mono);
-      font-size: 6.8px;
-      font-weight: 700;
-      color: #0f172a;
-      text-transform: uppercase;
-      margin-top: 3px;
-      text-align: center;
-      letter-spacing: 0.3px;
-      line-height: 1.1;
-    }
-
-    /* Medals Sub-Grid inside Achievements Tile */
-    .p1-medals-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-      padding-top: 1mm;
-    }
-
-    .p1-medal-column {
-      background: var(--tile-bg-alt);
-      padding: 3.5mm 4.5mm;
-      border-radius: 8px;
+    .p1-achieve-info {
       display: flex;
       flex-direction: column;
+      gap: 1px;
+      flex: 1;
     }
 
-    .p1-medal-col-title {
+    /* Name of the book at the top of the tile */
+    .p1-achieve-book {
       font-family: var(--font-heading);
-      font-size: 9.5px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 2mm;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      letter-spacing: 0.6px;
+      line-height: 1.25;
     }
 
-    .p1-medal-col-title::before {
-      content: '■';
-      font-size: 7px;
-      color: var(--accent);
-    }
-
-    .p1-medal-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.8mm;
-    }
-
-    .p1-medal-list li {
-      font-size: 8.8px;
+    /* Description of the record in body text */
+    .p1-achieve-desc {
+      font-family: var(--font-body);
+      font-size: 9.8px;
       color: var(--text-secondary);
-      line-height: 1.4;
-      padding-left: 3.5mm;
-      position: relative;
+      line-height: 1.35;
+      letter-spacing: 0.1px;
     }
 
-    .p1-medal-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent-light);
-      font-size: 8.5px;
-    }
-
-    .p1-medal-list li strong {
+    .p1-achieve-desc strong {
       color: #ffffff;
-      font-weight: 700;
-    }
-
-    /* Page Running Mini-Footer */
-    .page-footer-mini {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 3mm;
-      font-family: var(--font-mono);
-      font-size: 7.8px;
       font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .page-footer-mini span.gold {
-      color: var(--accent-light);
-      font-weight: 700;
     }
 
     /* ============================================================
@@ -676,7 +610,7 @@
     }
 
     /* ============================================================
-       PAGE 3: CAPABILITIES CONTENT + FULL-WIDTH BOTTOM TILE (QR)
+       PAGE 3: CAPABILITIES CANVAS + ADDITIONAL SKILLS + BOTTOM TILE (QR)
        ============================================================ */
     .p3-top-canvas {
       flex: 1;
@@ -969,12 +903,13 @@
 <body>
 
   <!-- ============================================================
-       PAGE 1: COMPACT TOP TILE + OPEN INTRO CANVAS + ACHIEVEMENTS TILE
+       PAGE 1: TOP BANNER TILE (PORTRAIT BLEND) + INTRODUCTION + ACHIEVEMENTS TILES
        ============================================================ -->
-  <section class="page" id="page-1" aria-label="Page 1: Name, Introduction & Athletic Achievements">
+  <section class="page" id="page-1" aria-label="Page 1: Ghazal Bhatnagar Introduction & Achievements">
     
-    <!-- COMPACT TOP TILE (Smaller, Only Name in Huge Font, Luxury Pattern, Full Edge-to-Edge Golden Line) -->
+    <!-- COMPACT TOP TILE (Blended Eyes Portrait + Huge Name + Full Edge-to-Edge Golden Line) -->
     <div class="p1-top-tile">
+      <div class="p1-tile-portrait-eyes" style="background-image: url('../assets/portrait-eyes-banner.png');" aria-hidden="true"></div>
       <div class="p1-tile-bg-pattern" aria-hidden="true"></div>
       <h1 class="p1-tile-name">GHAZAL <span>BHATNAGAR</span></h1>
     </div>
@@ -983,8 +918,8 @@
     <div class="p1-body-canvas">
       
       <!-- Section: INTRODUCTION -->
-      <div>
-        <div class="p1-intro-heading">Introduction</div>
+      <div class="p1-intro-section">
+        <div class="p1-section-heading">Introduction</div>
         <p class="p1-lead-quote">
           Ghazal Bhatnagar is a multidisciplinary athlete, personal trainer and fitness coach, and content creator based in Udaipur, Rajasthan.
         </p>
@@ -996,78 +931,79 @@
         </p>
       </div>
 
-      <!-- ACHIEVEMENTS TILE (World Records Logos & Championship Medals) -->
-      <div class="p1-achievements-tile">
+      <!-- Section: ACHIEVEMENTS (Vertical Stack of Horizontal Tiles) -->
+      <div class="p1-achievements-section">
+        <div class="p1-section-heading">Achievements</div>
         
-        <div class="p1-achievements-header">
-          <div class="p1-achievements-title">World Records & Athletic Achievements</div>
-          <div class="p1-achievements-tag">7× World Records &bull; National Honors</div>
-        </div>
-
-        <!-- 5 Official Logos -->
-        <div class="p1-logos-row">
+        <div class="p1-achievements-list">
           
-          <!-- 1. Guinness World Records -->
-          <div class="p1-logo-card">
-            <img src="../assets/logo-guinness.svg" alt="Guinness World Records" />
-            <div class="p1-logo-label">Guinness World Records</div>
+          <!-- 1. Guinness -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-guinness.svg" alt="Guinness World Records" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">Guinness World Records</div>
+              <div class="p1-achieve-desc">Official international Guinness World Record holder; verified and certified world record achievement.</div>
+            </div>
           </div>
 
-          <!-- 2. Limca Book of Records -->
-          <div class="p1-logo-card">
-            <img src="../assets/logo-limca-book-of-records.png" alt="Limca Book of Records" />
-            <div class="p1-logo-label">Limca Book of Records</div>
+          <!-- 2. India -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-india-clean.png" alt="India Book of Records" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">India Book of Records</div>
+              <div class="p1-achieve-desc">Official National Record recognition honoring extraordinary physical feat and certified record entry.</div>
+            </div>
           </div>
 
-          <!-- 3. India Book of Records -->
-          <div class="p1-logo-card">
-            <img src="../assets/logo-india-book-of-records.png" alt="India Book of Records" />
-            <div class="p1-logo-label">India Book of Records</div>
+          <!-- 3. Global -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-global-clean.png" alt="Global Records" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">Global Records</div>
+              <div class="p1-achieve-desc">Certified international world record entry adjudicated and recorded under global achievement standards.</div>
+            </div>
           </div>
 
-          <!-- 4. Unique World Records -->
-          <div class="p1-logo-card">
-            <img src="../assets/logo-unique-records.png" alt="Unique World Records" />
-            <div class="p1-logo-label">Unique World Records</div>
+          <!-- 4. Unique -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-unique-clean.png" alt="Unique World Records" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">Unique World Records</div>
+              <div class="p1-achieve-desc">Official World Record certification awarded for extraordinary athletic determination and record completion.</div>
+            </div>
           </div>
 
-          <!-- 5. Global Records -->
-          <div class="p1-logo-card">
-            <img src="../assets/logo-global-records.png" alt="Global World Record" />
-            <div class="p1-logo-label">Global World Records</div>
+          <!-- 5. Limca -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-limca-clean.png" alt="Limca Book of Records" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">Limca Book of Records</div>
+              <div class="p1-achieve-desc">Historic national record publication honoring pioneer sporting, endurance, and physical achievement.</div>
+            </div>
+          </div>
+
+          <!-- 6. National & State Championships Medal -->
+          <div class="p1-achieve-tile">
+            <div class="p1-achieve-logo-box">
+              <img src="../assets/logo-medal.svg" alt="Championship Medal" />
+            </div>
+            <div class="p1-achieve-info">
+              <div class="p1-achieve-book">National, State & District Championships</div>
+              <div class="p1-achieve-desc"><strong>National Medalist</strong> in Strength Lifting & Ice Stock Sport &bull; <strong>Multiple State & District Medalist</strong> in Powerlifting & Weightlifting.</div>
+            </div>
           </div>
 
         </div>
-
-        <!-- Medals Breakdown Grid -->
-        <div class="p1-medals-grid">
-          
-          <!-- National Medals -->
-          <div class="p1-medal-column">
-            <div class="p1-medal-col-title">National Championships</div>
-            <ul class="p1-medal-list">
-              <li><strong>National Medalist</strong> in Strength Lifting</li>
-              <li><strong>National Medalist</strong> in Ice Stock Sport</li>
-            </ul>
-          </div>
-
-          <!-- State & District Medals -->
-          <div class="p1-medal-column">
-            <div class="p1-medal-col-title">State & District Championships</div>
-            <ul class="p1-medal-list">
-              <li><strong>Multiple State-Level Medalist</strong> in Powerlifting & Weightlifting</li>
-              <li><strong>Multiple District-Level Medalist</strong> in Powerlifting & Weightlifting</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Running Page Mark -->
-      <div class="page-footer-mini">
-        <span>Ghazal Bhatnagar &bull; Resume</span>
-        <span>Page <span class="gold">01</span> of 03</span>
       </div>
 
     </div>
@@ -1124,12 +1060,6 @@
             <li>Interpersonal Intelligence</li>
             <li>Resilience & Adaptability</li>
           </ul>
-        </div>
-
-        <!-- Running Page Mark Sidebar -->
-        <div class="page-footer-mini" style="padding-top: 1mm;">
-          <span>Ghazal Bhatnagar</span>
-          <span><span class="gold">02</span> / 03</span>
         </div>
 
       </aside>
@@ -1200,7 +1130,7 @@
           </div>
         </div>
 
-        <!-- Athletic Honors & World Records Section -->
+        <!-- Athletic Heritage Section -->
         <div>
           <div class="section-title-bold" style="margin-bottom: 2mm;">Athletic Heritage & Competitive Background</div>
           <div class="honors-section">
@@ -1223,12 +1153,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Running Page Mark Main -->
-        <div class="page-footer-mini">
-          <span>Ghazal Bhatnagar &bull; Professional Dossier</span>
-          <span>Page <span class="gold">02</span> of 03</span>
         </div>
 
       </main>
@@ -1419,12 +1343,6 @@
           <strong>Status:</strong>
           <span style="color: var(--accent-light); font-weight: 700;">Open to Select Opportunities</span>
         </div>
-      </div>
-
-      <!-- Running Page Mark Bottom -->
-      <div class="page-footer-mini" style="padding-top: 2mm;">
-        <span>Ghazal Bhatnagar &bull; Resume</span>
-        <span>Page <span class="gold">03</span> of 03</span>
       </div>
 
     </div>
