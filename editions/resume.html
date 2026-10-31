@@ -9,7 +9,7 @@
   <!-- Google Fonts: Editorial & Modern Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
@@ -19,7 +19,7 @@
       /* Typography */
       --font-display: 'Plus Jakarta Sans', sans-serif;
       --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Montserrat', sans-serif;
+      --font-body: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
       /* Primary Palette (Obsidian Default) */
@@ -244,9 +244,39 @@
       flex-shrink: 0;
     }
 
-    .p1-intro-section {
+        .p1-intro-section {
       display: flex;
       flex-direction: column;
+      margin-bottom: 4mm;
+    }
+
+    .p1-intro-lead {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.55;
+      margin-bottom: 3.2mm;
+      letter-spacing: 0.2px;
+    }
+
+    .p1-intro-body {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.62;
+      margin-bottom: 3mm;
+      letter-spacing: 0.15px;
+    }
+
+    .p1-intro-body:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .p1-intro-body strong {
+      color: #ffffff;
+      font-weight: 700;
     }
 
     /* Natural, Authentic, Human Introduction Typography */
@@ -831,28 +861,17 @@
     }
 
     /* Huge Heading: HOBBIES AND ADDITIONAL SKILLS:- (Exact Match to INTRODUCTION) */
-    .p3-section-heading {
+    /* Hobbies And Additional Skills Heading - Centered, No Bullet Symbol (Matches GET IN TOUCH) */
+    .p3-skills-heading-huge {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 24px;
+      font-size: 21px;
       font-weight: 900;
-      letter-spacing: 2.2px;
+      letter-spacing: 2.8px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 2mm;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .p3-section-heading::before {
-      content: '';
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      background-color: var(--accent);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      flex-shrink: 0;
+      text-align: center;
+      width: 100%;
+      margin: 0 0 3mm 0;
     }
 
     /* Dedicated Horizontally Stacked Tiles (4 Separate Tiles: 2x2 Grid) */
@@ -1175,7 +1194,7 @@
         <div class="p1-section-heading">Introduction</div>
         
         <p class="p1-intro-lead">
-          I am a Multidisciplinary Athlete, Personal Trainer, Fitness Coach, and Content Creator based in Udaipur, Rajasthan.
+          I am a Multidisciplinary Athlete, Certified Conditioning Specialist, Executive Sales Advisor, and Digital Media Creator based in Udaipur, Rajasthan.
         </p>
 
         <p class="p1-intro-body">
@@ -1183,11 +1202,11 @@
         </p>
 
         <p class="p1-intro-body">
-          As a <strong>Personal Trainer and Fitness Coach</strong>, I work closely with clients on compound lifting, progressive strength building, fat loss, and customized body transformations. I bring the discipline, daily consistency, and work ethic of a competitive strength athlete directly into my coaching protocols to ensure real, measurable results.
+          As a <strong>Personal Trainer and Conditioning Specialist</strong>, I mentor clients across foundational barbell mastery, progressive strength development, metabolic conditioning, and targeted physique recomposition. I bring the discipline, daily consistency, and work ethic of an elite strength athlete directly into my coaching protocols to ensure real, measurable outcomes.
         </p>
 
         <p class="p1-intro-body">
-          As a <strong>Content Creator</strong>, I document my athletic training, fitness lifestyle, and mindset, sharing practical lifting breakdowns and inspiring people to build physical strength and unshakeable confidence.
+          As a <strong>Digital Media Creator and Content Strategist</strong>, I document high-performance athletic training, lifestyle architecture, and competitive mindset, producing technical lifting analyses and inspiring individuals to cultivate physical resilience, discipline, and uncompromising focus.
         </p>
       </div>
 
@@ -1380,8 +1399,8 @@
               </div>
               <div class="work-company">Digital Media &amp; Brand Partnerships</div>
               <ul class="work-bullets">
-                <li>Produce high-retention fitness video reels, lifting form breakdowns, and athletic storytelling reaching hundreds of thousands across digital platforms.</li>
-                <li>Partner with fitness and lifestyle brands to communicate verified strength training principles and positive physical transformations.</li>
+                <li>Produce high-retention short-form digital productions, technical movement analyses, and athletic storytelling reaching extensive audiences across international platforms.</li>
+                <li>Partner with premium athletic and lifestyle brands to communicate verified strength training principles and positive physical transformations.</li>
               </ul>
             </article>
 
@@ -1408,7 +1427,7 @@
               <div class="work-company">Independent Practice &bull; Private Clientele</div>
               <ul class="work-bullets">
                 <li>Deliver customized 1-on-1 personal training protocols, hypertrophy programming, and strength conditioning for private clientele.</li>
-                <li>Drive long-term body transformations and habit consistency through structured progressive overload, nutritional guidance, and lifestyle accountability.</li>
+                <li>Drive long-term body recomposition and habit consistency through structured progressive overload, nutritional guidance, and lifestyle accountability.</li>
               </ul>
             </article>
 
@@ -1421,7 +1440,7 @@
               <div class="work-company">Ragnar Fitness &bull; Udaipur, Rajasthan</div>
               <ul class="work-bullets">
                 <li>Instructed clients across barbell fundamentals, compound lifts, strength progressions, and functional training regimens with strict anatomical safety.</li>
-                <li>Formulated tailored workout splits and progressive overload structures for weight loss, muscle gain, and conditioning goals.</li>
+                <li>Formulated periodized training regimens and progressive overload protocols optimized for metabolic conditioning, muscular hypertrophy, and body recomposition objectives.</li>
               </ul>
             </article>
 
@@ -1468,7 +1487,7 @@
     <div class="p3-top-canvas">
       
       <!-- Huge Heading Matching INTRODUCTION -->
-      <div class="p3-section-heading">Hobbies And Additional Skills</div>
+      <h2 class="p3-skills-heading-huge">Hobbies And Additional Skills</h2>
       
       <!-- Dedicated Horizontally Stacked Tiles -->
       <div class="p3-skills-grid">
@@ -1486,7 +1505,7 @@
               <strong>Action Sports &amp; High-Shutter Capture:</strong> Freezing explosive power, barbell lifts, and high-speed motion with precision timing.
             </li>
             <li>
-              <strong>Studio &amp; Natural Gym Lighting:</strong> Shaping muscular definition, contrast, and athletic form with directional key lighting.
+              <strong>Studio &amp; Architectural Facility Lighting:</strong> Shaping muscular definition, contrast, and athletic form with directional key lighting.
             </li>
           </ul>
         </article>
@@ -1497,11 +1516,11 @@
             <h2 class="p3-skill-title">Videography</h2>
           </div>
           <p class="p3-skill-lead">
-            I shoot and direct 4K strength cinematography, training breakdowns, and dynamic gym sequences with fluid camera movement.
+            I shoot and direct 4K strength cinematography, athletic technical analyses, and dynamic strength sequences with fluid camera movement.
           </p>
           <ul class="p3-skill-list">
             <li>
-              <strong>4K Cinematography &amp; Gimbal Rigs:</strong> Operating stabilized tracking shots, compound lift sequences, and low-angle angles.
+              <strong>4K Cinematography &amp; Gimbal Rigs:</strong> Operating stabilized tracking shots, compound lift sequences, and low-angle perspective frames.
             </li>
             <li>
               <strong>Post-Production &amp; Color Grading:</strong> Editing in Adobe Premiere Pro and DaVinci Resolve with custom film tone LUTs and dynamic sound.
@@ -1533,14 +1552,14 @@
             <h2 class="p3-skill-title">Marketing &amp; Promotion</h2>
           </div>
           <p class="p3-skill-lead">
-            I strategize and execute targeted digital marketing campaigns, viral content distribution, and authentic fitness brand sponsorships.
+            I strategize and execute targeted digital marketing campaigns, high-reach organic media distribution, and authentic fitness brand sponsorships.
           </p>
           <ul class="p3-skill-list">
             <li>
-              <strong>Brand Collaborations &amp; Sponsorships:</strong> Partnering with fitness apparel, gym gear, and supplement brands for campaign ROI.
+              <strong>Brand Collaborations &amp; Sponsorships:</strong> Partnering with athletic apparel, commercial strength equipment, and nutritional performance brands for campaign ROI.
             </li>
             <li>
-              <strong>Organic Community Growth:</strong> Converting athletic discipline and world record credibility into loyal follower engagement.
+              <strong>Organic Community Growth:</strong> Converting athletic discipline and world record credibility into enduring digital community engagement and brand equity.
             </li>
           </ul>
         </article>
