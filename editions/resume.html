@@ -107,18 +107,57 @@
       break-after: avoid;
     }
 
-    /* Print Formatting */
+        /* Print Formatting (Strict 3-Page A4 Locking) */
     @page {
       size: A4 portrait;
-      margin: 0;
+      margin: 0mm;
     }
 
     @media print {
-      body {
-        background: var(--page-bg) !important;
+      * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
+
+      html, body {
+        width: 210mm !important;
+        min-width: 210mm !important;
+        max-width: 210mm !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        display: block !important;
+        background: #090c12 !important;
+      }
+
+      .page {
+        width: 210mm !important;
+        max-width: 210mm !important;
+        min-width: 210mm !important;
+        height: 296.8mm !important;
+        max-height: 297mm !important;
+        min-height: 296.5mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        overflow: hidden !important;
+        page-break-before: auto !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .page:last-of-type,
+      #page-3 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        margin-bottom: 0 !important;
+      }
+    }
       .page {
         margin: 0 !important;
         box-shadow: none !important;
