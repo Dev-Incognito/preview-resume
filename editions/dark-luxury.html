@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0a0a" />
   <title>Ghazal Bhatnagar — Executive Resume & Athletic Dossier</title>
   <meta name="description" content="Executive resume and athletic dossier of Ghazal Bhatnagar: 7× World Record Holder, National Medalist, Fitness Professional, and Creative Media Producer." />
 
@@ -78,6 +81,9 @@
       line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-overflow-scrolling: touch;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -227,6 +233,126 @@
         background: var(--print-sidebar-bg) !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+      }
+    }
+
+    /* ============================================================
+       APPLE SAFARI & MOBILE RESPONSIVE ENGINE (IOS & TOUCH OPTIMIZED)
+       ============================================================ */
+    @media screen and (max-width: 840px) {
+      body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screen-workspace {
+        padding: 12px 10px 48px 10px !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+      .hud-controls {
+        width: 95% !important;
+        padding: 8px 14px !important;
+        top: 8px !important;
+        justify-content: space-between !important;
+      }
+      .page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        border-radius: 12px !important;
+        border: 1px solid var(--accent-border) !important;
+        margin-bottom: 24px !important;
+      }
+      .sidebar {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1.5px solid var(--sidebar-border) !important;
+        padding: 24px 18px 20px 18px !important;
+        overflow: visible !important;
+      }
+      .sidebar::after {
+        display: none !important;
+      }
+      .sidebar-header-block {
+        padding: 0 0 16px 0 !important;
+      }
+      .sidebar-name {
+        font-size: 20px !important;
+      }
+      .sidebar-role {
+        font-size: 10px !important;
+      }
+      .sidebar-body {
+        padding: 0 !important;
+        gap: 16px !important;
+      }
+      .sb-section {
+        margin-bottom: 16px !important;
+      }
+      .main {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 24px 18px !important;
+        overflow: visible !important;
+      }
+      .hero-name {
+        font-size: 24px !important;
+        letter-spacing: 2px !important;
+      }
+      .hero-badges-row {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+      }
+      .records-grid-3col {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .medals-summary-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      .capabilities-matrix-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .suite-sub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .ref-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      .timeline-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      .timeline-badges {
+        margin-top: 2px !important;
+      }
+      .page-footer-marker {
+        padding: 14px 0 0 0 !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        text-align: center !important;
       }
     }
 

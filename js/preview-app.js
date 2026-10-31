@@ -43,7 +43,6 @@
   const btnWarmIvory = document.getElementById('btnWarmIvory');
   const btnCompare = document.getElementById('btnCompare');
   const btnPrint = document.getElementById('btnPrint');
-  const btnDownload = document.getElementById('btnDownload');
   const btnOpenStandalone = document.getElementById('btnOpenStandalone');
   const pagePills = document.querySelectorAll('.page-pill');
 
@@ -195,17 +194,6 @@
     }
   }
 
-  // Download Active HTML
-  function downloadActiveHtml() {
-    const edition = EDITIONS[currentEdition];
-    const link = document.createElement('a');
-    link.href = edition.src;
-    link.download = `Ghazal-Bhatnagar-Resume-${currentEdition}.html`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   // Toggle Side-by-Side Compare Mode
   function toggleCompareMode() {
     isCompareMode = !isCompareMode;
@@ -246,7 +234,6 @@
 
     btnCompare.addEventListener('click', toggleCompareMode);
     btnPrint.addEventListener('click', printActiveResume);
-    btnDownload.addEventListener('click', downloadActiveHtml);
 
     pagePills.forEach(pill => {
       pill.addEventListener('click', () => {

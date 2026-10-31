@@ -1,6 +1,6 @@
 # Ghazal Bhatnagar — Executive Resume Selection & Preview Portal
 
-An interactive web application designed for **Ghazal Bhatnagar** (7× World Record Holder, National Medalist, Fitness Professional, Consultative Sales Executive, and Creative Producer) to preview, compare, download, and export her bespoke 3-page A4 executive resumes.
+An interactive web application designed for **Ghazal Bhatnagar** (7× World Record Holder, National Medalist, Fitness Professional, Consultative Sales Executive, and Creative Producer) to preview, compare, and export her bespoke 3-page A4 executive resumes.
 
 ---
 
@@ -27,7 +27,7 @@ An interactive web application designed for **Ghazal Bhatnagar** (7× World Reco
 - **Zoom Engine**: Scalable from 35% up to 150%, with instant "Fit Screen" and "100% (True A4 Scale)".
 - **Page Jump Navigation**: Jump directly to Page 1 (Identity), Page 2 (7× World Records Dossier), or Page 3 (Capabilities & Repertoire).
 - **One-Click Print to PDF**: Press `P` or click "Print / Save PDF" to open the browser's native print engine.
-- **Offline HTML Download**: Download standalone, self-contained HTML files with zero external dependencies.
+- **Apple Safari & Mobile Support**: Responsive viewport optimization with touch support for iPhone, iPad, and Safari mobile.
 
 ---
 

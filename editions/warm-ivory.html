@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="light">
   <title>Ghazal Bhatnagar — Executive Curriculum Vitae & Athletic Dossier (v1)</title>
   
   <!-- Premium Font Engine: Cinzel (Display), Montserrat (Subheadings/Metrics), Plus Jakarta Sans (Body) -->
@@ -60,6 +62,9 @@
       line-height: 1.42;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-overflow-scrolling: touch;
       background: #090d14;
     }
 
@@ -130,6 +135,80 @@
       .resume-page:last-of-type {
         page-break-after: avoid !important;
         break-after: avoid !important;
+      }
+    }
+
+    /* ============================================================
+       APPLE SAFARI & MOBILE RESPONSIVE ENGINE (IOS & TOUCH OPTIMIZED)
+       ============================================================ */
+    @media screen and (max-width: 840px) {
+      body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screen-workspace {
+        padding: 12px 10px 48px 10px !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+      .resume-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 20px 16px !important;
+        overflow: visible !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+        margin-bottom: 24px !important;
+      }
+      .running-header, .running-footer {
+        flex-direction: column !important;
+        gap: 4px !important;
+        text-align: center !important;
+      }
+      .hero-name {
+        font-size: 24px !important;
+      }
+      .hero-badges-strip {
+        gap: 5px !important;
+      }
+      .hero-contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+      }
+      .stats-metric-strip {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+      }
+      .records-showcase-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .nat-medals-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .state-medals-strip {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .p3-split-layout {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .timeline-card-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+      }
+      .exec-meta-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
       }
     }
 
