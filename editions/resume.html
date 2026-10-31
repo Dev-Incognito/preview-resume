@@ -818,149 +818,135 @@
     }
 
     /* ============================================================
-       PAGE 3: CAPABILITIES CANVAS + ADDITIONAL SKILLS + BOTTOM TILE (QR)
+       PAGE 3: HOBBIES AND ADDITIONAL SKILLS + BOTTOM TILE (QR)
        ============================================================ */
     .p3-top-canvas {
       flex: 1;
-      padding: 13mm 18mm 6mm 18mm;
+      padding: 14mm 18mm 8mm 18mm;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6mm;
       background: transparent;
     }
 
-    /* 4-Pillar Matrix */
-    .cap-matrix {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5mm;
-      margin-bottom: 3mm;
-    }
-
-    .cap-card {
-      background: linear-gradient(90deg, #131926 0%, #161c2a 100%);
-      padding: 3.5mm 4.5mm;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cap-card-title {
-      font-family: var(--font-heading);
-      font-size: 9.8px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
+    /* Huge Heading: HOBBIES AND ADDITIONAL SKILLS:- (Exact Match to INTRODUCTION) */
+    .p3-section-heading {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 1.8mm;
+      margin-bottom: 2mm;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
     }
 
-    .cap-card-title::before {
-      content: '■';
-      font-size: 7px;
+    .p3-section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
+    }
+
+    /* Dedicated Horizontally Stacked Tiles */
+    .p3-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      width: 100%;
+    }
+
+    .p3-skill-tile {
+      background: linear-gradient(135deg, #131926 0%, #161d2c 100%);
+      padding: 7mm 7.5mm;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5mm;
+      border: none !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .p3-skill-title-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+
+    .p3-skill-title {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .p3-skill-badge {
+      font-family: var(--font-mono), monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       color: var(--accent);
+      background: rgba(184, 134, 11, 0.12);
+      padding: 3px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+      border: none !important;
     }
 
-    .cap-card-list {
+    .p3-skill-lead {
+      font-size: 11.2px;
+      line-height: 1.58;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .p3-skill-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1.2mm;
+      gap: 3.2mm;
+      margin-top: 1.5mm;
+      padding: 0;
     }
 
-    .cap-card-list li {
-      font-size: 8.2px;
+    .p3-skill-list li {
+      font-size: 10.8px;
       color: var(--text-secondary);
-      line-height: 1.4;
-      padding-left: 3.2mm;
+      line-height: 1.54;
+      padding-left: 15px;
       position: relative;
     }
 
-    .cap-card-list li::before {
-      content: '▸';
+    .p3-skill-list li::before {
+      content: '';
       position: absolute;
       left: 0;
-      top: 0;
-      color: var(--accent-light);
-      font-size: 8px;
+      top: 6px;
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      transform: rotate(45deg);
+      border-radius: 1px;
     }
 
-    /* Linguistic Repertoire Strip */
-    .lang-section {
-      background: linear-gradient(90deg, #131926 0%, #161c2a 100%);
-      padding: 3.5mm 4.5mm;
-      border-radius: 8px;
-      margin-bottom: 3mm;
-    }
-
-    .lang-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2mm 3mm;
-      margin-top: 2mm;
-    }
-
-    .lang-cell {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .lang-name-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 8.2px;
-      font-weight: 700;
+    .p3-skill-list li strong {
       color: #ffffff;
-      margin-bottom: 0.8mm;
-    }
-
-    .lang-badge {
-      font-family: var(--font-mono);
-      font-size: 7px;
       font-weight: 700;
-      color: var(--accent-light);
-    }
-
-    .lang-bar-bg {
-      width: 100%;
-      height: 3px;
-      background: var(--tile-bg-alt);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .lang-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      border-radius: 2px;
-    }
-
-    /* Executive Creed / Philosophy */
-    .creed-box {
-      background: var(--tile-bg-alt);
-      padding: 3mm 4mm;
-      border-radius: 8px;
-    }
-
-    .creed-text {
-      font-size: 8.4px;
-      font-weight: 500;
-      font-style: italic;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .creed-author {
-      font-family: var(--font-heading);
-      font-size: 7.8px;
-      font-weight: 800;
-      color: var(--accent-light);
-      margin-top: 1.5mm;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     /* Page 3 Bottom Tile (QR Connectivity Monolith) */
@@ -1417,122 +1403,62 @@
   </section>
 
   <!-- ============================================================
-       PAGE 3: CAPABILITIES CANVAS + ADDITIONAL SKILLS + BOTTOM TILE (QR)
+       PAGE 3: HOBBIES AND ADDITIONAL SKILLS + BOTTOM TILE (QR)
        ============================================================ -->
-  <section class="page" id="page-3" aria-label="Page 3: Capabilities Matrix, Additional Skills & QR Tile">
+  <section class="page" id="page-3" aria-label="Page 3: Hobbies and Additional Skills & QR Connectivity">
     
-    <!-- TOP CAPABILITIES CANVAS -->
+    <!-- TOP CANVAS: HOBBIES AND ADDITIONAL SKILLS -->
     <div class="p3-top-canvas">
       
-      <div>
-        <div class="section-title-bold" style="margin-bottom: 3mm;">Capabilities & Additional Skills</div>
+      <!-- Huge Heading Matching INTRODUCTION -->
+      <div class="p3-section-heading">Hobbies And Additional Skills:-</div>
+      
+      <!-- Dedicated Horizontally Stacked Tiles -->
+      <div class="p3-skills-grid">
         
-        <!-- 4-Pillar Frameless Cards -->
-        <div class="cap-matrix">
-          
-          <div class="cap-card">
-            <div class="cap-card-title">Fitness Coaching & Strength</div>
-            <ul class="cap-card-list">
-              <li>Periodized Strength & Hypertrophy Programming</li>
-              <li>Barbell Technique & Compound Lift Correction</li>
-              <li>Athletic Conditioning & Injury Prevention</li>
-              <li>Nutritional Consistency & Habit Engineering</li>
-              <li>Client Psychology, Motivation & Accountability</li>
-            </ul>
+        <!-- Tile 1: Photography & Videography -->
+        <article class="p3-skill-tile">
+          <div class="p3-skill-title-row">
+            <h2 class="p3-skill-title">Photography &amp; Videography</h2>
           </div>
+          <p class="p3-skill-lead">
+            I shoot, direct, and produce athletic photography and strength cinematography. My visual work focuses on capturing raw training intensity, lifting form, and physique conditioning with precision framing and dynamic camera movement.
+          </p>
+          <ul class="p3-skill-list">
+            <li>
+              <strong>4K Cinematography &amp; Motion Tracking:</strong> Operating gimbal rigs, fluid tracking shots, and dynamic low-angle sequences during heavy compound lifts to showcase technical execution.
+            </li>
+            <li>
+              <strong>Action Sports &amp; Physique Photography:</strong> Framing high-shutter athletic movement, muscular definition, and gym ambiance with high-contrast directional lighting.
+            </li>
+            <li>
+              <strong>Post-Production &amp; Precision Color Grading:</strong> Editing in Adobe Premiere Pro and DaVinci Resolve with customized film tone LUTs, rhythmic pacing, and impactful audio design.
+            </li>
+          </ul>
+        </article>
 
-          <div class="cap-card">
-            <div class="cap-card-title">Client Advisory & Sales</div>
-            <ul class="cap-card-list">
-              <li>Consultative Needs Discovery & Value Framing</li>
-              <li>High-Ticket Membership & Service Closing</li>
-              <li>Outbound Pipeline Follow-Up & Prospect Nurturing</li>
-              <li>Customer Relationship Management (CRM)</li>
-              <li>Client Retention & Referral System Architecture</li>
-            </ul>
+        <!-- Tile 2: Media & Production (Marketing & Promotion) -->
+        <article class="p3-skill-tile">
+          <div class="p3-skill-title-row">
+            <h2 class="p3-skill-title">Media &amp; Production</h2>
+            <span class="p3-skill-badge">Marketing &amp; Promotion</span>
           </div>
+          <p class="p3-skill-lead">
+            I strategize and execute end-to-end digital media campaigns, high-retention fitness content, and brand partnerships that convert audience attention into engaged community loyalty.
+          </p>
+          <ul class="p3-skill-list">
+            <li>
+              <strong>Content Strategy &amp; Viral Distribution:</strong> Producing high-retention short-form video content across Instagram and YouTube, translating training discipline into relatable fitness education.
+            </li>
+            <li>
+              <strong>Brand Partnerships &amp; Product Promotion:</strong> Collaborating with athletic apparel, fitness equipment, and nutrition brands to deliver authentic integrations and campaign ROI.
+            </li>
+            <li>
+              <strong>Audience Growth &amp; Community Building:</strong> Architecting organic outreach, comment engagement, and motivational communication that builds strong personal brand equity.
+            </li>
+          </ul>
+        </article>
 
-          <!-- Additional Skills (Video Editing, Photography, Tools) -->
-          <div class="cap-card">
-            <div class="cap-card-title">Additional Skills: Media & Production</div>
-            <ul class="cap-card-list">
-              <li>Adobe Premiere Pro & DaVinci Resolve Video Editing</li>
-              <li>4K Videography & Gimbal Camera Operations</li>
-              <li>Professional Photography & Studio Lighting</li>
-              <li>Color Grading & Dynamic Visual Post-Production</li>
-              <li>Short-Form Social Media Content Strategy</li>
-            </ul>
-          </div>
-
-          <div class="cap-card">
-            <div class="cap-card-title">Executive Presence & Leadership</div>
-            <ul class="cap-card-list">
-              <li>Public Speaking & Dynamic Presentation Skills</li>
-              <li>High-Equanimity Conflict De-Escalation</li>
-              <li>Interpersonal Intelligence with Diverse Stakeholders</li>
-              <li>Unrelenting Mental Toughness Under Pressure</li>
-              <li>Self-Driven Initiative & Target-Oriented Focus</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Linguistic Repertoire -->
-      <div class="lang-section">
-        <div class="section-title-bold" style="margin-bottom: 1.5mm; font-size: 11px;">Linguistic Repertoire & Regional Dialects</div>
-        <div class="lang-grid">
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>Hindi</span>
-              <span class="lang-badge">100% Native</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 100%;"></div></div>
-          </div>
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>English</span>
-              <span class="lang-badge">100% Professional</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 100%;"></div></div>
-          </div>
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>Punjabi</span>
-              <span class="lang-badge">60% Conversational</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 60%;"></div></div>
-          </div>
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>Rajasthani Dialects</span>
-              <span class="lang-badge">60% Regional Fluency</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 60%;"></div></div>
-          </div>
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>Gujarati</span>
-              <span class="lang-badge">50% Working Knowledge</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 50%;"></div></div>
-          </div>
-          <div class="lang-cell">
-            <div class="lang-name-row">
-              <span>Garhwali & Kumaoni</span>
-              <span class="lang-badge">45% Cultural Dialect</span>
-            </div>
-            <div class="lang-bar-bg"><div class="lang-bar-fill" style="width: 45%;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Professional Creed -->
-      <div class="creed-box">
-        <div class="creed-text">
-          &ldquo;Discipline is not a periodic exertion; it is an uncompromising lifestyle. Whether gripping the barbell under world-record weight or coaching clients toward physical transformation, outcomes are dictated by poise, relentless preparation, and zero excuses.&rdquo;
-        </div>
-        <div class="creed-author">Ghazal Bhatnagar &bull; Professional Operating Philosophy</div>
       </div>
 
     </div>
