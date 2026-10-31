@@ -35,26 +35,17 @@
         </div>
       </div>
 
-      <!-- Segmented Control for Layout / Edition Switcher -->
+      <!-- Edition Architecture Badge -->
       <nav class="edition-segmented-control" role="tablist" aria-label="Resume Editions">
-        <button class="edition-btn active" id="btnExecutive" role="tab" aria-selected="true" title="New Frameless Executive Edition (Page 1 Intro Tile · Page 2 Work Sidebar · Page 3 QR Tile)">
+        <button class="edition-btn active" id="btnExecutive" role="tab" aria-selected="true" title="Master Frameless Architecture (Page 1 Top Tile · Page 2 Sidebar Tile · Page 3 QR Tile)">
           <span class="edition-dot"></span>
-          <span>✦ Executive Frameless Edition</span>
-        </button>
-        <button class="edition-btn" id="btnWarmIvory" role="tab" aria-selected="false" title="Switch to Warm Ivory Edition">
-          <span class="edition-dot"></span>
-          <span>✧ Warm Ivory Edition</span>
+          <span>✦ Master Frameless Architectural Edition</span>
         </button>
       </nav>
 
       <!-- Right Header Actions -->
       <div class="header-actions">
-        <button class="action-btn" id="btnCompare" title="Compare layouts side-by-side (Press C)">
-          <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
-          <span>Compare</span>
-        </button>
-
-        <a class="action-btn" id="btnOpenStandalone" href="editions/executive-edition.html" target="_blank" rel="noopener" title="Open full screen in a new tab">
+        <a class="action-btn" id="btnOpenStandalone" href="editions/resume.html" target="_blank" rel="noopener" title="Open full screen in a new tab">
           <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           <span>Standalone</span>
         </a>
@@ -152,31 +143,15 @@
         <!-- Primary Active Resume Card -->
         <div class="iframe-card" id="mainIframeCard">
           <div class="iframe-header-label">
-            <strong id="mainIframeTitle">Executive Frameless Edition — Ghazal Bhatnagar</strong>
-            <span>3 Pages &bull; A4 Portrait &bull; Frameless Architecture &bull; Clean Vector QR Codes</span>
+            <strong id="mainIframeTitle">Master Frameless Architectural Edition — Ghazal Bhatnagar</strong>
+            <span>3 Pages &bull; A4 Portrait &bull; Frameless Tiles &bull; Live Vector QR Codes</span>
           </div>
           <iframe 
             id="mainIframe" 
             class="resume-iframe" 
-            src="editions/executive-edition.html" 
+            src="editions/resume.html" 
             title="Ghazal Bhatnagar Resume Preview" 
             loading="eager">
-          </iframe>
-        </div>
-
-        <!-- Secondary Resume Card (Compare Mode Only) -->
-        <div class="iframe-card" id="compareIframeCard" style="display: none;">
-          <div class="iframe-header-label">
-            <strong>Warm Ivory Edition — Ghazal Bhatnagar</strong>
-            <span>3 Pages &bull; A4 Portrait &bull; Print Optimized</span>
-          </div>
-          <iframe 
-            id="compareIframe" 
-            class="resume-iframe" 
-            src="editions/warm-ivory.html" 
-            title="Ghazal Bhatnagar Warm Ivory Resume Preview" 
-            loading="lazy" 
-            style="background: #fdfbf7;">
           </iframe>
         </div>
 

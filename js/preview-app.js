@@ -1,15 +1,14 @@
 /**
  * GHAZAL BHATNAGAR — RESUME PREVIEW & CUSTOMIZER PORTAL
  * Interactive Controller Engine: Live Font Selector, Color Picker & Canvas Theming
+ * Apple Safari & iOS Mobile Optimized
  */
 
 (function () {
   'use strict';
 
   // State
-  let currentEdition = 'executive'; // 'executive' | 'warm-ivory'
   let currentZoom = 0.95;
-  let isCompareMode = false;
 
   // Customization State
   let activeFont = "'Plus Jakarta Sans', sans-serif";
@@ -20,40 +19,20 @@
     tile: "#121722",
     tileAlt: "#181f2d",
     text: "#ffffff",
-    sub: "#cbd5e1"
+    sub: "#cbd5e1",
+    muted: "#8392a5"
   };
 
-  const EDITIONS = {
-    'executive': {
-      id: 'executive',
-      name: 'Executive Frameless Edition — Ghazal Bhatnagar',
-      shortName: 'Executive Frameless',
-      src: 'editions/executive-edition.html',
-      badge: 'Frameless Architecture • QR Tile',
-      themeBg: '#090c12'
-    },
-    'warm-ivory': {
-      id: 'warm-ivory',
-      name: 'Warm Ivory Edition — Ghazal Bhatnagar',
-      shortName: 'Warm Ivory',
-      src: 'editions/warm-ivory.html',
-      badge: 'Executive Editorial • Warm Ivory',
-      themeBg: '#fdfbf7'
-    }
-  };
+  const RESUME_SRC = 'editions/resume.html';
 
   // DOM Elements
   const previewStage = document.getElementById('previewStage');
   const mainIframeCard = document.getElementById('mainIframeCard');
   const mainIframe = document.getElementById('mainIframe');
-  const compareIframeCard = document.getElementById('compareIframeCard');
-  const compareIframe = document.getElementById('compareIframe');
   const zoomDisplay = document.getElementById('zoomDisplay');
   const activeEditionBadge = document.getElementById('activeEditionBadge');
   const mainIframeTitle = document.getElementById('mainIframeTitle');
   const btnExecutive = document.getElementById('btnExecutive');
-  const btnWarmIvory = document.getElementById('btnWarmIvory');
-  const btnCompare = document.getElementById('btnCompare');
   const btnPrint = document.getElementById('btnPrint');
   const btnOpenStandalone = document.getElementById('btnOpenStandalone');
   const pagePills = document.querySelectorAll('.page-pill');
@@ -70,7 +49,7 @@
     applyZoom();
     setupEventListeners();
     setupCustomizerListeners();
-    setEdition('executive');
+    setupIframeEvents();
   }
 
   // Auto-calculate optimal zoom based on screen width
@@ -89,104 +68,55 @@
     }
   }
 
-  // Switch Edition
-  function setEdition(editionId) {
-    if (!EDITIONS[editionId]) return;
-    currentEdition = editionId;
-    const edition = EDITIONS[editionId];
+  function setupIframeEvents() {
+    if (!mainIframe) return;
 
-    // Update Buttons
-    if (editionId === 'executive') {
-      btnExecutive.classList.add('active');
-      btnWarmIvory.classList.remove('active');
-    } else {
-      btnExecutive.classList.remove('active');
-      btnWarmIvory.classList.add('active');
-    }
-
-    // Update Header Badges
-    if (activeEditionBadge) {
-      activeEditionBadge.textContent = edition.badge;
-    }
-    if (mainIframeTitle) {
-      mainIframeTitle.textContent = edition.name;
-    }
-
-    // Load iframe
-    mainIframe.classList.add('loading');
-    mainIframe.src = edition.src;
-    mainIframe.style.backgroundColor = edition.themeBg;
-
-    // Update standalone link
-    if (btnOpenStandalone) {
-      btnOpenStandalone.href = edition.src;
-    }
-  }
-
-  mainIframe.addEventListener('load', () => {
-    mainIframe.classList.remove('loading');
-    injectIframeStyles(mainIframe);
-    applyCustomizationsToIframe(mainIframe);
-  });
-
-  if (compareIframe) {
-    compareIframe.addEventListener('load', () => {
-      compareIframe.classList.remove('loading');
-      injectIframeStyles(compareIframe);
-      applyCustomizationsToIframe(compareIframe);
+    mainIframe.addEventListener('load', () => {
+      mainIframe.classList.remove('loading');
+      applyCustomizationsToIframe(mainIframe);
     });
+
+    if (btnOpenStandalone) {
+      btnOpenStandalone.href = RESUME_SRC;
+    }
   }
 
-  // Hide the interactive HUD inside the embedded resume iframes for clean view
-  function injectIframeStyles(iframe) {
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (doc) {
-        const style = doc.createElement('style');
-        style.textContent = `
-          .hud-controls { display: none !important; }
-          .screen-workspace { padding-top: 10px !important; }
-        `;
-        doc.head.appendChild(style);
-      }
-    } catch (e) {}
-  }
-
-  // Apply Live Customizations to an Iframe
+  // Apply Live Customizations to the Iframe
   function applyCustomizationsToIframe(iframe) {
     try {
       const doc = iframe.contentDocument || iframe.contentWindow.document;
       if (!doc || !doc.documentElement) return;
       const root = doc.documentElement;
 
-      // Font
+      // Font updates
       root.style.setProperty('--font-heading', activeFont);
       root.style.setProperty('--font-display', activeFont);
 
-      // Colors
+      // Accent color updates
       root.style.setProperty('--accent', activeAccent);
       root.style.setProperty('--accent-light', activeAccentLight);
       root.style.setProperty('--accent-dim', hexToRgba(activeAccent, 0.16));
       root.style.setProperty('--accent-glow', hexToRgba(activeAccent, 0.35));
 
-      // Tone / Background
+      // Tone / Canvas updates
       if (activeTone) {
         root.style.setProperty('--page-bg', activeTone.bg);
         root.style.setProperty('--tile-bg', activeTone.tile);
         root.style.setProperty('--tile-bg-alt', activeTone.tileAlt);
         root.style.setProperty('--text-primary', activeTone.text);
         root.style.setProperty('--text-secondary', activeTone.sub);
-        root.style.setProperty('--sidebar-bg', activeTone.bg);
+        if (activeTone.muted) {
+          root.style.setProperty('--text-muted', activeTone.muted);
+        }
         iframe.style.backgroundColor = activeTone.bg;
       }
-    } catch (e) {}
+    } catch (e) {
+      console.warn('Unable to inject styles into iframe (cross-origin or loading):', e);
+    }
   }
 
   function broadcastCustomizations() {
     applyCustomizationsToIframe(mainIframe);
-    if (compareIframe && isCompareMode) {
-      applyCustomizationsToIframe(compareIframe);
-    }
   }
 
   function hexToRgba(hex, alpha) {
@@ -201,6 +131,25 @@
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
 
+  function lightenColor(color, percent) {
+    let num = parseInt(color.replace('#', ''), 16),
+      amt = Math.round(2.55 * percent),
+      R = (num >> 16) + amt,
+      G = ((num >> 8) & 0x00ff) + amt,
+      B = (num & 0x0000ff) + amt;
+    return (
+      '#' +
+      (
+        0x1000000 +
+        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+        (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+        (B < 255 ? (B < 1 ? 0 : B) : 255)
+      )
+        .toString(16)
+        .slice(1)
+    );
+  }
+
   // Setup Customizer Listeners
   function setupCustomizerListeners() {
     // Font Selector
@@ -212,9 +161,9 @@
     }
 
     // Color Swatches
-    colorSwatchBtns.forEach(btn => {
+    colorSwatchBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        colorSwatchBtns.forEach(b => b.classList.remove('active'));
+        colorSwatchBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
         activeAccent = btn.dataset.color;
         activeAccentLight = btn.dataset.light || activeAccent;
@@ -226,7 +175,7 @@
     // Custom Color Input
     if (customColorInput) {
       customColorInput.addEventListener('input', (e) => {
-        colorSwatchBtns.forEach(b => b.classList.remove('active'));
+        colorSwatchBtns.forEach((b) => b.classList.remove('active'));
         activeAccent = e.target.value;
         activeAccentLight = lightenColor(activeAccent, 20);
         broadcastCustomizations();
@@ -234,35 +183,33 @@
     }
 
     // Theme Tone Switcher
-    themeToneBtns.forEach(btn => {
+    themeToneBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        themeToneBtns.forEach(b => b.classList.remove('active'));
+        themeToneBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
+
+        const isIvory = btn.title && btn.title.toLowerCase().includes('ivory');
         activeTone = {
           bg: btn.dataset.bg,
           tile: btn.dataset.tile,
           tileAlt: btn.dataset.tileAlt,
           text: btn.dataset.text,
-          sub: btn.dataset.sub
+          sub: btn.dataset.sub,
+          muted: isIvory ? '#78716c' : '#8392a5'
         };
         broadcastCustomizations();
       });
     });
   }
 
-  function lightenColor(color, percent) {
-    let num = parseInt(color.replace('#', ''), 16),
-      amt = Math.round(2.55 * percent),
-      R = (num >> 16) + amt,
-      G = (num >> 8 & 0x00FF) + amt,
-      B = (num & 0x0000FF) + amt;
-    return '#' + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
-  }
-
   // Zoom Handling
   function applyZoom() {
-    previewStage.style.transform = `scale(${currentZoom})`;
-    zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
+    if (previewStage) {
+      previewStage.style.transform = `scale(${currentZoom})`;
+    }
+    if (zoomDisplay) {
+      zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
+    }
   }
 
   function zoomIn() {
@@ -295,13 +242,15 @@
       }
     } catch (e) {
       const pageHeight = 1122;
-      mainIframe.contentWindow.scrollTo({
-        top: (pageNum - 1) * pageHeight,
-        behavior: 'smooth'
-      });
+      if (mainIframe && mainIframe.contentWindow) {
+        mainIframe.contentWindow.scrollTo({
+          top: (pageNum - 1) * pageHeight,
+          behavior: 'smooth'
+        });
+      }
     }
 
-    pagePills.forEach(pill => {
+    pagePills.forEach((pill) => {
       if (pill.dataset.page === String(pageNum)) {
         pill.classList.add('active');
       } else {
@@ -318,85 +267,76 @@
     }
   }
 
-  // Toggle Side-by-Side Compare Mode
-  function toggleCompareMode() {
-    isCompareMode = !isCompareMode;
-    if (isCompareMode) {
-      btnCompare.classList.add('active');
-      previewStage.classList.add('compare-mode');
-      compareIframeCard.style.display = 'flex';
-      mainIframe.src = EDITIONS['executive'].src;
-      compareIframe.src = EDITIONS['warm-ivory'].src;
-      mainIframeTitle.textContent = EDITIONS['executive'].name;
-      currentZoom = Math.min(currentZoom, 0.72);
-      applyZoom();
-    } else {
-      btnCompare.classList.remove('active');
-      previewStage.classList.remove('compare-mode');
-      compareIframeCard.style.display = 'none';
-      setEdition(currentEdition);
-    }
-  }
-
   // Event Listeners
   function setupEventListeners() {
-    btnExecutive.addEventListener('click', () => {
-      if (isCompareMode) toggleCompareMode();
-      setEdition('executive');
-    });
+    // Zoom Buttons
+    const btnZoomIn = document.getElementById('btnZoomIn');
+    const btnZoomOut = document.getElementById('btnZoomOut');
+    const btnZoomFit = document.getElementById('btnZoomFit');
+    const btnZoomActual = document.getElementById('btnZoomActual');
 
-    btnWarmIvory.addEventListener('click', () => {
-      if (isCompareMode) toggleCompareMode();
-      setEdition('warm-ivory');
-    });
+    if (btnZoomIn) btnZoomIn.addEventListener('click', zoomIn);
+    if (btnZoomOut) btnZoomOut.addEventListener('click', zoomOut);
+    if (btnZoomFit) btnZoomFit.addEventListener('click', zoomFit);
+    if (btnZoomActual) btnZoomActual.addEventListener('click', zoomActual);
 
-    document.getElementById('btnZoomIn').addEventListener('click', zoomIn);
-    document.getElementById('btnZoomOut').addEventListener('click', zoomOut);
-    document.getElementById('btnZoomActual').addEventListener('click', zoomActual);
-    document.getElementById('btnZoomFit').addEventListener('click', zoomFit);
-
-    btnCompare.addEventListener('click', toggleCompareMode);
-    btnPrint.addEventListener('click', printActiveResume);
-
-    pagePills.forEach(pill => {
+    // Page Pills
+    pagePills.forEach((pill) => {
       pill.addEventListener('click', () => {
-        scrollToPage(parseInt(pill.dataset.page, 10));
+        const pageNum = parseInt(pill.dataset.page, 10);
+        scrollToPage(pageNum);
       });
     });
 
+    // Print Button
+    if (btnPrint) {
+      btnPrint.addEventListener('click', printActiveResume);
+    }
+
+    // Print Tip Close
     const closeTipBtn = document.getElementById('closeTipBtn');
-    if (closeTipBtn) {
+    const printTipBar = document.getElementById('printTipBar');
+    if (closeTipBtn && printTipBar) {
       closeTipBtn.addEventListener('click', () => {
-        const bar = document.getElementById('printTipBar');
-        if (bar) bar.style.display = 'none';
+        printTipBar.style.display = 'none';
       });
     }
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
 
-      if (e.key === '1') {
-        setEdition('executive');
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        printActiveResume();
+      } else if (e.key === '1') {
+        scrollToPage(1);
       } else if (e.key === '2') {
-        setEdition('warm-ivory');
-      } else if (e.key === 'p' || e.key === 'P') {
-        if (!e.ctrlKey && !e.metaKey) {
-          e.preventDefault();
-          printActiveResume();
-        }
-      } else if (e.key === 'c' || e.key === 'C') {
-        toggleCompareMode();
-      } else if (e.key === '=' || e.key === '+') {
+        scrollToPage(2);
+      } else if (e.key === '3') {
+        scrollToPage(3);
+      } else if (e.key === '+' || e.key === '=') {
         zoomIn();
       } else if (e.key === '-') {
         zoomOut();
       } else if (e.key === '0') {
-        zoomActual();
+        zoomFit();
+      }
+    });
+
+    // Window Resize -> Recalculate Zoom if on small screen
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 900) {
+        calculateInitialZoom();
+        applyZoom();
       }
     });
   }
 
-  // Start app
-  document.addEventListener('DOMContentLoaded', init);
+  // Launch
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
