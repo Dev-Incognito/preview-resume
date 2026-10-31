@@ -17,10 +17,10 @@
        ============================================================ */
     :root {
       /* Typography */
-      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      --font-mono: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --font-display: 'Arial', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      --font-heading: 'Arial', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      --font-body: 'Arial', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      --font-mono: 'Arial', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 
       /* Primary Palette (Obsidian Default) */
       --page-bg: #090c12;
@@ -63,19 +63,17 @@
 
     body {
       font-family: var(--font-body);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      background: var(--page-bg);
+      background-color: #040508;
       color: var(--text-primary);
-      padding: 0;
-      margin: 0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      -webkit-overflow-scrolling: touch;
+      gap: 16mm;
+      padding: 16mm 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: geometricPrecision;
     }
 
     /* ============================================================
@@ -255,22 +253,27 @@
 
     .p1-intro-lead {
       font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13.5px;
+      font-weight: 700;
       color: #ffffff;
       line-height: 1.55;
       margin-bottom: 3.2mm;
-      letter-spacing: 0.2px;
     }
 
     .p1-intro-body {
       font-family: var(--font-body);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 500;
-      color: var(--text-secondary);
-      line-height: 1.62;
+      color: #f1f5f9;
+      line-height: 1.6;
       margin-bottom: 3mm;
-      letter-spacing: 0.15px;
+    }
+    .p1-intro-body:last-of-type {
+      margin-bottom: 0;
+    }
+    .p1-intro-body strong {
+      color: #ffffff;
+      font-weight: 700;
     }
 
     .p1-intro-body:last-of-type {
@@ -375,10 +378,10 @@
     /* Description of the record in body text */
     .p1-achieve-desc {
       font-family: var(--font-body);
-      font-size: 10px;
-      color: var(--text-secondary);
+      font-size: 10.2px;
+      color: #f1f5f9;
       line-height: 1.4;
-      letter-spacing: 0.1px;
+      font-weight: 500;
     }
 
     .p1-achieve-desc strong {
@@ -431,27 +434,14 @@
 
     /* Enlarged Sidebar Headings with 4-Diamond Symbol */
     .sb-header-enlarged {
-      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 12.5px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 2.2mm;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .sb-header-enlarged::before {
-      content: '';
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background-color: var(--accent);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      flex-shrink: 0;
+      margin-bottom: 3mm;
+      display: block;
     }
 
     .sb-tiles-list {
@@ -619,27 +609,16 @@
 
             /* Work Experience Huge Heading (Matches INTRODUCTION) */
     .p2-work-heading-huge {
-      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 24px;
+      font-family: var(--font-heading);
+      font-size: 21px;
       font-weight: 900;
-      letter-spacing: 2.2px;
+      letter-spacing: 2.8px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 4mm;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .p2-work-heading-huge::before {
-      content: '';
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      background-color: var(--accent);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
-      flex-shrink: 0;
+      margin: 0 0 4mm 0;
+      text-align: center;
+      width: 100%;
+      display: block;
     }
 
     .p2-main-column {
@@ -677,11 +656,10 @@
     }
 
     .work-role {
-      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 12.2px;
+      font-family: var(--font-heading);
+      font-size: 12.5px;
       font-weight: 800;
       color: #ffffff;
-      letter-spacing: 0.4px;
     }
 
     .work-date {
@@ -716,9 +694,9 @@
     }
 
     .work-bullets li {
-      font-size: 9px;
+      font-size: 9.8px;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: #f1f5f9;
       line-height: 1.48;
       padding-left: 3.8mm;
       position: relative;
@@ -778,10 +756,11 @@
     }
 
     .declaration-text {
-      font-size: 8.5px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-      font-style: italic;
+      font-size: 9.8px;
+      line-height: 1.52;
+      color: #f1f5f9;
+      margin-bottom: 2mm;
+      font-weight: 500;
     }
 
     .declaration-meta {
@@ -1345,7 +1324,7 @@
 
                         <!-- 4. Languages and Stuff (Languages & Vocabulary) -->
         <div class="sb-block">
-          <div class="sb-header-enlarged">Languages &amp; Vocabulary</div>
+          <div class="sb-header-enlarged">Languages</div>
           <div class="sb-lang-list">
             <div class="sb-lang-tile">
               <img src="../assets/flag-en.svg" alt="English" class="sb-lang-flag" />
