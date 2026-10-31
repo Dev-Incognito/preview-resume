@@ -364,17 +364,18 @@
       background: transparent;
     }
 
-    /* Left Sidebar Tile (Width ~68mm, full height) */
+        /* Left Sidebar Tile (Width ~68mm, full height) */
     .p2-sidebar-tile {
       width: 68mm;
       min-width: 68mm;
       max-width: 68mm;
       height: 297mm;
       background: linear-gradient(180deg, #131926 0%, #101520 50%, #0d121a 100%);
-      padding: 14mm 8mm 12mm 9mm;
+      padding: 13mm 8mm 12mm 9mm;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6mm;
       position: relative;
     }
 
@@ -392,94 +393,13 @@
     .sb-block {
       display: flex;
       flex-direction: column;
-      margin-bottom: 4mm;
-    }
-
-    .sb-block:last-child {
       margin-bottom: 0;
     }
 
-    .sb-header {
-      font-family: var(--font-heading);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      margin-bottom: 2.5mm;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .sb-header::before {
-      content: '■';
-      font-size: 7px;
-      color: var(--accent);
-    }
-
-    .sb-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.8mm;
-    }
-
-    .sb-list li {
-      font-size: 8.2px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-      padding-left: 3.5mm;
-      position: relative;
-    }
-
-    .sb-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent-light);
-      font-size: 8px;
-    }
-
-    .sb-list li strong {
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .sb-edu-card {
-      background: var(--tile-bg-alt);
-      padding: 3mm 4mm;
-      border-radius: 6px;
-      margin-top: 1mm;
-    }
-
-    .sb-edu-degree {
-      font-family: var(--font-heading);
-      font-size: 8.8px;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.25;
-      margin-bottom: 1mm;
-    }
-
-    .sb-edu-school {
-      font-size: 7.8px;
-      font-weight: 600;
-      color: var(--accent-light);
-      line-height: 1.3;
-    }
-
-    .sb-edu-meta {
-      font-size: 7.2px;
-      color: var(--text-muted);
-      margin-top: 0.8mm;
-    }
-
-            /* Enlarged Sidebar Headings & Tiled Bullets */
+    /* Enlarged Sidebar Headings with 4-Diamond Symbol */
     .sb-header-enlarged {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 800;
       letter-spacing: 1.4px;
       text-transform: uppercase;
@@ -529,18 +449,41 @@
       flex-shrink: 0;
     }
 
+    /* Enlarge Font in Attribute Tiles as requested */
+    .sb-bullet-tile-attr {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.025) 100%), #141b27;
+      padding: 2.8mm 3.8mm;
+      border-radius: 6px;
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8.5px;
+      line-height: 1.25;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    }
+
+    .sb-bullet-tile-attr::before {
+      content: '▸';
+      color: var(--accent-light);
+      font-size: 9.5px;
+      flex-shrink: 0;
+    }
+
     /* Education: Logo Centered Outside Tile + Text Card Below */
     .sb-edu-crest-wrap {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 2mm;
-      padding: 1mm 0 0.5mm 0;
+      padding: 0.5mm 0;
     }
 
     .sb-edu-crest-hd {
-      width: 48px;
-      height: 48px;
+      width: 58px;
+      height: 58px;
       object-fit: contain;
       filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
     }
@@ -572,11 +515,14 @@
       line-height: 1.25;
     }
 
+    /* Udaipur, Rajasthan uses the exact same color as uni name as requested */
     .sb-edu-loc-big {
-      font-size: 8.2px;
-      font-weight: 600;
-      color: var(--text-muted);
-      line-height: 1.2;
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 8.8px;
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1.25;
+      margin-top: 1px;
     }
 
     /* Languages & Vocabulary Section */
@@ -1204,26 +1150,13 @@
       <!-- LEFT SIDEBAR TILE -->
       <aside class="p2-sidebar-tile">
         
-        <!-- Core Disciplines -->
-        <div class="sb-block">
-          <div class="sb-header-enlarged">Core Disciplines</div>
-          <div class="sb-tiles-list">
-            <div class="sb-bullet-tile">Personal Training</div>
-            <div class="sb-bullet-tile">Athletic Conditioning</div>
-            <div class="sb-bullet-tile">Sales Executive</div>
-            <div class="sb-bullet-tile">Content Creation</div>
-            <div class="sb-bullet-tile">Consultative Advisory</div>
-            <div class="sb-bullet-tile">Communication</div>
-          </div>
-        </div>
-
-        <!-- Academic Foundation -->
+        <!-- 1. Education -->
         <div class="sb-block">
           <div class="sb-header-enlarged">Education</div>
           
-          <!-- Crest Logo Centered Outside the Tile -->
+          <!-- Crest Logo Centered Outside the Tile (image named MLSU) -->
           <div class="sb-edu-crest-wrap">
-            <img src="../assets/logo-mlsu-hd.png" alt="Mohanlal Sukhadia University Crest" class="sb-edu-crest-hd" />
+            <img src="../assets/MLSU.png" alt="Mohanlal Sukhadia University" class="sb-edu-crest-hd" />
           </div>
 
           <!-- Big Text Card Below Logo -->
@@ -1234,20 +1167,32 @@
           </div>
         </div>
 
-        <!-- Key Attributes (Sensible, High-Value, Pascal Case) -->
+        <!-- 2. Domains (Renamed with relevant points) -->
         <div class="sb-block">
-          <div class="sb-header-enlarged">Key Attributes</div>
+          <div class="sb-header-enlarged">Domains</div>
           <div class="sb-tiles-list">
-            <div class="sb-bullet-tile">Mental Toughness</div>
-            <div class="sb-bullet-tile">Extreme Discipline</div>
-            <div class="sb-bullet-tile">Daily Consistency</div>
-            <div class="sb-bullet-tile">Interpersonal Intelligence</div>
-            <div class="sb-bullet-tile">Leadership &amp; Accountability</div>
-            <div class="sb-bullet-tile">Conflict Resolution</div>
+            <div class="sb-bullet-tile">Personal Training</div>
+            <div class="sb-bullet-tile">Athletic Conditioning</div>
+            <div class="sb-bullet-tile">Consultative Sales</div>
+            <div class="sb-bullet-tile">Content Creation</div>
+            <div class="sb-bullet-tile">Strength &amp; Powerlifting</div>
+            <div class="sb-bullet-tile">Client Mentorship</div>
           </div>
         </div>
 
-        <!-- Languages & Vocabulary -->
+        <!-- 3. Key Attributes (Enlarged font, exact requested list) -->
+        <div class="sb-block">
+          <div class="sb-header-enlarged">Key Attributes</div>
+          <div class="sb-tiles-list">
+            <div class="sb-bullet-tile-attr">Leadership &amp; Accountability</div>
+            <div class="sb-bullet-tile-attr">Interpersonal Intelligence</div>
+            <div class="sb-bullet-tile-attr">Discipline</div>
+            <div class="sb-bullet-tile-attr">Creativity</div>
+            <div class="sb-bullet-tile-attr">Consistency</div>
+          </div>
+        </div>
+
+        <!-- 4. Languages and Stuff (Languages & Vocabulary) -->
         <div class="sb-block">
           <div class="sb-header-enlarged">Languages &amp; Vocabulary</div>
           <div class="sb-lang-list">
