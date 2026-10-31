@@ -234,9 +234,14 @@
     }
 
     .p1-section-heading::before {
-      content: '■';
-      font-size: 13px;
-      color: var(--accent);
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
     }
 
     .p1-intro-section {
@@ -471,43 +476,48 @@
       margin-top: 0.8mm;
     }
 
-        /* Enlarged Sidebar Headings & Tiled Bullets */
+            /* Enlarged Sidebar Headings & Tiled Bullets */
     .sb-header-enlarged {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 2.8mm;
+      margin-bottom: 2.2mm;
       display: flex;
       align-items: center;
       gap: 7px;
     }
 
     .sb-header-enlarged::before {
-      content: '■';
-      font-size: 7.5px;
-      color: var(--accent);
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3Cpolygon points='74,31 93,50 74,69 55,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
     }
 
     .sb-tiles-list {
       display: flex;
       flex-direction: column;
-      gap: 1.9mm;
+      gap: 1.6mm;
     }
 
     .sb-bullet-tile {
       background: linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.02) 100%), #141b27;
-      padding: 2.7mm 3.8mm;
+      padding: 2.2mm 3.4mm;
       border-radius: 6px;
       font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 9.8px;
+      font-size: 9.4px;
       font-weight: 700;
       color: #ffffff;
       display: flex;
       align-items: center;
-      gap: 8.5px;
+      gap: 8px;
       line-height: 1.25;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
     }
@@ -515,57 +525,104 @@
     .sb-bullet-tile::before {
       content: '▸';
       color: var(--accent-light);
-      font-size: 9.5px;
+      font-size: 9px;
       flex-shrink: 0;
     }
 
-    /* Enlarged Education Tile */
-    .sb-edu-tile-enlarged {
+    /* Education: Logo Centered Outside Tile + Text Card Below */
+    .sb-edu-crest-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2mm;
+      padding: 1mm 0 0.5mm 0;
+    }
+
+    .sb-edu-crest-hd {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
+    }
+
+    .sb-edu-text-card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.02) 100%), #141b27;
-      padding: 3.2mm 4mm;
+      padding: 2.8mm 3.2mm;
       border-radius: 7px;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
-    }
-
-    .sb-edu-logo-img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      flex-shrink: 0;
-      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
-    }
-
-    .sb-edu-info-col {
-      display: flex;
       flex-direction: column;
-      gap: 2.5px;
-      overflow: hidden;
+      gap: 2px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
     }
 
     .sb-edu-degree-big {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 800;
       color: #ffffff;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     .sb-edu-school-big {
       font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 10px;
+      font-size: 9.6px;
       font-weight: 700;
       color: var(--accent-light);
       line-height: 1.25;
     }
 
     .sb-edu-loc-big {
-      font-size: 8.5px;
+      font-size: 8.2px;
       font-weight: 600;
       color: var(--text-muted);
+      line-height: 1.2;
+    }
+
+    /* Languages & Vocabulary Section */
+    .sb-lang-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8mm;
+    }
+
+    .sb-lang-tile {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.02) 100%), #141b27;
+      padding: 2.2mm 3.4mm;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    }
+
+    .sb-lang-flag {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .sb-lang-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .sb-lang-name {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 9.8px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .sb-lang-level {
+      font-size: 7.8px;
+      font-weight: 600;
+      color: var(--accent-light);
       line-height: 1.2;
     }
 
@@ -578,6 +635,29 @@
       flex-direction: column;
       justify-content: space-between;
       background: transparent;
+    }
+
+        .section-title-bold {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-bold::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3Cpolygon points='26,31 45,50 26,69 7,50' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,7 69,26 50,45 31,26' fill='%23000'/%3E%3Cpolygon points='50,55 69,74 50,93 31,74' fill='%23000'/%3E%3C/svg%3E") no-repeat center / contain;
+      flex-shrink: 0;
     }
 
     .work-timeline {
@@ -1019,17 +1099,21 @@
       <!-- Section: INTRODUCTION -->
       <div class="p1-intro-section">
         <div class="p1-section-heading">Introduction</div>
-        <p class="p1-lead-quote">
-          Ghazal Bhatnagar is a multidisciplinary athlete, personal trainer, fitness coach, and content creator based in Udaipur, Rajasthan.
+        
+        <p class="p1-intro-lead">
+          I am a Multidisciplinary Athlete, Personal Trainer, Fitness Coach, and Content Creator based in Udaipur, Rajasthan.
         </p>
-        <p class="p1-narrative-p">
-          She is a <strong>7-time World Record Holder</strong>, recognized officially by <strong>Guinness World Records</strong>, <strong>Limca Book of Records</strong>, and <strong>India Book of Records</strong>. She is also a <strong>two-time National Medalist</strong> in Strength Lifting and Ice Stock Sport, with multiple state and district championship medals in <strong>Powerlifting</strong> and <strong>Weightlifting</strong>.
+
+        <p class="p1-intro-body">
+          I am a <strong>7-Time World Record Holder</strong>, recognized officially by <strong>Guinness World Records</strong>, <strong>Limca Book of Records</strong>, and <strong>India Book of Records</strong>. I am also a <strong>2-Time National Medalist</strong> in Strength Lifting and Ice Stock Sport, with multiple State and District Championship Medals in <strong>Powerlifting</strong> and <strong>Weightlifting</strong>.
         </p>
-        <p class="p1-narrative-p">
-          As a <strong>personal trainer and coach</strong>, Ghazal works with clients on heavy lifting, strength building, fat loss, and custom body transformations. She brings the discipline, consistency, and work ethic of a competitive strength athlete directly into her coaching to help clients achieve real, lasting results.
+
+        <p class="p1-intro-body">
+          As a <strong>Personal Trainer and Fitness Coach</strong>, I work closely with clients on compound lifting, progressive strength building, fat loss, and customized body transformations. I bring the discipline, daily consistency, and work ethic of a competitive strength athlete directly into my coaching protocols to ensure real, measurable results.
         </p>
-        <p class="p1-narrative-p">
-          As a <strong>content creator</strong>, she documents her athletic training, fitness lifestyle, and mindset, sharing practical advice and inspiring people to build physical strength and confidence.
+
+        <p class="p1-intro-body">
+          As a <strong>Content Creator</strong>, I document my athletic training, fitness lifestyle, and mindset, sharing practical lifting breakdowns and inspiring people to build physical strength and unshakeable confidence.
         </p>
       </div>
 
@@ -1136,30 +1220,51 @@
         <!-- Academic Foundation -->
         <div class="sb-block">
           <div class="sb-header-enlarged">Education</div>
-          <div class="sb-edu-tile-enlarged">
-            <img src="../assets/logo-mlsu.png" alt="Mohanlal Sukhadia University" class="sb-edu-logo-img" />
-            <div class="sb-edu-info-col">
-              <div class="sb-edu-degree-big">Bachelor of Arts (B.A.)</div>
-              <div class="sb-edu-school-big">Mohanlal Sukhadia University</div>
-              <div class="sb-edu-loc-big">Udaipur, Rajasthan</div>
-            </div>
+          
+          <!-- Crest Logo Centered Outside the Tile -->
+          <div class="sb-edu-crest-wrap">
+            <img src="../assets/logo-mlsu-hd.png" alt="Mohanlal Sukhadia University Crest" class="sb-edu-crest-hd" />
+          </div>
+
+          <!-- Big Text Card Below Logo -->
+          <div class="sb-edu-text-card">
+            <div class="sb-edu-degree-big">Bachelor of Arts (B.A.)</div>
+            <div class="sb-edu-school-big">Mohanlal Sukhadia University</div>
+            <div class="sb-edu-loc-big">Udaipur, Rajasthan</div>
           </div>
         </div>
 
-        <!-- Key Attributes -->
+        <!-- Key Attributes (Sensible, High-Value, Pascal Case) -->
         <div class="sb-block">
           <div class="sb-header-enlarged">Key Attributes</div>
           <div class="sb-tiles-list">
-            <div class="sb-bullet-tile">100% Mental Toughness</div>
+            <div class="sb-bullet-tile">Mental Toughness</div>
             <div class="sb-bullet-tile">Extreme Discipline</div>
             <div class="sb-bullet-tile">Daily Consistency</div>
             <div class="sb-bullet-tile">Interpersonal Intelligence</div>
             <div class="sb-bullet-tile">Leadership &amp; Accountability</div>
-            <div class="sb-bullet-tile">Public Speaking &amp; Presence</div>
             <div class="sb-bullet-tile">Conflict Resolution</div>
-            <div class="sb-bullet-tile">High-Stakes Resilience</div>
-            <div class="sb-bullet-tile">Consultative Mindset</div>
-            <div class="sb-bullet-tile">Athletic Work Ethic</div>
+          </div>
+        </div>
+
+        <!-- Languages & Vocabulary -->
+        <div class="sb-block">
+          <div class="sb-header-enlarged">Languages &amp; Vocabulary</div>
+          <div class="sb-lang-list">
+            <div class="sb-lang-tile">
+              <img src="../assets/flag-en.svg" alt="English" class="sb-lang-flag" />
+              <div class="sb-lang-info">
+                <div class="sb-lang-name">English</div>
+                <div class="sb-lang-level">Professional Working Fluency</div>
+              </div>
+            </div>
+            <div class="sb-lang-tile">
+              <img src="../assets/flag-hi.svg" alt="Hindi" class="sb-lang-flag" />
+              <div class="sb-lang-info">
+                <div class="sb-lang-name">Hindi</div>
+                <div class="sb-lang-level">Native &amp; Bilingual Proficiency</div>
+              </div>
+            </div>
           </div>
         </div>
 

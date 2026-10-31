@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <g fill="currentColor">
+    <!-- Top Diamond -->
+    <polygon points="50,7 69,26 50,45 31,26" />
+    <!-- Bottom Diamond -->
+    <polygon points="50,55 69,74 50,93 31,74" />
+    <!-- Left Diamond -->
+    <polygon points="26,31 45,50 26,69 7,50" />
+    <!-- Right Diamond -->
+    <polygon points="74,31 93,50 74,69 55,50" />
+  </g>
+</svg>

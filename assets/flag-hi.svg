@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <clipPath id="circleClipIN">
+      <circle cx="50" cy="50" r="48" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circleClipIN)">
+    <!-- Saffron top -->
+    <rect width="100" height="33.3" y="0" fill="#FF9933" />
+    <!-- White middle -->
+    <rect width="100" height="33.4" y="33.3" fill="#FFFFFF" />
+    <!-- Green bottom -->
+    <rect width="100" height="33.3" y="66.7" fill="#138808" />
+    <!-- Ashoka Chakra (24 spokes circle) -->
+    <circle cx="50" cy="50" r="12" fill="none" stroke="#000088" stroke-width="1.8" />
+    <circle cx="50" cy="50" r="2.5" fill="#000088" />
+    <!-- 24 spokes -->
+    <g stroke="#000088" stroke-width="0.9">
+      <line x1="50" y1="38" x2="50" y2="62" />
+      <line x1="38" y1="50" x2="62" y2="50" />
+      <line x1="41.5" y1="41.5" x2="58.5" y2="58.5" />
+      <line x1="41.5" y1="58.5" x2="58.5" y2="41.5" />
+      <line x1="44" y1="38.5" x2="56" y2="61.5" />
+      <line x1="47" y1="38.1" x2="53" y2="61.9" />
+      <line x1="53" y1="38.1" x2="47" y2="61.9" />
+      <line x1="56" y1="38.5" x2="44" y2="61.5" />
+      <line x1="38.5" y1="44" x2="61.5" y2="56" />
+      <line x1="38.1" y1="47" x2="61.9" y2="53" />
+      <line x1="38.1" y1="53" x2="61.9" y2="47" />
+      <line x1="38.5" y1="56" x2="61.5" y2="44" />
+    </g>
+  </g>
+  <!-- Subtle gold rim -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(229,184,56,0.5)" stroke-width="2.5" />
+</svg>
