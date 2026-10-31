@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Ghazal Bhatnagar — Executive Resume & Athletic Dossier</title>
-  <meta name="description" content="Executive Resume of Ghazal Bhatnagar: 7x World Record Holder, National Medalist, Fitness Professional, Consultative Sales Executive, and Creative Producer." />
+  <meta name="description" content="Resume of Ghazal Bhatnagar: 7x World Record Holder, National Medalist, Fitness Professional, Personal Trainer, and Content Creator." />
 
   <!-- Google Fonts: Editorial & Modern Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -123,76 +123,60 @@
     }
 
     /* ============================================================
-       PAGE 1: TOP BANNER TILE + OPEN INTRO CANVAS
+       PAGE 1: COMPACT TOP TILE + FULL GOLDEN LINE + ACHIEVEMENTS TILE
        ============================================================ */
     .p1-top-tile {
       width: 100%;
-      height: 86mm;
+      height: 48mm;
       background: var(--tile-bg);
-      padding: 16mm 18mm 12mm 18mm;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
-
-    .p1-top-tile::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 18mm;
-      right: 18mm;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-light), transparent);
-      opacity: 0.8;
-    }
-
-    .p1-tile-overline {
-      font-family: var(--font-mono);
-      font-size: 8.5px;
-      font-weight: 700;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      margin-bottom: 4mm;
+      padding: 0 18mm;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .p1-tile-overline::before {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 2.5px;
-      background: var(--accent-light);
-      border-radius: 2px;
+    /* Subtle luxury geometric background design */
+    .p1-tile-bg-pattern {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background: 
+        radial-gradient(circle at 10% 50%, var(--accent-light) 0%, transparent 45%),
+        radial-gradient(circle at 90% 50%, var(--accent) 0%, transparent 45%),
+        repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px);
     }
 
     .p1-tile-name {
       font-family: var(--font-display);
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 900;
       line-height: 1.0;
       color: #ffffff;
       letter-spacing: -0.5px;
       text-transform: uppercase;
-      margin-bottom: 4.5mm;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .p1-tile-name span {
       color: var(--accent-light);
-      display: inline;
     }
 
-    .p1-tile-tagline {
-      font-family: var(--font-heading);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      line-height: 1.35;
+    /* Golden line starting from left end and stretching fully to right end */
+    .p1-top-tile::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     /* Page 1 Body Canvas */
@@ -205,40 +189,41 @@
       background: var(--page-bg);
     }
 
-    .section-title-bold {
+    /* Big Font Heading: INTRODUCTION */
+    .p1-intro-heading {
       font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 20px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 3.5mm;
+      margin-bottom: 4mm;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .section-title-bold::before {
+    .p1-intro-heading::before {
       content: '■';
-      font-size: 9px;
+      font-size: 11px;
       color: var(--accent);
     }
 
     .p1-lead-quote {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
       color: #ffffff;
       line-height: 1.6;
-      margin-bottom: 4mm;
+      margin-bottom: 3.5mm;
       letter-spacing: 0.1px;
     }
 
     .p1-narrative-p {
-      font-size: 10.2px;
+      font-size: 10.4px;
       font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.65;
-      margin-bottom: 3.5mm;
+      margin-bottom: 4mm;
     }
 
     .p1-narrative-p strong {
@@ -246,71 +231,154 @@
       font-weight: 700;
     }
 
-    .p1-objective-box {
+    /* ACHIEVEMENTS TILE (Frameless Architectural Tile on Page 1) */
+    .p1-achievements-tile {
       background: var(--tile-bg);
-      padding: 4mm 5mm;
-      border-radius: 8px;
-      margin: 2mm 0 4mm 0;
+      padding: 6mm 7mm 6mm 7mm;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+      position: relative;
     }
 
-    .p1-objective-title {
+    .p1-achievements-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .p1-achievements-title {
       font-family: var(--font-heading);
-      font-size: 9px;
+      font-size: 12.5px;
       font-weight: 800;
       letter-spacing: 1.8px;
       text-transform: uppercase;
       color: var(--accent-light);
-      margin-bottom: 1.5mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .p1-objective-text {
-      font-size: 9.8px;
-      color: var(--text-secondary);
-      line-height: 1.55;
+    .p1-achievements-title::before {
+      content: '★';
+      font-size: 12px;
+      color: var(--accent-light);
     }
 
-    /* 4 Frameless Monumental Milestone Cards */
-    .p1-stats-strip {
+    .p1-achievements-tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--accent-dim);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    /* 5 Logos Row */
+    .p1-logos-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 9px;
-      margin-top: 1mm;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      align-items: stretch;
     }
 
-    .p1-stat-card {
-      background: var(--tile-bg);
-      padding: 10px 12px;
+    .p1-logo-card {
+      background: #ffffff;
+      padding: 6px 7px;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      min-height: 48px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    .p1-stat-num {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 900;
-      color: var(--accent-light);
-      line-height: 1.0;
-      margin-bottom: 3px;
+    .p1-logo-card img {
+      max-width: 100%;
+      max-height: 34px;
+      object-fit: contain;
+      display: block;
     }
 
-    .p1-stat-title {
-      font-family: var(--font-heading);
-      font-size: 8.5px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
+    .p1-logo-label {
+      font-family: var(--font-mono);
+      font-size: 6.8px;
+      font-weight: 700;
+      color: #0f172a;
       text-transform: uppercase;
-      color: #ffffff;
-      line-height: 1.25;
+      margin-top: 3px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      line-height: 1.1;
     }
 
-    .p1-stat-desc {
-      font-size: 7.2px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 2px;
-      line-height: 1.3;
+    /* Medals Sub-Grid inside Achievements Tile */
+    .p1-medals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      padding-top: 1mm;
+    }
+
+    .p1-medal-column {
+      background: var(--tile-bg-alt);
+      padding: 3.5mm 4.5mm;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .p1-medal-col-title {
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .p1-medal-col-title::before {
+      content: '■';
+      font-size: 7px;
+      color: var(--accent);
+    }
+
+    .p1-medal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8mm;
+    }
+
+    .p1-medal-list li {
+      font-size: 8.8px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      padding-left: 3.5mm;
+      position: relative;
+    }
+
+    .p1-medal-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-light);
+      font-size: 8.5px;
+    }
+
+    .p1-medal-list li strong {
+      color: #ffffff;
+      font-weight: 700;
     }
 
     /* Page Running Mini-Footer */
@@ -901,73 +969,104 @@
 <body>
 
   <!-- ============================================================
-       PAGE 1: FULL-PAGE TOP BANNER TILE + OPEN INTRO NARRATIVE
+       PAGE 1: COMPACT TOP TILE + OPEN INTRO CANVAS + ACHIEVEMENTS TILE
        ============================================================ -->
-  <section class="page" id="page-1" aria-label="Page 1: Executive Introduction & Career Objective">
+  <section class="page" id="page-1" aria-label="Page 1: Name, Introduction & Athletic Achievements">
     
-    <!-- TOP BANNER TILE (Solid Full-Width Block sitting flush) -->
+    <!-- COMPACT TOP TILE (Smaller, Only Name in Huge Font, Luxury Pattern, Full Edge-to-Edge Golden Line) -->
     <div class="p1-top-tile">
-      <div class="p1-tile-overline">7× World Record Holder &bull; National Medalist &bull; Multidisciplinary Executive</div>
+      <div class="p1-tile-bg-pattern" aria-hidden="true"></div>
       <h1 class="p1-tile-name">GHAZAL <span>BHATNAGAR</span></h1>
-      <div class="p1-tile-tagline">
-        Consultative Sales &bull; High-Performance Fitness Coaching &bull; Creative Media Production
-      </div>
     </div>
 
     <!-- OPEN BODY CANVAS -->
     <div class="p1-body-canvas">
       
+      <!-- Section: INTRODUCTION -->
       <div>
-        <div class="section-title-bold">Executive Narrative & Core Identity</div>
+        <div class="p1-intro-heading">Introduction</div>
         <p class="p1-lead-quote">
-          Ghazal Bhatnagar is an internationally recognized multi-record athletic champion, consultative sales executive, certified fitness professional, and creative media producer based in Udaipur, Rajasthan.
+          Ghazal Bhatnagar is a multidisciplinary athlete, personal trainer and fitness coach, and content creator based in Udaipur, Rajasthan.
         </p>
         <p class="p1-narrative-p">
-          Holding <strong>seven official world records</strong>—including Guinness World Records recognition—and <strong>two national championship medals</strong> in Strength Lifting and Ice Stock Sport, she synthesizes competitive athletic discipline with high-ticket commercial execution and digital media production.
+          A <strong>7-time World Record Holder</strong> and multi-discipline <strong>National Medalist</strong>, she embodies the pinnacle of physical discipline, consistency, and athletic grit. Her competitive journey spans world records across major international books of records, national podium finishes in <strong>Strength Lifting</strong> and <strong>Ice Stock Sport</strong>, as well as multiple state and district championships in <strong>Powerlifting</strong> and <strong>Weightlifting</strong>.
         </p>
         <p class="p1-narrative-p">
-          Her professional experience spans formal consultative sales leadership at <strong>Anytime Fitness</strong>, strength coaching at <strong>Ragnar Fitness</strong>, extensive private client personal training transformations, and multi-platform commercial videography, photography, and video editing. Built on an unyielding foundation of mental toughness, consistency, and interpersonal intelligence, she excels in high-stakes environments demanding persuasion, customer handling, and decisive execution.
+          As a <strong>personal trainer and coach</strong>, Ghazal specializes in strength training, biomechanics, compound lift execution, and personalized body transformation protocols. She translates competitive sporting discipline into actionable coaching for clients, prioritizing injury-free movement, mental toughness, and holistic health. As a <strong>content creator</strong>, she shares her athletic journey, training philosophy, and health insights to empower a wider community toward physical excellence.
         </p>
       </div>
 
-      <!-- Career Objective -->
-      <div class="p1-objective-box">
-        <div class="p1-objective-title">Career Objective</div>
-        <div class="p1-objective-text">
-          To contribute to a high-growth organization, premium fitness brand, or commercial enterprise where exceptional verbal communication, consultative sales ability, athletic grit, and digital production skills create measurable revenue growth, high client retention, and transformative brand value.
+      <!-- ACHIEVEMENTS TILE (World Records Logos & Championship Medals) -->
+      <div class="p1-achievements-tile">
+        
+        <div class="p1-achievements-header">
+          <div class="p1-achievements-title">World Records & Athletic Achievements</div>
+          <div class="p1-achievements-tag">7× World Records &bull; National Honors</div>
         </div>
-      </div>
 
-      <!-- 4 Frameless Monumental Milestone Cards -->
-      <div>
-        <div class="section-title-bold" style="margin-bottom: 2.5mm;">Monumental Career Milestones</div>
-        <div class="p1-stats-strip">
-          <div class="p1-stat-card">
-            <div class="p1-stat-num">7×</div>
-            <div class="p1-stat-title">World Records</div>
-            <div class="p1-stat-desc">Guinness, Limca, Unique, Global & India Books</div>
+        <!-- 5 Official Logos -->
+        <div class="p1-logos-row">
+          
+          <!-- 1. Guinness World Records -->
+          <div class="p1-logo-card">
+            <img src="../assets/logo-guinness.svg" alt="Guinness World Records" />
+            <div class="p1-logo-label">Guinness World Records</div>
           </div>
-          <div class="p1-stat-card">
-            <div class="p1-stat-num">2×</div>
-            <div class="p1-stat-title">National Medals</div>
-            <div class="p1-stat-desc">Strength Lifting & Ice Stock Sport</div>
+
+          <!-- 2. Limca Book of Records -->
+          <div class="p1-logo-card">
+            <img src="../assets/logo-limca-book-of-records.png" alt="Limca Book of Records" />
+            <div class="p1-logo-label">Limca Book of Records</div>
           </div>
-          <div class="p1-stat-card">
-            <div class="p1-stat-num">100%</div>
-            <div class="p1-stat-title">Bilingual Oratory</div>
-            <div class="p1-stat-desc">Fluent Hindi & English + 5 Regional Dialects</div>
+
+          <!-- 3. India Book of Records -->
+          <div class="p1-logo-card">
+            <img src="../assets/logo-india-book-of-records.png" alt="India Book of Records" />
+            <div class="p1-logo-label">India Book of Records</div>
           </div>
-          <div class="p1-stat-card">
-            <div class="p1-stat-num">MULTI</div>
-            <div class="p1-stat-title">Dimensional</div>
-            <div class="p1-stat-desc">Sales, Fitness, 4K Media & Post-Production</div>
+
+          <!-- 4. Unique World Records -->
+          <div class="p1-logo-card">
+            <img src="../assets/logo-unique-records.png" alt="Unique World Records" />
+            <div class="p1-logo-label">Unique World Records</div>
           </div>
+
+          <!-- 5. Global Records -->
+          <div class="p1-logo-card">
+            <img src="../assets/logo-global-records.png" alt="Global World Record" />
+            <div class="p1-logo-label">Global World Records</div>
+          </div>
+
         </div>
+
+        <!-- Medals Breakdown Grid -->
+        <div class="p1-medals-grid">
+          
+          <!-- National Medals -->
+          <div class="p1-medal-column">
+            <div class="p1-medal-col-title">National Championships</div>
+            <ul class="p1-medal-list">
+              <li><strong>National Medalist</strong> in Strength Lifting</li>
+              <li><strong>National Medalist</strong> in Ice Stock Sport</li>
+            </ul>
+          </div>
+
+          <!-- State & District Medals -->
+          <div class="p1-medal-column">
+            <div class="p1-medal-col-title">State & District Championships</div>
+            <ul class="p1-medal-list">
+              <li><strong>Multiple State-Level Medalist</strong> in Powerlifting & Weightlifting</li>
+              <li><strong>Multiple District-Level Medalist</strong> in Powerlifting & Weightlifting</li>
+            </ul>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- Running Page Mark -->
       <div class="page-footer-mini">
-        <span>Ghazal Bhatnagar &bull; Executive Dossier</span>
+        <span>Ghazal Bhatnagar &bull; Resume</span>
         <span>Page <span class="gold">01</span> of 03</span>
       </div>
 
@@ -987,10 +1086,10 @@
         <div class="sb-block">
           <div class="sb-header">Core Disciplines</div>
           <ul class="sb-list">
-            <li><strong>Consultative Sales:</strong> Member acquisition, pipeline management & closing</li>
             <li><strong>Personal Training:</strong> Hypertrophy, powerlifting & biomechanics</li>
-            <li><strong>Videography:</strong> 4K camera ops, gimbal movement & lighting</li>
-            <li><strong>Video Editing:</strong> Premiere Pro, color grading & audio sync</li>
+            <li><strong>Athletic Conditioning:</strong> Strength, speed & recovery</li>
+            <li><strong>Content Creation:</strong> Health, fitness & athletic storytelling</li>
+            <li><strong>Consultative Advisory:</strong> Client assessment & motivation</li>
             <li><strong>Communication:</strong> Public speaking & client de-escalation</li>
           </ul>
         </div>
@@ -1016,19 +1115,6 @@
           </ul>
         </div>
 
-        <!-- Production Toolset -->
-        <div class="sb-block">
-          <div class="sb-header">Production Suite</div>
-          <div class="sb-pills-wrap">
-            <span class="sb-pill">Premiere Pro</span>
-            <span class="sb-pill">DaVinci Resolve</span>
-            <span class="sb-pill">Sony Alpha</span>
-            <span class="sb-pill">Studio Lighting</span>
-            <span class="sb-pill">Gimbal Ops</span>
-            <span class="sb-pill">Audio Post</span>
-          </div>
-        </div>
-
         <!-- Personal Attributes -->
         <div class="sb-block">
           <div class="sb-header">Key Attributes</div>
@@ -1036,7 +1122,7 @@
             <li>100% Mental Toughness & Grit</li>
             <li>Extreme Daily Accountability</li>
             <li>Interpersonal Intelligence</li>
-            <li>Conflict Resolution & Persuasion</li>
+            <li>Resilience & Adaptability</li>
           </ul>
         </div>
 
@@ -1056,6 +1142,20 @@
           
           <div class="work-timeline">
             
+            <!-- Ragnar Fitness -->
+            <article class="work-entry">
+              <div class="work-header-row">
+                <div class="work-role">Fitness Coach & Strength Specialist</div>
+                <div class="work-date">Sep 2025 – May 2026</div>
+              </div>
+              <div class="work-company">Ragnar Fitness &bull; Udaipur, Rajasthan</div>
+              <ul class="work-bullets">
+                <li>Instructed clients across barbell fundamentals, compound lifts, strength progressions, and functional training regimens with strict anatomical safety.</li>
+                <li>Formulated tailored workout splits and progressive overload structures for weight loss, muscle gain, and conditioning goals.</li>
+                <li>Monitored training execution, corrected biomechanical posture, and motivated clients to achieve sustained consistency and physical transformations.</li>
+              </ul>
+            </article>
+
             <!-- Anytime Fitness -->
             <article class="work-entry">
               <div class="work-header-row">
@@ -1068,20 +1168,6 @@
                 <li>Consistently exceeded outbound lead conversion targets via structured telephone and in-person consultative sales dialogues.</li>
                 <li>Handled customer questions, conflict resolution, and escalated service concerns with high emotional intelligence and empathy.</li>
                 <li>Fostered strong member community relationships, driving member retention benchmarks and recurring referral streams across club operations.</li>
-              </ul>
-            </article>
-
-            <!-- Ragnar Fitness -->
-            <article class="work-entry">
-              <div class="work-header-row">
-                <div class="work-role">Fitness Coach & Strength Specialist</div>
-                <div class="work-date">Sep 2025 – May 2026</div>
-              </div>
-              <div class="work-company">Ragnar Fitness &bull; Udaipur, Rajasthan</div>
-              <ul class="work-bullets">
-                <li>Instructed clients across barbell fundamentals, compound lifts, strength progressions, and functional training regimens with strict anatomical safety.</li>
-                <li>Formulated tailored workout splits and progressive overload structures for weight loss, muscle gain, and conditioning goals.</li>
-                <li>Monitored training execution, corrected biomechanical posture, and motivated clients to achieve sustained consistency and physical transformations.</li>
               </ul>
             </article>
 
@@ -1101,13 +1187,13 @@
             <!-- Creative Media & Content Creation -->
             <article class="work-entry">
               <div class="work-header-row">
-                <div class="work-role">Commercial Videographer & Video Editor</div>
-                <div class="work-date">Project Engagements</div>
+                <div class="work-role">Fitness Content Creator & Athlete</div>
+                <div class="work-date">Active Engagements</div>
               </div>
-              <div class="work-company">Creative Content & Commercial Production</div>
+              <div class="work-company">Digital Media & Athletic Branding</div>
               <ul class="work-bullets">
-                <li>Produced high-retention short-form fitness reels, brand storytelling videos, and professional photography for commercial clients.</li>
-                <li>Handled entire post-production pipeline: cutting, pacing, dynamic transitions, color grading, and audio mastering optimized for digital audiences.</li>
+                <li>Produced high-retention fitness reels, training breakdowns, and lifestyle storytelling for digital platforms.</li>
+                <li>Built a growing audience through educational demonstrations of lifting techniques, mental resilience, and holistic fitness habits.</li>
               </ul>
             </article>
 
@@ -1116,12 +1202,12 @@
 
         <!-- Athletic Honors & World Records Section -->
         <div>
-          <div class="section-title-bold" style="margin-bottom: 2mm;">World Records & Athletic Honors</div>
+          <div class="section-title-bold" style="margin-bottom: 2mm;">Athletic Heritage & Competitive Background</div>
           <div class="honors-section">
             <div class="honors-grid">
               <div class="honor-item">
                 <div class="honor-title">7× World Record Holder</div>
-                <div class="honor-detail">Official recipient recognized across Guinness World Records, Limca Book, Unique, Global & India Books of Records.</div>
+                <div class="honor-detail">Recognized across Guinness, Limca Book, India Book, Unique, and Global Records.</div>
               </div>
               <div class="honor-item">
                 <div class="honor-title">2× National Championship Medalist</div>
@@ -1151,30 +1237,19 @@
   </section>
 
   <!-- ============================================================
-       PAGE 3: CAPABILITIES CANVAS + FULL-WIDTH BOTTOM TILE (QR)
+       PAGE 3: CAPABILITIES CANVAS + ADDITIONAL SKILLS + BOTTOM TILE (QR)
        ============================================================ -->
-  <section class="page" id="page-3" aria-label="Page 3: Capabilities Matrix, Linguistic Repertoire & QR Tile">
+  <section class="page" id="page-3" aria-label="Page 3: Capabilities Matrix, Additional Skills & QR Tile">
     
     <!-- TOP CAPABILITIES CANVAS -->
     <div class="p3-top-canvas">
       
       <div>
-        <div class="section-title-bold" style="margin-bottom: 3mm;">Capabilities & Strategic Competencies</div>
+        <div class="section-title-bold" style="margin-bottom: 3mm;">Capabilities & Additional Skills</div>
         
         <!-- 4-Pillar Frameless Cards -->
         <div class="cap-matrix">
           
-          <div class="cap-card">
-            <div class="cap-card-title">Consultative Sales & Revenue</div>
-            <ul class="cap-card-list">
-              <li>Consultative Needs Discovery & Value Framing</li>
-              <li>High-Ticket Membership & Service Closing</li>
-              <li>Outbound Pipeline Follow-Up & Prospect Nurturing</li>
-              <li>Customer Relationship Management (CRM)</li>
-              <li>Client Retention & Referral System Architecture</li>
-            </ul>
-          </div>
-
           <div class="cap-card">
             <div class="cap-card-title">Fitness Biomechanics & Coaching</div>
             <ul class="cap-card-list">
@@ -1187,13 +1262,25 @@
           </div>
 
           <div class="cap-card">
-            <div class="cap-card-title">Creative Production & Editing</div>
+            <div class="cap-card-title">Client Advisory & Sales</div>
             <ul class="cap-card-list">
-              <li>4K Commercial Cinematography & Gimbal Camera Ops</li>
-              <li>Editorial Video Cutting & Viral Social Reel Pacing</li>
-              <li>Color Grading & Cinematic Visual Contrast</li>
-              <li>Studio & Natural Light Scene Direction</li>
-              <li>Digital Content Strategy & Multi-Platform Publishing</li>
+              <li>Consultative Needs Discovery & Value Framing</li>
+              <li>High-Ticket Membership & Service Closing</li>
+              <li>Outbound Pipeline Follow-Up & Prospect Nurturing</li>
+              <li>Customer Relationship Management (CRM)</li>
+              <li>Client Retention & Referral System Architecture</li>
+            </ul>
+          </div>
+
+          <!-- Additional Skills (Video Editing, Photography, Tools) -->
+          <div class="cap-card">
+            <div class="cap-card-title">Additional Skills: Media & Production</div>
+            <ul class="cap-card-list">
+              <li>Adobe Premiere Pro & DaVinci Resolve Video Editing</li>
+              <li>4K Videography & Gimbal Camera Operations</li>
+              <li>Professional Photography & Studio Lighting</li>
+              <li>Color Grading & Dynamic Visual Post-Production</li>
+              <li>Short-Form Social Media Content Strategy</li>
             </ul>
           </div>
 
@@ -1263,7 +1350,7 @@
       <!-- Professional Creed -->
       <div class="creed-box">
         <div class="creed-text">
-          &ldquo;Discipline is not a periodic exertion; it is an uncompromising lifestyle. Whether gripping the barbell under world-record weight or navigating complex client sales negotiations, outcomes are dictated by poise, relentless preparation, and zero excuses.&rdquo;
+          &ldquo;Discipline is not a periodic exertion; it is an uncompromising lifestyle. Whether gripping the barbell under world-record weight or coaching clients toward physical transformation, outcomes are dictated by poise, relentless preparation, and zero excuses.&rdquo;
         </div>
         <div class="creed-author">— Ghazal Bhatnagar &bull; Professional Operating Philosophy</div>
       </div>
@@ -1336,7 +1423,7 @@
 
       <!-- Running Page Mark Bottom -->
       <div class="page-footer-mini" style="padding-top: 2mm;">
-        <span>Ghazal Bhatnagar &bull; Executive Resume</span>
+        <span>Ghazal Bhatnagar &bull; Resume</span>
         <span>Page <span class="gold">03</span> of 03</span>
       </div>
 
