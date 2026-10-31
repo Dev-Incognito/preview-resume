@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <clipPath id="circleClipPB">
+      <circle cx="50" cy="50" r="48" />
+    </clipPath>
+    <linearGradient id="pbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D47A1" />
+      <stop offset="50%" stop-color="#1976D2" />
+      <stop offset="100%" stop-color="#FFB300" />
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#circleClipPB)">
+    <rect width="100" height="100" fill="url(#pbGrad)" />
+    <!-- Golden Wheat stalks motif -->
+    <circle cx="50" cy="50" r="22" fill="#FFA000" />
+    <circle cx="50" cy="50" r="16" fill="#FFF3E0" />
+    <!-- Wheat ears curve -->
+    <path d="M42 66 C42 50 48 40 50 32 C52 40 58 50 58 66 Z" fill="#FFA000" opacity="0.3" />
+    <!-- PB text marker -->
+    <text x="50" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="900" fill="#0D47A1" text-anchor="middle" dominant-baseline="central">PB</text>
+  </g>
+  <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,215,0,0.7)" stroke-width="2.5" />
+</svg>
