@@ -137,20 +137,21 @@
       overflow: hidden;
     }
 
-    /* Blended Portrait Eyes View */
+    /* Crisp Portrait Eyes View without Blur */
     .p1-tile-portrait-eyes {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+      background-image: url('../assets/eyes-crop-test.jpg');
       background-size: cover;
-      background-position: center 50%;
+      background-position: center 48%;
       background-repeat: no-repeat;
-      opacity: 0.38;
-      mix-blend-mode: luminosity;
+      opacity: 0.32;
       pointer-events: none;
       z-index: 0;
+      filter: none; /* NO BLUR */
     }
 
     /* Subtle luxury geometric background design */
@@ -161,7 +162,7 @@
       right: 0;
       bottom: 0;
       pointer-events: none;
-      opacity: 0.08;
+      opacity: 0.05;
       background: 
         radial-gradient(circle at 15% 50%, var(--accent-light) 0%, transparent 45%),
         radial-gradient(circle at 85% 50%, var(--accent) 0%, transparent 45%),
@@ -180,7 +181,7 @@
       text-align: center;
       position: relative;
       z-index: 2;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8);
     }
 
     .p1-tile-name span {
@@ -201,59 +202,65 @@
       z-index: 3;
     }
 
-    /* Page 1 Body Canvas */
+    /* Page 1 Body Canvas - Natural Flex Flow without the giant gap */
     .p1-body-canvas {
       flex: 1;
-      padding: 11mm 18mm 12mm 18mm;
+      padding: 10mm 18mm 10mm 18mm;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 6.5mm;
       background: var(--page-bg);
     }
 
-    /* Uniform Section Headings: INTRODUCTION and ACHIEVEMENTS */
+    /* Bigger, Bolder Section Headings: INTRODUCTION and ACHIEVEMENTS */
     .p1-section-heading {
       font-family: var(--font-heading);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 2px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       color: var(--accent-light);
       margin-bottom: 3.5mm;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .p1-section-heading::before {
       content: '■';
-      font-size: 11px;
+      font-size: 13px;
       color: var(--accent);
     }
 
     .p1-intro-section {
-      margin-bottom: 3mm;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Readable, Perfect Font Size for Introduction Body */
+    /* Natural, Authentic, Human Introduction Typography */
     .p1-lead-quote {
       font-family: var(--font-body);
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 600;
       color: #ffffff;
       line-height: 1.6;
-      margin-bottom: 3mm;
+      margin-bottom: 2.8mm;
       letter-spacing: 0.1px;
     }
 
     .p1-narrative-p {
       font-family: var(--font-body);
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.65;
       margin-bottom: 2.8mm;
       letter-spacing: 0.15px;
+    }
+
+    .p1-narrative-p:last-of-type {
+      margin-bottom: 0;
     }
 
     .p1-narrative-p strong {
@@ -270,25 +277,25 @@
     .p1-achievements-list {
       display: flex;
       flex-direction: column;
-      gap: 2mm;
+      gap: 2.8mm;
     }
 
-    /* Individual Horizontal Tile */
+    /* Individual Horizontal Tile - Made larger & more spacious */
     .p1-achieve-tile {
       background: var(--tile-bg);
-      padding: 2.6mm 4mm;
-      border-radius: 8px;
+      padding: 3.2mm 4.8mm;
+      border-radius: 9px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       transition: background 0.2s ease;
     }
 
     /* Logo Box: Single non-background transparent logo */
     .p1-achieve-logo-box {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -300,32 +307,32 @@
       max-height: 100%;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     }
 
     .p1-achieve-info {
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 1.5px;
       flex: 1;
     }
 
     /* Name of the book at the top of the tile */
     .p1-achieve-book {
       font-family: var(--font-heading);
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       color: var(--accent-light);
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       line-height: 1.25;
     }
 
     /* Description of the record in body text */
     .p1-achieve-desc {
       font-family: var(--font-body);
-      font-size: 9.8px;
+      font-size: 10px;
       color: var(--text-secondary);
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: 0.1px;
     }
 
@@ -903,31 +910,34 @@
 <body>
 
   <!-- ============================================================
-       PAGE 1: TOP BANNER TILE (PORTRAIT BLEND) + INTRODUCTION + ACHIEVEMENTS TILES
+       PAGE 1: TOP BANNER TILE (PORTRAIT EYES) + INTRODUCTION + ACHIEVEMENTS TILES
        ============================================================ -->
   <section class="page" id="page-1" aria-label="Page 1: Ghazal Bhatnagar Introduction & Achievements">
     
-    <!-- COMPACT TOP TILE (Blended Eyes Portrait + Huge Name + Full Edge-to-Edge Golden Line) -->
+    <!-- COMPACT TOP TILE (Crisp Portrait Eyes View without Blur + Huge Name + Full Edge-to-Edge Golden Line) -->
     <div class="p1-top-tile">
-      <div class="p1-tile-portrait-eyes" style="background-image: url('../assets/portrait-eyes-banner.png');" aria-hidden="true"></div>
+      <div class="p1-tile-portrait-eyes" aria-hidden="true"></div>
       <div class="p1-tile-bg-pattern" aria-hidden="true"></div>
       <h1 class="p1-tile-name">GHAZAL <span>BHATNAGAR</span></h1>
     </div>
 
-    <!-- OPEN BODY CANVAS -->
+    <!-- OPEN BODY CANVAS (Natural Spacing, Bigger Headings, Human Body Text) -->
     <div class="p1-body-canvas">
       
       <!-- Section: INTRODUCTION -->
       <div class="p1-intro-section">
         <div class="p1-section-heading">Introduction</div>
         <p class="p1-lead-quote">
-          Ghazal Bhatnagar is a multidisciplinary athlete, personal trainer and fitness coach, and content creator based in Udaipur, Rajasthan.
+          Ghazal Bhatnagar is a multidisciplinary athlete, personal trainer, fitness coach, and content creator based in Udaipur, Rajasthan.
         </p>
         <p class="p1-narrative-p">
-          A <strong>7-time World Record Holder</strong> and multi-discipline <strong>National Medalist</strong>, she embodies the pinnacle of physical discipline, consistency, and athletic grit. Her competitive journey spans world records across major international books of records, national podium finishes in <strong>Strength Lifting</strong> and <strong>Ice Stock Sport</strong>, as well as multiple state and district championships in <strong>Powerlifting</strong> and <strong>Weightlifting</strong>.
+          She is a <strong>7-time World Record Holder</strong>—with official records recognized by <strong>Guinness World Records</strong>, <strong>Limca Book of Records</strong>, and <strong>India Book of Records</strong>—and a <strong>two-time National Medalist</strong> in Strength Lifting and Ice Stock Sport. She has also won multiple state and district championship medals in <strong>Powerlifting</strong> and <strong>Weightlifting</strong>.
         </p>
         <p class="p1-narrative-p">
-          As a <strong>personal trainer and coach</strong>, Ghazal specializes in strength training, biomechanics, compound lift execution, and personalized body transformation protocols. She translates competitive sporting discipline into actionable coaching for clients, prioritizing injury-free movement, mental toughness, and holistic health. As a <strong>content creator</strong>, she shares her athletic journey, training philosophy, and health insights to empower a wider community toward physical excellence.
+          As a <strong>personal trainer and coach</strong>, Ghazal works with clients on heavy lifting, strength building, fat loss, and custom body transformations. She brings the discipline, consistency, and work ethic of a competitive strength athlete directly into her coaching to help clients achieve real, lasting results.
+        </p>
+        <p class="p1-narrative-p">
+          As a <strong>content creator</strong>, she documents her athletic training, fitness lifestyle, and mindset, sharing practical advice and inspiring people to build physical strength and confidence.
         </p>
       </div>
 
@@ -1022,11 +1032,11 @@
         <div class="sb-block">
           <div class="sb-header">Core Disciplines</div>
           <ul class="sb-list">
-            <li><strong>Personal Training:</strong> Hypertrophy, powerlifting & biomechanics</li>
+            <li><strong>Personal Training:</strong> Hypertrophy, powerlifting & strength</li>
             <li><strong>Athletic Conditioning:</strong> Strength, speed & recovery</li>
             <li><strong>Content Creation:</strong> Health, fitness & athletic storytelling</li>
             <li><strong>Consultative Advisory:</strong> Client assessment & motivation</li>
-            <li><strong>Communication:</strong> Public speaking & client de-escalation</li>
+            <li><strong>Communication:</strong> Public speaking & client guidance</li>
           </ul>
         </div>
 
@@ -1082,7 +1092,7 @@
               <ul class="work-bullets">
                 <li>Instructed clients across barbell fundamentals, compound lifts, strength progressions, and functional training regimens with strict anatomical safety.</li>
                 <li>Formulated tailored workout splits and progressive overload structures for weight loss, muscle gain, and conditioning goals.</li>
-                <li>Monitored training execution, corrected biomechanical posture, and motivated clients to achieve sustained consistency and physical transformations.</li>
+                <li>Monitored training execution, corrected lifting form, and motivated clients to achieve sustained consistency and physical transformations.</li>
               </ul>
             </article>
 
@@ -1175,11 +1185,11 @@
         <div class="cap-matrix">
           
           <div class="cap-card">
-            <div class="cap-card-title">Fitness Biomechanics & Coaching</div>
+            <div class="cap-card-title">Fitness Coaching & Strength</div>
             <ul class="cap-card-list">
               <li>Periodized Strength & Hypertrophy Programming</li>
-              <li>Barbell Biomechanics & Kinematic Assessment</li>
-              <li>Athletic Conditioning & Injury Risk Mitigation</li>
+              <li>Barbell Technique & Compound Lift Correction</li>
+              <li>Athletic Conditioning & Injury Prevention</li>
               <li>Nutritional Consistency & Habit Engineering</li>
               <li>Client Psychology, Motivation & Accountability</li>
             </ul>
@@ -1290,7 +1300,7 @@
         <div class="p3-qr-subtitle">Scan QR Codes for Instant Digital Access</div>
       </div>
 
-      <!-- 3 Small QR Codes Strip -->
+      <!-- 3 Small QR Cards Strip -->
       <div class="p3-qr-strip">
         
         <!-- QR 1: LinkedIn -->
