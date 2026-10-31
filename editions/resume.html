@@ -471,19 +471,102 @@
       margin-top: 0.8mm;
     }
 
-    .sb-pills-wrap {
+        /* Enlarged Sidebar Headings & Tiled Bullets */
+    .sb-header-enlarged {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 2.8mm;
       display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
+      align-items: center;
+      gap: 7px;
     }
 
-    .sb-pill {
-      background: var(--tile-bg-alt);
-      color: var(--text-secondary);
-      font-size: 7.4px;
+    .sb-header-enlarged::before {
+      content: '■';
+      font-size: 7.5px;
+      color: var(--accent);
+    }
+
+    .sb-tiles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.9mm;
+    }
+
+    .sb-bullet-tile {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.02) 100%), #141b27;
+      padding: 2.7mm 3.8mm;
+      border-radius: 6px;
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 9.8px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8.5px;
+      line-height: 1.25;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    }
+
+    .sb-bullet-tile::before {
+      content: '▸';
+      color: var(--accent-light);
+      font-size: 9.5px;
+      flex-shrink: 0;
+    }
+
+    /* Enlarged Education Tile */
+    .sb-edu-tile-enlarged {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.02) 100%), #141b27;
+      padding: 3.2mm 4mm;
+      border-radius: 7px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    }
+
+    .sb-edu-logo-img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+    }
+
+    .sb-edu-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      overflow: hidden;
+    }
+
+    .sb-edu-degree-big {
+      font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .sb-edu-school-big {
+      font-family: var(--font-display), 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1.25;
+    }
+
+    .sb-edu-loc-big {
+      font-size: 8.5px;
       font-weight: 600;
-      padding: 2.5px 6px;
-      border-radius: 4px;
+      color: var(--text-muted);
+      line-height: 1.2;
     }
 
     /* Right Main Work Column (Width ~142mm) */
@@ -1037,48 +1120,47 @@
       <!-- LEFT SIDEBAR TILE -->
       <aside class="p2-sidebar-tile">
         
-        <!-- Disciplines -->
+        <!-- Core Disciplines -->
         <div class="sb-block">
-          <div class="sb-header">Core Disciplines</div>
-          <ul class="sb-list">
-            <li><strong>Personal Training:</strong> Hypertrophy, powerlifting & strength</li>
-            <li><strong>Athletic Conditioning:</strong> Strength, speed & recovery</li>
-            <li><strong>Content Creation:</strong> Health, fitness & athletic storytelling</li>
-            <li><strong>Consultative Advisory:</strong> Client assessment & motivation</li>
-            <li><strong>Communication:</strong> Public speaking & client guidance</li>
-          </ul>
+          <div class="sb-header-enlarged">Core Disciplines</div>
+          <div class="sb-tiles-list">
+            <div class="sb-bullet-tile">Personal Training</div>
+            <div class="sb-bullet-tile">Athletic Conditioning</div>
+            <div class="sb-bullet-tile">Sales Executive</div>
+            <div class="sb-bullet-tile">Content Creation</div>
+            <div class="sb-bullet-tile">Consultative Advisory</div>
+            <div class="sb-bullet-tile">Communication</div>
+          </div>
         </div>
 
         <!-- Academic Foundation -->
         <div class="sb-block">
-          <div class="sb-header">Education</div>
-          <div class="sb-edu-card">
-            <div class="sb-edu-degree">Bachelor of Arts (B.A.)</div>
-            <div class="sb-edu-school">Mohanlal Sukhadia University</div>
-            <div class="sb-edu-meta">Udaipur, Rajasthan &bull; Completed</div>
+          <div class="sb-header-enlarged">Education</div>
+          <div class="sb-edu-tile-enlarged">
+            <img src="../assets/logo-mlsu.png" alt="Mohanlal Sukhadia University" class="sb-edu-logo-img" />
+            <div class="sb-edu-info-col">
+              <div class="sb-edu-degree-big">Bachelor of Arts (B.A.)</div>
+              <div class="sb-edu-school-big">Mohanlal Sukhadia University</div>
+              <div class="sb-edu-loc-big">Udaipur, Rajasthan</div>
+            </div>
           </div>
         </div>
 
-        <!-- Competitive Sporting Fields -->
+        <!-- Key Attributes -->
         <div class="sb-block">
-          <div class="sb-header">Sporting Domains</div>
-          <ul class="sb-list">
-            <li><strong>Powerlifting:</strong> Squat, Bench, Deadlift</li>
-            <li><strong>Weightlifting:</strong> Olympic Snatch & Clean</li>
-            <li><strong>Strength Lifting:</strong> Two-Hands & Incline</li>
-            <li><strong>Ice Stock Sport:</strong> National Championship</li>
-          </ul>
-        </div>
-
-        <!-- Personal Attributes -->
-        <div class="sb-block">
-          <div class="sb-header">Key Attributes</div>
-          <ul class="sb-list">
-            <li>100% Mental Toughness & Grit</li>
-            <li>Extreme Daily Accountability</li>
-            <li>Interpersonal Intelligence</li>
-            <li>Resilience & Adaptability</li>
-          </ul>
+          <div class="sb-header-enlarged">Key Attributes</div>
+          <div class="sb-tiles-list">
+            <div class="sb-bullet-tile">100% Mental Toughness</div>
+            <div class="sb-bullet-tile">Extreme Discipline</div>
+            <div class="sb-bullet-tile">Daily Consistency</div>
+            <div class="sb-bullet-tile">Interpersonal Intelligence</div>
+            <div class="sb-bullet-tile">Leadership &amp; Accountability</div>
+            <div class="sb-bullet-tile">Public Speaking &amp; Presence</div>
+            <div class="sb-bullet-tile">Conflict Resolution</div>
+            <div class="sb-bullet-tile">High-Stakes Resilience</div>
+            <div class="sb-bullet-tile">Consultative Mindset</div>
+            <div class="sb-bullet-tile">Athletic Work Ethic</div>
+          </div>
         </div>
 
       </aside>
