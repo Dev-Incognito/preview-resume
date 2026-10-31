@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghazal Bhatnagar — Resume Selection & Interactive Preview Portal</title>
-  <meta name="description" content="Interactive preview and selection portal for Ghazal Bhatnagar's 3-Page Executive Resumes: Edition v2 (Dark Luxury & Antique Gold) and Edition v1 (Warm Ivory & Metallic Gold)." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Ghazal Bhatnagar — Executive Resume Customizer & Preview Portal</title>
+  <meta name="description" content="Interactive resume customizer and selection portal for Ghazal Bhatnagar: customize fonts, live color picker, view full-page intro tile, work dossier, and QR connectivity tile." />
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
-  <!-- Google Fonts: Cinzel & Montserrat -->
+  <!-- Google Fonts: Diverse Typographic Engine -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@500;600;700;800&family=Outfit:wght@600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Syne:wght@700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/preview-app.css" />
 </head>
@@ -21,7 +21,7 @@
   <div class="app-container">
 
     <!-- ============================================================
-         TOP APP HEADER
+         TOP APP HEADER (BIGGER, BOLDER LUXURY TYPOGRAPHY)
          ============================================================ -->
     <header class="top-header" role="banner">
       <div class="brand-section">
@@ -29,32 +29,32 @@
         <div class="brand-titles">
           <h1 class="brand-name">Ghazal Bhatnagar</h1>
           <div class="brand-subtitle">
-            Executive Resume Dossier
-            <span class="brand-badge" id="activeEditionBadge">Edition v2 • Dark Luxury</span>
+            Executive Resume & Athletic Dossier
+            <span class="brand-badge" id="activeEditionBadge">Frameless Architecture</span>
           </div>
         </div>
       </div>
 
-      <!-- Segmented Control for Edition Switching -->
+      <!-- Segmented Control for Layout / Edition Switcher -->
       <nav class="edition-segmented-control" role="tablist" aria-label="Resume Editions">
-        <button class="edition-btn active" id="btnDarkLuxury" role="tab" aria-selected="true" title="Switch to Edition v2 (Deepika Dark Luxury Aesthetic)">
+        <button class="edition-btn active" id="btnExecutive" role="tab" aria-selected="true" title="New Frameless Executive Edition (Page 1 Intro Tile · Page 2 Work Sidebar · Page 3 QR Tile)">
           <span class="edition-dot"></span>
-          <span>✦ Edition v2 (Dark Luxury)</span>
+          <span>✦ Executive Frameless Edition</span>
         </button>
-        <button class="edition-btn" id="btnWarmIvory" role="tab" aria-selected="false" title="Switch to Edition v1 (Warm Ivory & Gold Editorial)">
+        <button class="edition-btn" id="btnWarmIvory" role="tab" aria-selected="false" title="Switch to Warm Ivory Edition">
           <span class="edition-dot"></span>
-          <span>✧ Edition v1 (Warm Ivory)</span>
+          <span>✧ Warm Ivory Edition</span>
         </button>
       </nav>
 
       <!-- Right Header Actions -->
       <div class="header-actions">
-        <button class="action-btn" id="btnCompare" title="Compare both editions side-by-side (Press C)">
+        <button class="action-btn" id="btnCompare" title="Compare layouts side-by-side (Press C)">
           <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
           <span>Compare</span>
         </button>
 
-        <a class="action-btn" id="btnOpenStandalone" href="editions/dark-luxury.html" target="_blank" rel="noopener" title="Open full screen in a new tab">
+        <a class="action-btn" id="btnOpenStandalone" href="editions/executive-edition.html" target="_blank" rel="noopener" title="Open full screen in a new tab">
           <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           <span>Standalone</span>
         </a>
@@ -67,16 +67,65 @@
     </header>
 
     <!-- ============================================================
-         SUB-TOOLBAR (VIEW, PAGE JUMP & ZOOM)
+         SUB-TOOLBAR 1: LIVE FONT SELECTOR & LIVE COLOR PICKER
+         ============================================================ -->
+    <div class="customizer-toolbar" role="region" aria-label="Live Font and Color Customizer">
+      
+      <!-- FONT SELECTOR -->
+      <div class="cust-group">
+        <span class="cust-label">Heading Font:</span>
+        <select id="fontSelector" class="cust-select" title="Choose heading font style">
+          <option value="'Plus Jakarta Sans', sans-serif" selected>Plus Jakarta Sans (Modern Ultra-Bold)</option>
+          <option value="'Outfit', sans-serif">Outfit (Geometric Clean Bold)</option>
+          <option value="'Syne', sans-serif">Syne (Sculptural Editorial Bold)</option>
+          <option value="'Montserrat', sans-serif">Montserrat (Classic Solid Bold)</option>
+          <option value="'Cinzel', serif">Cinzel (Classical Luxury Serif)</option>
+          <option value="'Playfair Display', serif">Playfair Display (Editorial High-Fashion)</option>
+        </select>
+      </div>
+
+      <!-- ACCENT COLOR PICKER & PRESET SWATCHES -->
+      <div class="cust-group">
+        <span class="cust-label">Accent Color:</span>
+        <div class="color-swatches-strip">
+          <button class="color-swatch-btn active" data-color="#b8860b" data-light="#e5b838" style="background: #b8860b;" title="Muted Antique Gold"></button>
+          <button class="color-swatch-btn" data-color="#c5a059" data-light="#dfc082" style="background: #c5a059;" title="Warm Champagne Gold"></button>
+          <button class="color-swatch-btn" data-color="#10b981" data-light="#34d399" style="background: #10b981;" title="Emerald Luxury"></button>
+          <button class="color-swatch-btn" data-color="#3b82f6" data-light="#60a5fa" style="background: #3b82f6;" title="Royal Cobalt Blue"></button>
+          <button class="color-swatch-btn" data-color="#e11d48" data-light="#fb7185" style="background: #e11d48;" title="Crimson Ruby"></button>
+          <button class="color-swatch-btn" data-color="#94a3b8" data-light="#cbd5e1" style="background: #94a3b8;" title="Titanium Platinum"></button>
+          
+          <!-- Custom Color Input -->
+          <label class="custom-color-picker-label" title="Pick any custom accent color">
+            <input type="color" id="customColorInput" value="#b8860b" />
+            <span class="picker-rainbow-icon">🎨</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- BACKGROUND TONE SWITCHER -->
+      <div class="cust-group">
+        <span class="cust-label">Canvas Tone:</span>
+        <div class="theme-tones-strip">
+          <button class="theme-tone-btn active" data-bg="#090c12" data-tile="#121722" data-tile-alt="#181f2d" data-text="#ffffff" data-sub="#cbd5e1" title="Obsidian Dark">Obsidian</button>
+          <button class="theme-tone-btn" data-bg="#121620" data-tile="#1a202e" data-tile-alt="#232c3f" data-text="#ffffff" data-sub="#cbd5e1" title="Deep Slate">Slate</button>
+          <button class="theme-tone-btn" data-bg="#fbf9f5" data-tile="#f0ede6" data-tile-alt="#e6e1d6" data-text="#0f172a" data-sub="#334155" title="Warm Ivory">Ivory</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         SUB-TOOLBAR 2: PAGE JUMP & ZOOM CONTROLS
          ============================================================ -->
     <div class="sub-toolbar" role="toolbar" aria-label="Viewer Controls">
       <div class="toolbar-left">
         <!-- Page Jump Navigation -->
         <div class="page-jump-group">
           <span class="tool-label">Jump:</span>
-          <button class="tool-pill page-pill active" data-page="1">Page 1: Identity & Milestones</button>
-          <button class="tool-pill page-pill" data-page="2">Page 2: 7× World Records</button>
-          <button class="tool-pill page-pill" data-page="3">Page 3: Capabilities & Repertoire</button>
+          <button class="tool-pill page-pill active" data-page="1">Page 1: Full-Page Intro Tile</button>
+          <button class="tool-pill page-pill" data-page="2">Page 2: Work Dossier & Sidebar</button>
+          <button class="tool-pill page-pill" data-page="3">Page 3: Capabilities & QR Tile</button>
         </div>
       </div>
 
@@ -103,13 +152,13 @@
         <!-- Primary Active Resume Card -->
         <div class="iframe-card" id="mainIframeCard">
           <div class="iframe-header-label">
-            <strong id="mainIframeTitle">Edition v2 — Dark Luxury & Antique Gold</strong>
-            <span>3 Pages • A4 Portrait • Print Optimized</span>
+            <strong id="mainIframeTitle">Executive Frameless Edition — Ghazal Bhatnagar</strong>
+            <span>3 Pages &bull; A4 Portrait &bull; Frameless Architecture &bull; Clean Vector QR Codes</span>
           </div>
           <iframe 
             id="mainIframe" 
             class="resume-iframe" 
-            src="editions/dark-luxury.html" 
+            src="editions/executive-edition.html" 
             title="Ghazal Bhatnagar Resume Preview" 
             loading="eager">
           </iframe>
@@ -118,8 +167,8 @@
         <!-- Secondary Resume Card (Compare Mode Only) -->
         <div class="iframe-card" id="compareIframeCard" style="display: none;">
           <div class="iframe-header-label">
-            <strong>Edition v1 — Warm Ivory & Metallic Gold</strong>
-            <span>3 Pages • A4 Portrait • Print Optimized</span>
+            <strong>Warm Ivory Edition — Ghazal Bhatnagar</strong>
+            <span>3 Pages &bull; A4 Portrait &bull; Print Optimized</span>
           </div>
           <iframe 
             id="compareIframe" 
@@ -140,7 +189,7 @@
     <aside class="print-tip-bar" id="printTipBar" role="note" aria-label="Print Instructions">
       <svg class="print-tip-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       <div>
-        <strong>PDF Export Tip:</strong> In the browser print dialog, choose Destination: <span class="tip-pill">Save as PDF</span>, Paper size: <span class="tip-pill">A4</span>, Margins: <span class="tip-pill">None</span>, and check <span class="tip-pill">Background graphics</span>.
+        <strong>PDF Export Tip:</strong> Click <span class="tip-pill">Print / Save PDF</span>. In your browser dialog, choose Destination: <span class="tip-pill">Save as PDF</span>, Paper size: <span class="tip-pill">A4</span>, Margins: <span class="tip-pill">None</span>, and check <span class="tip-pill">Background graphics</span>.
       </div>
       <button class="tip-close-btn" id="closeTipBtn" title="Dismiss tip" aria-label="Dismiss tip">✕</button>
     </aside>

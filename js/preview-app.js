@@ -1,31 +1,43 @@
 /**
- * GHAZAL BHATNAGAR — RESUME PREVIEW & SELECTION PORTAL
- * Interactive Controller Engine
+ * GHAZAL BHATNAGAR — RESUME PREVIEW & CUSTOMIZER PORTAL
+ * Interactive Controller Engine: Live Font Selector, Color Picker & Canvas Theming
  */
 
 (function () {
   'use strict';
 
   // State
-  let currentEdition = 'dark-luxury'; // 'dark-luxury' | 'warm-ivory'
+  let currentEdition = 'executive'; // 'executive' | 'warm-ivory'
   let currentZoom = 0.95;
   let isCompareMode = false;
 
+  // Customization State
+  let activeFont = "'Plus Jakarta Sans', sans-serif";
+  let activeAccent = "#b8860b";
+  let activeAccentLight = "#e5b838";
+  let activeTone = {
+    bg: "#090c12",
+    tile: "#121722",
+    tileAlt: "#181f2d",
+    text: "#ffffff",
+    sub: "#cbd5e1"
+  };
+
   const EDITIONS = {
-    'dark-luxury': {
-      id: 'dark-luxury',
-      name: 'Edition v2 — Dark Luxury & Antique Gold',
-      shortName: 'Dark Luxury (v2)',
-      src: 'editions/dark-luxury.html',
-      badge: 'Deepika Aesthetic • Onyx & Antique Gold',
-      themeBg: '#141414'
+    'executive': {
+      id: 'executive',
+      name: 'Executive Frameless Edition — Ghazal Bhatnagar',
+      shortName: 'Executive Frameless',
+      src: 'editions/executive-edition.html',
+      badge: 'Frameless Architecture • QR Tile',
+      themeBg: '#090c12'
     },
     'warm-ivory': {
       id: 'warm-ivory',
-      name: 'Edition v1 — Warm Ivory & Metallic Gold',
-      shortName: 'Warm Ivory (v1)',
+      name: 'Warm Ivory Edition — Ghazal Bhatnagar',
+      shortName: 'Warm Ivory',
       src: 'editions/warm-ivory.html',
-      badge: 'Executive Editorial • Ivory & Gold',
+      badge: 'Executive Editorial • Warm Ivory',
       themeBg: '#fdfbf7'
     }
   };
@@ -39,19 +51,26 @@
   const zoomDisplay = document.getElementById('zoomDisplay');
   const activeEditionBadge = document.getElementById('activeEditionBadge');
   const mainIframeTitle = document.getElementById('mainIframeTitle');
-  const btnDarkLuxury = document.getElementById('btnDarkLuxury');
+  const btnExecutive = document.getElementById('btnExecutive');
   const btnWarmIvory = document.getElementById('btnWarmIvory');
   const btnCompare = document.getElementById('btnCompare');
   const btnPrint = document.getElementById('btnPrint');
   const btnOpenStandalone = document.getElementById('btnOpenStandalone');
   const pagePills = document.querySelectorAll('.page-pill');
 
+  // Customizer DOM
+  const fontSelector = document.getElementById('fontSelector');
+  const colorSwatchBtns = document.querySelectorAll('.color-swatch-btn');
+  const customColorInput = document.getElementById('customColorInput');
+  const themeToneBtns = document.querySelectorAll('.theme-tone-btn');
+
   // Initialize
   function init() {
     calculateInitialZoom();
     applyZoom();
     setupEventListeners();
-    setEdition('dark-luxury');
+    setupCustomizerListeners();
+    setEdition('executive');
   }
 
   // Auto-calculate optimal zoom based on screen width
@@ -77,11 +96,11 @@
     const edition = EDITIONS[editionId];
 
     // Update Buttons
-    if (editionId === 'dark-luxury') {
-      btnDarkLuxury.classList.add('active');
+    if (editionId === 'executive') {
+      btnExecutive.classList.add('active');
       btnWarmIvory.classList.remove('active');
     } else {
-      btnDarkLuxury.classList.remove('active');
+      btnExecutive.classList.remove('active');
       btnWarmIvory.classList.add('active');
     }
 
@@ -107,12 +126,14 @@
   mainIframe.addEventListener('load', () => {
     mainIframe.classList.remove('loading');
     injectIframeStyles(mainIframe);
+    applyCustomizationsToIframe(mainIframe);
   });
 
   if (compareIframe) {
     compareIframe.addEventListener('load', () => {
       compareIframe.classList.remove('loading');
       injectIframeStyles(compareIframe);
+      applyCustomizationsToIframe(compareIframe);
     });
   }
 
@@ -128,9 +149,114 @@
         `;
         doc.head.appendChild(style);
       }
-    } catch (e) {
-      // Cross-origin fallback (when hosted on certain servers)
+    } catch (e) {}
+  }
+
+  // Apply Live Customizations to an Iframe
+  function applyCustomizationsToIframe(iframe) {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.documentElement) return;
+      const root = doc.documentElement;
+
+      // Font
+      root.style.setProperty('--font-heading', activeFont);
+      root.style.setProperty('--font-display', activeFont);
+
+      // Colors
+      root.style.setProperty('--accent', activeAccent);
+      root.style.setProperty('--accent-light', activeAccentLight);
+      root.style.setProperty('--accent-dim', hexToRgba(activeAccent, 0.16));
+      root.style.setProperty('--accent-glow', hexToRgba(activeAccent, 0.35));
+
+      // Tone / Background
+      if (activeTone) {
+        root.style.setProperty('--page-bg', activeTone.bg);
+        root.style.setProperty('--tile-bg', activeTone.tile);
+        root.style.setProperty('--tile-bg-alt', activeTone.tileAlt);
+        root.style.setProperty('--text-primary', activeTone.text);
+        root.style.setProperty('--text-secondary', activeTone.sub);
+        root.style.setProperty('--sidebar-bg', activeTone.bg);
+        iframe.style.backgroundColor = activeTone.bg;
+      }
+    } catch (e) {}
+  }
+
+  function broadcastCustomizations() {
+    applyCustomizationsToIframe(mainIframe);
+    if (compareIframe && isCompareMode) {
+      applyCustomizationsToIframe(compareIframe);
     }
+  }
+
+  function hexToRgba(hex, alpha) {
+    let c = hex.replace('#', '');
+    if (c.length === 3) {
+      c = c.split('').map(x => x + x).join('');
+    }
+    const num = parseInt(c, 16);
+    const r = (num >> 16) & 255;
+    const g = (num >> 8) & 255;
+    const b = num & 255;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+
+  // Setup Customizer Listeners
+  function setupCustomizerListeners() {
+    // Font Selector
+    if (fontSelector) {
+      fontSelector.addEventListener('change', (e) => {
+        activeFont = e.target.value;
+        broadcastCustomizations();
+      });
+    }
+
+    // Color Swatches
+    colorSwatchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        colorSwatchBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeAccent = btn.dataset.color;
+        activeAccentLight = btn.dataset.light || activeAccent;
+        if (customColorInput) customColorInput.value = activeAccent;
+        broadcastCustomizations();
+      });
+    });
+
+    // Custom Color Input
+    if (customColorInput) {
+      customColorInput.addEventListener('input', (e) => {
+        colorSwatchBtns.forEach(b => b.classList.remove('active'));
+        activeAccent = e.target.value;
+        activeAccentLight = lightenColor(activeAccent, 20);
+        broadcastCustomizations();
+      });
+    }
+
+    // Theme Tone Switcher
+    themeToneBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        themeToneBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTone = {
+          bg: btn.dataset.bg,
+          tile: btn.dataset.tile,
+          tileAlt: btn.dataset.tileAlt,
+          text: btn.dataset.text,
+          sub: btn.dataset.sub
+        };
+        broadcastCustomizations();
+      });
+    });
+  }
+
+  function lightenColor(color, percent) {
+    let num = parseInt(color.replace('#', ''), 16),
+      amt = Math.round(2.55 * percent),
+      R = (num >> 16) + amt,
+      G = (num >> 8 & 0x00FF) + amt,
+      B = (num & 0x0000FF) + amt;
+    return '#' + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
   }
 
   // Zoom Handling
@@ -168,15 +294,13 @@
         targetPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } catch (e) {
-      // Fallback scroll on main iframe container
-      const pageHeight = 1122; // ~297mm at 96dpi
+      const pageHeight = 1122;
       mainIframe.contentWindow.scrollTo({
         top: (pageNum - 1) * pageHeight,
         behavior: 'smooth'
       });
     }
 
-    // Update active pill
     pagePills.forEach(pill => {
       if (pill.dataset.page === String(pageNum)) {
         pill.classList.add('active');
@@ -201,10 +325,9 @@
       btnCompare.classList.add('active');
       previewStage.classList.add('compare-mode');
       compareIframeCard.style.display = 'flex';
-      // Load both editions
-      mainIframe.src = EDITIONS['dark-luxury'].src;
+      mainIframe.src = EDITIONS['executive'].src;
       compareIframe.src = EDITIONS['warm-ivory'].src;
-      mainIframeTitle.textContent = EDITIONS['dark-luxury'].name;
+      mainIframeTitle.textContent = EDITIONS['executive'].name;
       currentZoom = Math.min(currentZoom, 0.72);
       applyZoom();
     } else {
@@ -217,9 +340,9 @@
 
   // Event Listeners
   function setupEventListeners() {
-    btnDarkLuxury.addEventListener('click', () => {
+    btnExecutive.addEventListener('click', () => {
       if (isCompareMode) toggleCompareMode();
-      setEdition('dark-luxury');
+      setEdition('executive');
     });
 
     btnWarmIvory.addEventListener('click', () => {
@@ -241,7 +364,6 @@
       });
     });
 
-    // Close tip bar
     const closeTipBtn = document.getElementById('closeTipBtn');
     if (closeTipBtn) {
       closeTipBtn.addEventListener('click', () => {
@@ -252,10 +374,10 @@
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
 
       if (e.key === '1') {
-        setEdition('dark-luxury');
+        setEdition('executive');
       } else if (e.key === '2') {
         setEdition('warm-ivory');
       } else if (e.key === 'p' || e.key === 'P') {
@@ -272,11 +394,6 @@
       } else if (e.key === '0') {
         zoomActual();
       }
-    });
-
-    // Window Resize
-    window.addEventListener('resize', () => {
-      // Keep within bounds on major resize
     });
   }
 

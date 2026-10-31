@@ -4,81 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="color-scheme" content="dark light" />
   <title>Ghazal Bhatnagar — Executive Resume & Athletic Dossier</title>
-  <meta name="description" content="Executive resume and athletic dossier of Ghazal Bhatnagar: 7× World Record Holder, National Medalist, Fitness Professional, and Creative Media Producer." />
 
-  <!-- Google Fonts: Exact Deepika Goyal Typographic Engine (Cinzel Display & Montserrat Body) -->
+  <!-- Google Fonts: Dynamic Typographic Engine (Plus Jakarta Sans, Syne, Outfit, Montserrat, Cinzel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
-       EXACT DEEPIKA GOYAL LUXURY DARK & ANTIQUE GOLD DESIGN SYSTEM
+       DYNAMIC LUXURY EXECUTIVE DESIGN SYSTEM (FRAMELESS / NO BORDERS)
        ============================================================ */
     :root {
-      /* --- SIDEBAR BACKGROUND GRADIENT --- */
-      --sidebar-bg-top:      #0a0a0a;
-      --sidebar-bg-mid:      #1a1a1a;
-      --sidebar-bg-bottom:   #111111;
+      /* Typography Engine Variables (Configurable live via portal) */
+      --font-heading: 'Plus Jakarta Sans', 'Outfit', 'Montserrat', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-display: 'Plus Jakarta Sans', 'Syne', sans-serif;
 
-      /* --- ACCENT / BRAND COLOR (MUTED WARM GOLD) --- */
-      --accent:              #b8860b;                   /* Primary muted gold */
-      --accent-light:        #d4a827;                   /* Rich goldenrod */
-      --accent-dim:          rgba(184, 134, 11, 0.16); /* Transparent accent pill fill */
-      --accent-border:       rgba(184, 134, 11, 0.42); /* Semi-transparent accent borders */
-      --accent-border-subtle:rgba(184, 134, 11, 0.22);
+      /* Palette & Theming (Configurable live via portal) */
+      --page-bg: #090c12;
+      --tile-bg: #121722;
+      --tile-bg-alt: #181f2d;
+      --sidebar-bg: #0d121c;
 
-      /* --- MAIN CONTENT BACKGROUNDS --- */
-      --page-bg:             #141414;                   /* Overall page dark matte */
-      --main-bg:             #1c1c1c;                   /* Main content area */
-      --main-bg-alt:         #212121;                   /* Card & container dark surface */
-      --main-bg-card-hover:  #252525;
+      --accent: #b8860b;
+      --accent-light: #e5b838;
+      --accent-dim: rgba(184, 134, 11, 0.16);
+      --accent-glow: rgba(184, 134, 11, 0.35);
 
-      /* --- TYPOGRAPHY INK PALETTE --- */
-      --text-primary:        #f0ece4;                   /* Warm alabaster cream body text */
-      --text-secondary:      #a8a090;                   /* Muted warm sand text */
-      --text-sidebar:        #d6d0c8;                   /* Sidebar body text */
-      --text-sidebar-muted:  #8a8278;                   /* Sidebar small labels */
-      --text-heading-main:   #f5f0e8;                   /* Section headings */
-      --text-name:           #ffffff;                   /* Hero title white */
-      --text-role:           #d4a827;                   /* Gold descriptor */
-
-      /* --- DETAIL & BORDER ELEMENTS --- */
-      --sidebar-section-line:rgba(184, 134, 11, 0.55);
-      --sidebar-icon-bg:     rgba(184, 134, 11, 0.12);
-      --divider-line:        rgba(184, 134, 11, 0.22);
-      --card-border:         rgba(255, 255, 255, 0.06);
-      --shadow-accent:       rgba(184, 134, 11, 0.12);
-      --skill-glow:          rgba(212, 168, 39, 0.32);
-
-      /* --- TAG PILLS --- */
-      --pill-bg:             rgba(184, 134, 11, 0.13);
-      --pill-border:         rgba(184, 134, 11, 0.40);
-      --pill-text:           #d4a827;
-
-      /* --- WATERMARK --- */
-      --watermark-color:     rgba(184, 134, 11, 0.035);
-
-      /* --- PRINT FALLBACK --- */
-      --print-sidebar-bg:    #111111;
+      --text-primary: #ffffff;
+      --text-secondary: #cbd5e1;
+      --text-muted: #8492a6;
+      --text-heading: #ffffff;
+      
+      --print-page-bg: #090c12;
+      --print-tile-bg: #121722;
     }
 
-    /* Reset & Physics Protection */
+    /* Universal Reset & Strict NO BORDERS Rule */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      border: none !important;
+      outline: none !important;
     }
 
     html, body {
-      background: #090909;
-      font-family: 'Montserrat', sans-serif;
+      background: #05070a;
+      font-family: var(--font-body);
       font-size: 11px;
       color: var(--text-primary);
-      line-height: 1.45;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       -webkit-text-size-adjust: 100%;
@@ -89,13 +67,13 @@
     }
 
     /* ============================================================
-       SCREEN WORKSPACE & HUD CONTROLS
+       WORKSPACE & HUD (SCREEN ONLY)
        ============================================================ */
     .screen-workspace {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
+      gap: 32px;
       padding: 24px 16px 80px 16px;
     }
 
@@ -103,87 +81,71 @@
       position: sticky;
       top: 14px;
       z-index: 9999;
-      background: rgba(14, 14, 14, 0.95);
-      border: 1px solid var(--accent-border);
-      backdrop-filter: blur(12px);
-      padding: 9px 20px;
+      background: rgba(13, 18, 28, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 10px 22px;
       border-radius: 40px;
       display: flex;
       align-items: center;
       gap: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
     }
     .hud-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-light);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .hud-badge {
       background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
       color: var(--accent-light);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.62rem;
-      padding: 2px 7px;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 9px;
       border-radius: 12px;
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
     }
     .hud-btn {
       background: linear-gradient(135deg, var(--accent), var(--accent-light));
-      color: #0a0a0a;
-      border: none;
-      padding: 6px 15px;
+      color: #07090e;
+      padding: 7px 18px;
       border-radius: 20px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 11.5px;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      box-shadow: 0 4px 14px rgba(184, 134, 11, 0.4);
       transition: all 0.2s ease;
-      box-shadow: 0 3px 10px rgba(184, 134, 11, 0.35);
     }
     .hud-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 5px 15px rgba(212, 168, 39, 0.55);
-    }
-    .hud-link {
-      color: var(--text-sidebar);
-      text-decoration: none;
-      font-size: 0.7rem;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    .hud-link:hover {
-      color: var(--accent-light);
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
     }
 
     /* ============================================================
-       PAGE CONTAINER (EXACT A4 210mm x 297mm)
+       EXACT A4 PAGE CONTAINER (210mm x 297mm)
        ============================================================ */
     .page {
       width: 210mm;
       height: 297mm;
       max-height: 297mm;
       min-height: 297mm;
-      display: flex;
-      overflow: hidden;
       position: relative;
       background: var(--page-bg);
-      box-shadow: 0 14px 50px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
       page-break-after: always;
       break-after: page;
       page-break-inside: avoid;
       break-inside: avoid;
+      overflow: hidden;
+      display: flex;
     }
 
     .page:last-of-type {
@@ -192,7 +154,7 @@
     }
 
     /* ============================================================
-       PRINT RULES (PERFECT CHROMIUM BROWSER OUTPUT)
+       PRINT ENGINE
        ============================================================ */
     @page {
       size: A4 portrait;
@@ -201,7 +163,7 @@
 
     @media print {
       html, body {
-        background: var(--print-sidebar-bg) !important;
+        background: var(--print-page-bg) !important;
         width: 210mm !important;
         height: auto !important;
         margin: 0 !important;
@@ -229,15 +191,570 @@
         page-break-after: avoid !important;
         break-after: avoid !important;
       }
-      .sidebar {
-        background: var(--print-sidebar-bg) !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
     }
 
     /* ============================================================
-       APPLE SAFARI & MOBILE RESPONSIVE ENGINE (IOS & TOUCH OPTIMIZED)
+       PAGE 1: FULL-PAGE MONUMENTAL IDENTITY TILE
+       ============================================================ */
+    #page-1 {
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16mm 18mm 14mm 18mm;
+      background: radial-gradient(ellipse 90% 60% at 50% -20%, rgba(184, 134, 11, 0.15) 0%, transparent 65%),
+                  var(--page-bg);
+    }
+
+    .page-running-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .pr-gold {
+      color: var(--accent-light);
+    }
+
+    .p1-tile-monolith {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10mm 12mm;
+      background: var(--tile-bg);
+      border-radius: 20px;
+      margin: 6mm 0;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .p1-pre-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 5mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .p1-pre-tag::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2.5px;
+      background: var(--accent-light);
+      border-radius: 2px;
+    }
+
+    .p1-name {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 5mm;
+    }
+    .p1-name span {
+      color: var(--accent-light);
+      display: block;
+    }
+
+    .p1-role-strip {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 8mm;
+      line-height: 1.4;
+    }
+    .p1-sub-roles {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .p1-manifesto-box {
+      margin-bottom: 9mm;
+    }
+    .p1-manifesto-lead {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.6;
+      margin-bottom: 4mm;
+    }
+    .p1-manifesto-body {
+      font-size: 10.5px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .p1-manifesto-body strong {
+      color: var(--accent-light);
+      font-weight: 700;
+    }
+
+    /* 4 Bold Metric Tiles (Borderless) */
+    .p1-stats-quad {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding-top: 5mm;
+    }
+    .p1-stat-card {
+      background: var(--tile-bg-alt);
+      padding: 12px 14px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .p1-stat-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .p1-stat-label {
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+    .p1-stat-sub {
+      font-size: 7px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .page-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-top: 3mm;
+    }
+    .page-footer-row strong {
+      color: var(--text-secondary);
+    }
+
+    /* ============================================================
+       PAGE 2: WORK EXPERIENCE & ATHLETIC HONORS (SIDEBAR TILE)
+       ============================================================ */
+    #page-2 {
+      padding: 14mm 16mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--page-bg);
+    }
+
+    .p2-layout-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 56mm 1fr;
+      gap: 12mm;
+      margin: 4mm 0;
+    }
+
+    /* Sidebar Tile (Frameless) */
+    .p2-sidebar-tile {
+      background: var(--sidebar-bg);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+    .p2-sb-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+    .p2-sb-role {
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-top: 2px;
+      margin-bottom: 12px;
+    }
+
+    .sb-sec-title {
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sb-sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: rgba(184, 134, 11, 0.3);
+    }
+
+    .sb-item-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .sb-disc-card {
+      background: var(--tile-bg);
+      padding: 7px 10px;
+      border-radius: 8px;
+    }
+    .sb-disc-title {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .sb-disc-desc {
+      font-size: 7px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .sb-credo-box {
+      background: var(--tile-bg);
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 7.5px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .sb-edu-box {
+      background: var(--tile-bg);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    .sb-edu-deg {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .sb-edu-uni {
+      font-size: 7px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    /* Main Area (Frameless) */
+    .p2-main-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sec-header-clean {
+      margin-bottom: 8px;
+    }
+    .sec-title-bold {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-title-bold span {
+      color: var(--accent-light);
+    }
+
+    .work-timeline-clean {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .work-card-clean {
+      background: var(--tile-bg);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+    .work-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .work-role {
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .work-company {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+    .work-date {
+      font-size: 7.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .work-desc {
+      font-size: 7.8px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* Athletic Honors Grid */
+    .honors-grid-clean {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .honor-card-clean {
+      background: var(--tile-bg);
+      border-radius: 10px;
+      padding: 9px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .honor-highlight {
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.25) 0%, rgba(229, 184, 56, 0.1) 100%);
+    }
+    .honor-title {
+      font-family: var(--font-heading);
+      font-size: 9px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+    .honor-org {
+      font-size: 7.5px;
+      font-weight: 700;
+      color: var(--accent-light);
+      margin-bottom: 3px;
+    }
+    .honor-desc {
+      font-size: 7px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       PAGE 3: CAPABILITIES, REPERTOIRE & GRAND CONTACT TILE (QR CODES)
+       ============================================================ */
+    #page-3 {
+      padding: 14mm 16mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--page-bg);
+    }
+
+    .p3-body-layout {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 4mm 0;
+    }
+
+    /* Capabilities Matrix (4 Bold Cards) */
+    .cap-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .cap-card-clean {
+      background: var(--tile-bg);
+      border-radius: 12px;
+      padding: 11px 14px;
+    }
+    .cap-card-title {
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .cap-card-desc {
+      font-size: 7.8px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* Linguistic Repertoire Tile */
+    .p3-languages-tile {
+      background: var(--tile-bg);
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .lang-pill-item {
+      background: var(--tile-bg-alt);
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-pill-name {
+      font-size: 8px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .lang-pill-status {
+      font-size: 7px;
+      font-weight: 700;
+      color: var(--accent-light);
+      text-transform: uppercase;
+    }
+
+    /* THE GRAND CONTACT TILE WITH 3 QR CODES (NO BORDERS) */
+    .grand-contact-tile {
+      background: var(--tile-bg);
+      border-radius: 16px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 50%;
+    }
+    .contact-hero-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .contact-hero-sub {
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 8.5px;
+      color: var(--text-secondary);
+    }
+    .contact-detail-item svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--accent-light);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .contact-detail-item a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* 3 Clean Vector QR Code Blocks */
+    .qr-codes-trio {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .qr-unit-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: var(--tile-bg-alt);
+      padding: 7px 8px 6px 8px;
+      border-radius: 10px;
+    }
+    .qr-img-wrap {
+      width: 22mm;
+      height: 22mm;
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-img-wrap img, .qr-img-wrap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .qr-unit-label {
+      font-family: var(--font-heading);
+      font-size: 7px;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .qr-unit-sub {
+      font-size: 5.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ============================================================
+       APPLE SAFARI & MOBILE RESPONSIVE ENGINE
        ============================================================ */
     @media screen and (max-width: 840px) {
       body {
@@ -245,17 +762,14 @@
         -webkit-overflow-scrolling: touch;
       }
       .screen-workspace {
-        padding: 12px 10px 48px 10px !important;
+        padding: 12px 8px 48px 8px !important;
         gap: 20px !important;
         width: 100% !important;
         max-width: 100% !important;
-        overflow-x: hidden !important;
       }
       .hud-controls {
         width: 95% !important;
         padding: 8px 14px !important;
-        top: 8px !important;
-        justify-content: space-between !important;
       }
       .page {
         width: 100% !important;
@@ -264,1614 +778,435 @@
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
-        display: flex !important;
-        flex-direction: column !important;
-        overflow: visible !important;
-        border-radius: 12px !important;
-        border: 1px solid var(--accent-border) !important;
+        padding: 20px 16px !important;
+        border-radius: 14px !important;
         margin-bottom: 24px !important;
       }
-      .sidebar {
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        border-right: none !important;
-        border-bottom: 1.5px solid var(--sidebar-border) !important;
-        padding: 24px 18px 20px 18px !important;
-        overflow: visible !important;
+      .p1-name {
+        font-size: 30px !important;
       }
-      .sidebar::after {
-        display: none !important;
+      .p1-stats-quad {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
-      .sidebar-header-block {
-        padding: 0 0 16px 0 !important;
-      }
-      .sidebar-name {
-        font-size: 20px !important;
-      }
-      .sidebar-role {
-        font-size: 10px !important;
-      }
-      .sidebar-body {
-        padding: 0 !important;
+      .p2-layout-body {
+        grid-template-columns: 1fr !important;
         gap: 16px !important;
       }
-      .sb-section {
-        margin-bottom: 16px !important;
-      }
-      .main {
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        padding: 24px 18px !important;
-        overflow: visible !important;
-      }
-      .hero-name {
-        font-size: 24px !important;
-        letter-spacing: 2px !important;
-      }
-      .hero-badges-row {
-        flex-wrap: wrap !important;
-        gap: 6px !important;
-      }
-      .hero-stats-row {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-      }
-      .records-grid-3col {
+      .honors-grid-clean {
         grid-template-columns: 1fr !important;
-        gap: 12px !important;
       }
-      .medals-summary-grid {
+      .cap-matrix-grid {
         grid-template-columns: 1fr !important;
-        gap: 10px !important;
       }
-      .capabilities-matrix-grid {
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
-      }
-      .suite-sub-grid {
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-      }
-      .ref-cards-grid {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-      }
-      .timeline-header {
+      .grand-contact-tile {
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 4px !important;
+        gap: 16px !important;
       }
-      .timeline-badges {
-        margin-top: 2px !important;
+      .contact-info-col {
+        max-width: 100% !important;
       }
-      .page-footer-marker {
-        padding: 14px 0 0 0 !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        text-align: center !important;
+      .qr-codes-trio {
+        width: 100% !important;
+        justify-content: space-around !important;
       }
-    }
-
-    /* ============================================================
-       SIDEBAR ARCHITECTURE (68mm WIDTH)
-       ============================================================ */
-    .sidebar {
-      width: 68mm;
-      min-width: 68mm;
-      max-width: 68mm;
-      height: 297mm;
-      background: linear-gradient(175deg, var(--sidebar-bg-top) 0%, var(--sidebar-bg-mid) 50%, var(--sidebar-bg-bottom) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 0;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    /* Gold hairline on right edge of sidebar */
-    .sidebar::after {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 1.5px;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent, var(--accent), var(--accent-light), var(--accent), transparent);
-      opacity: 0.65;
-    }
-
-    /* Sidebar Header Block (Clean Typographic Editorial Header - No Image) */
-    .sidebar-header-block {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 8mm 5.5mm 4mm 5.5mm;
-      text-align: center;
-      position: relative;
-    }
-
-    .sidebar-name {
-      font-family: 'Cinzel', serif;
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--text-name);
-      text-align: center;
-      margin-top: 0;
-      letter-spacing: 1.8px;
-      line-height: 1.25;
-      text-shadow: 0 1px 8px rgba(184,134,11,0.3);
-    }
-
-    .sidebar-role {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 7.8px;
-      font-weight: 600;
-      color: var(--text-role);
-      text-align: center;
-      margin-top: 1.5px;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-    }
-
-    .sidebar-accent-bar {
-      width: 26mm;
-      height: 1.5px;
-      background: linear-gradient(to right, transparent, var(--accent), var(--accent-light), var(--accent), transparent);
-      margin: 3mm auto 0 auto;
-      opacity: 0.75;
-    }
-
-    /* Sidebar Body Sections */
-    .sidebar-body {
-      flex: 1;
-      padding: 0 5.5mm;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5mm;
-    }
-
-    .sb-section {
-      display: flex;
-      flex-direction: column;
-      gap: 2mm;
-    }
-
-    .sb-section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 8px;
-      font-weight: 700;
-      color: var(--accent-light);
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      padding-bottom: 2px;
-      border-bottom: 1px solid var(--sidebar-section-line);
-    }
-
-    /* Contact Items */
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 2.8mm;
-    }
-    .contact-icon {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-      margin-top: 1px;
-      fill: var(--accent);
-      opacity: 0.9;
-    }
-    .contact-label {
-      font-size: 6.8px;
-      color: var(--text-sidebar-muted);
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.5px;
-    }
-    .contact-text {
-      font-size: 8.2px;
-      color: var(--text-sidebar);
-      line-height: 1.35;
-      font-weight: 400;
-      word-break: break-word;
-    }
-    .contact-text a {
-      color: var(--text-sidebar);
-      text-decoration: none;
-    }
-
-    /* Education Item (Sidebar) */
-    .edu-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8mm;
-      padding-left: 3mm;
-      border-left: 1.5px solid var(--accent-border);
-    }
-    .edu-degree {
-      font-size: 8.2px;
-      font-weight: 600;
-      color: var(--text-sidebar);
-      line-height: 1.3;
-    }
-    .edu-school {
-      font-size: 7.5px;
-      color: var(--text-sidebar-muted);
-      line-height: 1.3;
-    }
-
-    /* Core Disciplines List (Sidebar) */
-    .sb-disc-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2mm;
-    }
-    .sb-disc-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5mm;
-    }
-    .sb-disc-name {
-      font-size: 8px;
-      font-weight: 600;
-      color: var(--text-sidebar);
-    }
-    .sb-disc-sub {
-      font-size: 7px;
-      color: var(--accent-light);
-      letter-spacing: 0.5px;
-    }
-
-    /* Language Items in Sidebar */
-    .lang-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5px 0;
-    }
-    .lang-name {
-      font-size: 8.2px;
-      font-weight: 500;
-      color: var(--text-sidebar);
-    }
-    .lang-level {
-      font-size: 7px;
-      color: var(--accent-light);
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 1px 4px;
-      border-radius: 2px;
-    }
-
-    /* ============================================================
-       MAIN CONTENT ARCHITECTURE (142mm WIDTH)
-       ============================================================ */
-    .main {
-      flex: 1;
-      height: 297mm;
-      background: var(--main-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Subtle Giant Watermark Letter 'G' */
-    .main::before {
-      content: 'G';
-      font-family: 'Cinzel', serif;
-      font-size: 230px;
-      font-weight: 900;
-      color: var(--watermark-color);
-      position: absolute;
-      right: -10mm;
-      bottom: -15mm;
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-    }
-
-    .main-inner {
-      position: relative;
-      z-index: 1;
-      padding: 0 7.5mm;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      margin-bottom: 3.5mm;
-    }
-
-    /* Hero Header (Page 1) */
-    .hero {
-      padding: 7mm 7.5mm 4.5mm 7.5mm;
-      position: relative;
-      z-index: 1;
-      background: linear-gradient(180deg, var(--main-bg-alt) 0%, transparent 100%);
-      border-bottom: 1px solid var(--divider-line);
-    }
-
-    .hero-tag {
-      font-size: 7.2px;
-      font-weight: 700;
-      letter-spacing: 3.2px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 2mm;
-    }
-
-    .hero-name {
-      font-family: 'Cinzel', serif;
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--text-name);
-      line-height: 1.05;
-      letter-spacing: 2px;
-      text-shadow: 0 2px 20px rgba(184,134,11,0.22);
-    }
-    .hero-name span {
-      color: var(--accent-light);
-    }
-
-    .hero-role {
-      font-size: 9.2px;
-      font-weight: 600;
-      color: var(--text-role);
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      margin-top: 2mm;
-    }
-
-    .hero-divider {
-      width: 32mm;
-      height: 1.8px;
-      background: linear-gradient(to right, var(--accent), var(--accent-light), transparent);
-      margin: 3mm 0;
-      border-radius: 2px;
-    }
-
-    .hero-summary {
-      font-size: 8.6px;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      font-weight: 400;
-      text-align: justify;
-    }
-    .hero-summary strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    /* Page Continuation Header (Pages 2 and 3) */
-    .page-header-mini {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 4.5mm 7.5mm 3.5mm 7.5mm;
-      border-bottom: 1px solid var(--divider-line);
-      background: var(--main-bg-alt);
-      position: relative;
-      z-index: 1;
-    }
-
-    .phm-name {
-      font-family: 'Cinzel', serif;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-name);
-      letter-spacing: 2px;
-    }
-    .phm-name span {
-      color: var(--accent-light);
-    }
-
-    .phm-page {
-      font-size: 7.2px;
-      font-weight: 600;
-      color: var(--accent-light);
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 1.5px 6px;
-      border-radius: 3px;
-    }
-
-    /* Section Headings */
-    .section {
-      margin-top: 4.5mm;
-    }
-
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 9.8px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      padding-bottom: 1.5mm;
-      margin-bottom: 2.8mm;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 22mm;
-      height: 1.5px;
-      background: linear-gradient(to right, var(--accent), var(--accent-light), transparent);
-      border-radius: 2px;
-    }
-
-    /* Stat Cards Banner (Page 1) */
-    .stat-banner-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2.5mm;
-      margin-top: 3.5mm;
-    }
-    .stat-box {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-top: 2px solid var(--accent);
-      border-radius: 4px;
-      padding: 2.5mm 3mm;
-      text-align: center;
-      box-shadow: 0 2px 10px var(--shadow-accent);
-    }
-    .stat-num {
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 900;
-      color: var(--accent-light);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 7px;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1.5mm;
-    }
-    .stat-sub {
-      font-size: 6px;
-      color: var(--text-secondary);
-      margin-top: 0.5mm;
-    }
-
-    /* Experience Items */
-    .exp-item {
-      margin-bottom: 3.5mm;
-      padding-left: 3.5mm;
-      border-left: 2px solid var(--accent-border);
-      position: relative;
-    }
-
-    .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -4.5px; top: 2px;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 6px var(--skill-glow);
-    }
-
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1mm;
-    }
-
-    .exp-role {
-      font-family: 'Cinzel', serif;
-      font-size: 9.6px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-      letter-spacing: 0.5px;
-    }
-
-    .exp-date {
-      font-size: 7.2px;
-      font-weight: 600;
-      color: var(--accent-light);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      padding: 1px 4px;
-      border-radius: 3px;
-    }
-
-    .exp-company {
-      font-size: 7.8px;
-      color: var(--text-secondary);
-      font-weight: 500;
-      letter-spacing: 0.4px;
-      margin-bottom: 1.5mm;
-      font-style: italic;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2mm;
-    }
-
-    .exp-bullets li {
-      font-size: 8.3px;
-      color: var(--text-primary);
-      line-height: 1.5;
-      padding-left: 3mm;
-      position: relative;
-    }
-
-    .exp-bullets li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 5.5px;
-      width: 3.5px; height: 1.5px;
-      background: var(--accent);
-      border-radius: 1px;
-    }
-    .exp-bullets li strong {
-      color: var(--accent-light);
-      font-weight: 600;
-    }
-
-    /* Consolidated Practice Cards (Page 1) */
-    .cons-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-    }
-    .cons-box {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-left: 2px solid var(--accent-border);
-      border-radius: 4px;
-      padding: 2.5mm 3.5mm;
-      box-shadow: 0 2px 8px var(--shadow-accent);
-    }
-    .cons-box-title {
-      font-family: 'Cinzel', serif;
-      font-size: 8.5px;
-      font-weight: 700;
-      color: var(--accent-light);
-      margin-bottom: 0.8mm;
-    }
-    .cons-box-roles {
-      font-size: 7.2px;
-      font-weight: 600;
-      color: var(--text-heading-main);
-      margin-bottom: 1.2mm;
-    }
-    .cons-box-desc {
-      font-size: 7.8px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-
-    /* Strength Pills */
-    .pills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2mm;
-    }
-    .pill {
-      font-size: 7.8px;
-      font-weight: 600;
-      color: var(--pill-text);
-      background: var(--pill-bg);
-      border: 1px solid var(--pill-border);
-      border-radius: 20px;
-      padding: 2.5px 8px;
-      letter-spacing: 0.4px;
-      line-height: 1.5;
-    }
-
-    /* World Records Hero Card (Page 2) */
-    .wr-hero-card {
-      background: var(--main-bg-alt);
-      border: 1.5px solid var(--accent-border);
-      border-radius: 5px;
-      padding: 4mm 5mm;
-      margin-bottom: 3.5mm;
-      position: relative;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-    }
-    .wr-hero-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--divider-line);
-      padding-bottom: 2mm;
-      margin-bottom: 2.5mm;
-    }
-    .wr-title-large {
-      font-family: 'Cinzel', serif;
-      font-size: 13px;
-      font-weight: 900;
-      color: var(--accent-light);
-      letter-spacing: 1.2px;
-    }
-    .wr-guinness-tag {
-      font-size: 7.8px;
-      font-weight: 700;
-      color: #ffffff;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent);
-      padding: 2px 7px;
-      border-radius: 3px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-    .wr-bodies-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8mm;
-      margin-top: 2.5mm;
-    }
-    .wr-body-badge {
-      font-size: 7.2px;
-      font-weight: 600;
-      color: var(--text-sidebar);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--accent-border-subtle);
-      padding: 1.5px 6px;
-      border-radius: 3px;
-      letter-spacing: 0.5px;
-    }
-
-    /* National Medals Dual Cards (Page 2) */
-    .nat-medals-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-      margin-bottom: 3.5mm;
-    }
-    .nat-card {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-left: 2.5px solid var(--accent);
-      border-radius: 4px;
-      padding: 3mm 4mm;
-      box-shadow: 0 2px 10px var(--shadow-accent);
-    }
-    .nat-card-title {
-      font-family: 'Cinzel', serif;
-      font-size: 9.2px;
-      font-weight: 700;
-      color: var(--accent-light);
-      margin-bottom: 1mm;
-    }
-    .nat-card-badge {
-      font-size: 6.8px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 1.5mm;
-    }
-    .nat-card-desc {
-      font-size: 7.8px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-
-    /* State & District Grid (Page 2) */
-    .championship-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-      margin-bottom: 3.5mm;
-    }
-    .champ-card {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: 4px;
-      padding: 3mm 4mm;
-    }
-    .champ-card-head {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--divider-line);
-      padding-bottom: 1.5mm;
-      margin-bottom: 1.8mm;
-    }
-    .champ-tag {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 6.8px;
-      font-weight: 700;
-      color: var(--accent-light);
-    }
-    .champ-rows {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2mm;
-    }
-    .champ-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 7.8px;
-      color: var(--text-primary);
-    }
-    .champ-medal-txt {
-      font-weight: 600;
-      color: var(--accent-light);
-    }
-
-    /* Capabilities 4-Quadrant Cards (Page 3) */
-    .cap-matrix-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-      margin-bottom: 3.5mm;
-    }
-    .cap-quad-card {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: 4px;
-      padding: 3mm 4mm;
-      position: relative;
-      overflow: hidden;
-    }
-    .cap-quad-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 2px;
-      background: linear-gradient(to right, var(--accent), var(--accent-light));
-    }
-    .cap-quad-title {
-      font-family: 'Cinzel', serif;
-      font-size: 8.6px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-      letter-spacing: 0.6px;
-      margin-bottom: 1.8mm;
-    }
-    .cap-quad-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2mm;
-    }
-    .cap-quad-list li {
-      font-size: 7.8px;
-      color: var(--text-secondary);
-      padding-left: 2.8mm;
-      position: relative;
-      line-height: 1.45;
-    }
-    .cap-quad-list li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 5px;
-      width: 3px; height: 1.2px;
-      background: var(--accent);
-      border-radius: 1px;
-    }
-    .cap-quad-list li strong {
-      color: var(--text-primary);
-    }
-
-    /* Creative & Fitness Suites (Page 3) */
-    .dual-suite-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3mm;
-      margin-bottom: 3.5mm;
-    }
-    .suite-card-box {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--card-border);
-      border-left: 2px solid var(--accent-border);
-      border-radius: 4px;
-      padding: 3mm 4mm;
-    }
-    .suite-box-head {
-      font-family: 'Cinzel', serif;
-      font-size: 8.6px;
-      font-weight: 700;
-      color: var(--accent-light);
-      margin-bottom: 1.5mm;
-    }
-    .suite-sub-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2mm;
-    }
-    .suite-mini-item {
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--card-border);
-      border-radius: 3px;
-      padding: 1.5mm 2.2mm;
-    }
-    .suite-mini-name {
-      font-size: 7.2px;
-      font-weight: 700;
-      color: var(--text-heading-main);
-    }
-    .suite-mini-desc {
-      font-size: 6.6px;
-      color: var(--text-secondary);
-      line-height: 1.3;
-    }
-
-    /* Formal Verification Notice Card */
-    .verify-note-card {
-      background: var(--main-bg-alt);
-      border: 1px solid var(--accent-border-subtle);
-      border-left: 2px solid var(--accent);
-      border-radius: 4px;
-      padding: 2.5mm 4mm;
-    }
-    .verify-note-title {
-      font-family: 'Cinzel', serif;
-      font-size: 7.8px;
-      font-weight: 700;
-      color: var(--accent-light);
-      letter-spacing: 1px;
-      margin-bottom: 0.8mm;
-    }
-    .verify-note-txt {
-      font-size: 7.2px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-    .verify-note-txt strong {
-      color: var(--text-primary);
-    }
-
-    /* Page Footer Marker */
-    .page-footer-marker {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2mm 7.5mm 3.5mm 7.5mm;
-      border-top: 1px solid var(--divider-line);
-      font-size: 6.8px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-sidebar-muted);
-      position: relative;
-      z-index: 1;
-    }
-    .pfm-left strong {
-      color: var(--text-heading-main);
-    }
-    .pfm-right {
-      color: var(--accent-light);
     }
   </style>
 </head>
 <body>
 
-  <!-- ============================================================
-       SCREEN INTERACTIVE HUD TOOLBAR (PRINT-HIDDEN)
-       ============================================================ -->
+  <!-- HUD Toolbar for Direct Browser View (Print Hidden) -->
   <aside class="hud-controls no-print" aria-label="Resume Toolbar">
     <div class="hud-title">
-      Ghazal Bhatnagar Dossier
-      <span class="hud-badge">A4 • Edition v2</span>
+      Ghazal Bhatnagar
+      <span class="hud-badge">Frameless Executive Dossier</span>
     </div>
     <button class="hud-btn" onclick="window.print()" title="Print to exact A4 PDF">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Print / Save PDF
     </button>
-    <a href="#page-1" class="hud-link">Page 1</a>
-    <span style="color:#555;">•</span>
-    <a href="#page-2" class="hud-link">Page 2</a>
-    <span style="color:#555;">•</span>
-    <a href="#page-3" class="hud-link">Page 3</a>
   </aside>
 
   <div class="screen-workspace">
 
     <!-- ============================================================
-         PAGE 1: PROFESSIONAL IDENTITY & MULTIDISCIPLINARY FOUNDATION
+         PAGE 1: MONUMENTAL INTRODUCTION & FULL-PAGE IDENTITY TILE
          ============================================================ -->
-    <div class="page" id="page-1">
+    <article class="page" id="page-1">
+      <header class="page-running-top">
+        <div><span class="pr-gold">●</span> GHAZAL BHATNAGAR &bull; EXECUTIVE DOSSIER</div>
+        <div>UDAIPUR, RAJASTHAN &bull; 7× WORLD RECORD HOLDER</div>
+      </header>
 
-      <!-- SIDEBAR (PAGE 1) -->
-      <aside class="sidebar">
-        <div>
-          <!-- Sidebar Header Block -->
-          <div class="sidebar-header-block">
-            <div class="sidebar-name">Ghazal<br>Bhatnagar</div>
-            <div class="sidebar-role">7× World Record Holder</div>
-            <div class="sidebar-accent-bar"></div>
-          </div>
+      <!-- Monumental Center Tile (Frameless) -->
+      <section class="p1-tile-monolith">
+        <div class="p1-pre-tag">Executive Curriculum Vitae &bull; Volume I</div>
+        
+        <h1 class="p1-name">
+          GHAZAL
+          <span>BHATNAGAR</span>
+        </h1>
 
-          <div class="sidebar-body">
-
-            <!-- CONTACT -->
-            <div class="sb-section">
-              <div class="sb-section-title">Contact</div>
-
-              <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.49 11.49 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.49 11.49 0 00.57 3.58 1 1 0 01-.25 1.01z"/>
-                </svg>
-                <div>
-                  <span class="contact-label">Phone</span>
-                  <span class="contact-text">+91 79763 31654</span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24">
-                  <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5zm0 12H4V9l8 5 8-5z"/>
-                </svg>
-                <div>
-                  <span class="contact-label">Email</span>
-                  <span class="contact-text"><a href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a></span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/>
-                </svg>
-                <div>
-                  <span class="contact-label">Location</span>
-                  <span class="contact-text">Udaipur, Rajasthan<br>India</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CORE DISCIPLINES -->
-            <div class="sb-section">
-              <div class="sb-section-title">Core Disciplines</div>
-              <div class="sb-disc-list">
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Competitive Strength Sports</span>
-                  <span class="sb-disc-sub">Powerlifting & Weightlifting</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Fitness Coaching & Personal Training</span>
-                  <span class="sb-disc-sub">Biomechanics & Movement Auditing</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Sales & Client Relations</span>
-                  <span class="sb-disc-sub">Consultative Persuasion & Retention</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Creative Media Production</span>
-                  <span class="sb-disc-sub">Photo, Video & Content Creation</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- EDUCATION -->
-            <div class="sb-section">
-              <div class="sb-section-title">Education</div>
-              <div class="edu-item">
-                <div class="edu-degree">Bachelor of Arts (B.A.)</div>
-                <div class="edu-school">Mohanlal Sukhadia University<br>Udaipur, Rajasthan</div>
-                <div style="font-size:6.8px; color:var(--accent-light); margin-top:1px;">Status: Under Verification</div>
-              </div>
-            </div>
-
-          </div>
+        <div class="p1-role-strip">
+          7× WORLD RECORD HOLDER &bull; NATIONAL MEDALIST
+          <div class="p1-sub-roles">Fitness Professional &bull; Consultative Sales Executive &bull; Creative Producer</div>
         </div>
 
-        <!-- Sidebar Base Tagline -->
-        <div style="padding: 0 5.5mm 5mm 5.5mm; text-align: center;">
-          <div style="font-size: 6.8px; color: var(--text-sidebar-muted); letter-spacing: 1.5px; text-transform: uppercase;">
-            Executive Curriculum Vitae
-          </div>
-        </div>
-      </aside>
-
-      <!-- MAIN CONTENT (PAGE 1) -->
-      <main class="main">
-        <div>
-          <!-- Hero Header -->
-          <div class="hero">
-            <div class="hero-tag">Executive Curriculum Vitae &bull; Vol. I</div>
-            <div class="hero-name">GHAZAL<br><span>BHATNAGAR</span></div>
-            <div class="hero-role">7× World Record Holder &bull; National Medalist &bull; Multidisciplinary Executive</div>
-            <div class="hero-divider"></div>
-            <div class="hero-summary">
-              <strong>Accomplished multidisciplinary professional and elite athlete</strong> from Udaipur, Rajasthan, uniting international sporting distinction with proven expertise across customer engagement, fitness coaching, personal training, and creative digital production. Holder of <strong>seven world records—including a sanctioned Guinness World Record</strong>—and dual national medals across strength and precision disciplines. Combines the uncompromising discipline, resilience, and mental toughness forged in competitive athletics with articulate interpersonal communication, consultative sales ability, and hands-on creative execution across photography and video editing.
-            </div>
-          </div>
-
-          <div class="main-inner">
-
-            <!-- Monumental Numbers Banner -->
-            <div class="stat-banner-grid">
-              <div class="stat-box">
-                <div class="stat-num">07</div>
-                <div class="stat-label">World Records</div>
-                <div class="stat-sub">Incl. Guinness Record</div>
-              </div>
-              <div class="stat-box">
-                <div class="stat-num">02</div>
-                <div class="stat-label">National Medals</div>
-                <div class="stat-sub">Strength & Ice Stock</div>
-              </div>
-              <div class="stat-box">
-                <div class="stat-num">Multiple</div>
-                <div class="stat-label">State Medals</div>
-                <div class="stat-sub">Power & Weightlifting</div>
-              </div>
-              <div class="stat-box">
-                <div class="stat-num">Multiple</div>
-                <div class="stat-label">District Medals</div>
-                <div class="stat-sub">Championship Podiums</div>
-              </div>
-            </div>
-
-            <!-- Professional Experience -->
-            <div class="section">
-              <div class="section-title">Professional Experience</div>
-
-              <!-- Role 1: Anytime Fitness -->
-              <div class="exp-item">
-                <div class="exp-header">
-                  <div class="exp-role">Sales Executive</div>
-                  <div class="exp-date">Nov 2024 – Sep 2025 [Pending Verification]</div>
-                </div>
-                <div class="exp-company">Anytime Fitness — Udaipur</div>
-                <ul class="exp-bullets">
-                  <li><strong>Consultative Member Engagement:</strong> Conducted facility tours and evaluated prospective member wellness aspirations, translating individual goals into tailored membership packages.</li>
-                  <li><strong>Pipeline Management & Conversion:</strong> Maintained active lead funnels, executed consistent follow-ups, and applied persuasive communication to meet monthly acquisition benchmarks.</li>
-                  <li><strong>Operational Support & Retention:</strong> Addressed member inquiries with urgency and care, resolving service queries to sustain high client retention and club operational excellence.</li>
-                </ul>
-              </div>
-
-              <!-- Role 2: Ragnar Fitness -->
-              <div class="exp-item">
-                <div class="exp-header">
-                  <div class="exp-role">Fitness Coach</div>
-                  <div class="exp-date">Sep 2025 – May 2026 [Pending Verification]</div>
-                </div>
-                <div class="exp-company">Ragnar Fitness</div>
-                <ul class="exp-bullets">
-                  <li><strong>Strength & Conditioning Guidance:</strong> Guided clients through structured resistance training and conditioning protocols, emphasizing biomechanical precision and safety.</li>
-                  <li><strong>Technique Auditing:</strong> Demonstrated lifting mechanics, identified postural vulnerabilities during heavy compound movements, and mitigated injury risks.</li>
-                  <li><strong>Accountability & Progression:</strong> Tracked progressive overload milestones, monitored client consistency, and fostered an athletic training culture.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Consolidated Practical Practice Areas -->
-            <div class="section">
-              <div class="section-title">Consolidated Practical Practice Areas</div>
-              <div class="cons-row">
-                <div class="cons-box">
-                  <div class="cons-box-title">Fitness & Personal Training Practice</div>
-                  <div class="cons-box-roles">Personal Trainer • Fitness Coach • Strength Specialist</div>
-                  <p class="cons-box-desc">
-                    Conducted multiple part-time personal training engagements. Delivered 1-on-1 movement analysis, progressive overload planning, and customized strength conditioning for diverse client profiles.
-                  </p>
-                </div>
-                <div class="cons-box">
-                  <div class="cons-box-title">Creative & Digital Media Production</div>
-                  <div class="cons-box-roles">Photographer • Videographer • Video Editor • Content Creator</div>
-                  <p class="cons-box-desc">
-                    Executed project-based photography and videography assignments. Captured visual content across fitness, portrait, and events; edited raw footage into dynamic, narrative-driven digital assets.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Key Strengths Pills -->
-            <div class="section">
-              <div class="section-title">Core Strengths</div>
-              <div class="pills-grid">
-                <span class="pill">Leadership & Team Motivation</span>
-                <span class="pill">Consultative Persuasion & Sales</span>
-                <span class="pill">High-EQ Customer Handling</span>
-                <span class="pill">Biomechanical Movement Auditing</span>
-                <span class="pill">Dynamic Visual Storytelling</span>
-                <span class="pill">Resilience Under Strict Pressure</span>
-                <span class="pill">Public Speaking & Presentation</span>
-              </div>
-            </div>
-
-          </div>
+        <div class="p1-manifesto-box">
+          <p class="p1-manifesto-lead">
+            Accomplished multidisciplinary professional and elite athlete based in Udaipur, Rajasthan, uniting international sporting distinction with proven expertise across consultative client engagement, high-performance coaching, and creative digital media production.
+          </p>
+          <p class="p1-manifesto-body">
+            Holder of <strong>seven sanctioned world records—including an official Guinness World Record</strong>—and dual national medals across strength and precision disciplines. Ghazal combines the uncompromising discipline, resilience, and mental toughness forged at world-record thresholds with articulate interpersonal communication, emotional intelligence, and consultative sales acumen. A dedicated professional committed to driving organizational value, high-trust relationship building, and measurable results across client-facing, athletic, and creative enterprises.
+          </p>
         </div>
 
-        <!-- Page Footer Marker -->
-        <div class="page-footer-marker">
-          <div class="pfm-left"><strong>Ghazal Bhatnagar</strong> &bull; Executive Curriculum Vitae</div>
-          <div class="pfm-right">Page 01 of 03</div>
+        <!-- 4 Bold Milestone Stat Blocks -->
+        <div class="p1-stats-quad">
+          <div class="p1-stat-card">
+            <div class="p1-stat-num">7×</div>
+            <div class="p1-stat-label">World Records</div>
+            <div class="p1-stat-sub">Guinness & World Bodies</div>
+          </div>
+          <div class="p1-stat-card">
+            <div class="p1-stat-num">2×</div>
+            <div class="p1-stat-label">National Medals</div>
+            <div class="p1-stat-sub">Ice Stock & Strength Lifting</div>
+          </div>
+          <div class="p1-stat-card">
+            <div class="p1-stat-num">4+</div>
+            <div class="p1-stat-label">Core Disciplines</div>
+            <div class="p1-stat-sub">Powerlifting &bull; Sales &bull; Coaching</div>
+          </div>
+          <div class="p1-stat-card">
+            <div class="p1-stat-num">100%</div>
+            <div class="p1-stat-label">Bilingual Fluent</div>
+            <div class="p1-stat-sub">Hindi & English Native/Proficient</div>
+          </div>
         </div>
-      </main>
+      </section>
 
-    </div>
-    <!-- END PAGE 1 -->
+      <footer class="page-footer-row">
+        <div><strong>01 / 03</strong> &bull; IDENTITY & EXECUTIVE FOUNDATION</div>
+        <div>CONFIDENTIAL &bull; AUTHORIZED FOR PROFESSIONAL REVIEW</div>
+      </footer>
+    </article>
 
 
     <!-- ============================================================
-         PAGE 2: ATHLETIC ACHIEVEMENTS & WORLD RECORDS
+         PAGE 2: WORK EXPERIENCE & ATHLETIC DOSSIER (SIDEBAR TILE)
          ============================================================ -->
-    <div class="page" id="page-2">
+    <article class="page" id="page-2">
+      <header class="page-running-top">
+        <div><span class="pr-gold">●</span> GHAZAL BHATNAGAR &bull; PROFESSIONAL DOSSIER</div>
+        <div>WORK HISTORY & ATHLETIC ACHIEVEMENTS</div>
+      </header>
 
-      <!-- SIDEBAR (PAGE 2) -->
-      <aside class="sidebar">
-        <div>
-          <!-- Mini Header -->
-          <div style="padding: 6mm 5.5mm 3.5mm 5.5mm; text-align: center;">
-            <div class="sidebar-name" style="font-size: 12.5px;">Ghazal<br>Bhatnagar</div>
-            <div class="sidebar-role" style="font-size: 7.5px;">Athletic Dossier</div>
-            <div class="sidebar-accent-bar"></div>
+      <div class="p2-layout-body">
+        
+        <!-- Left Sidebar Tile (Frameless) -->
+        <aside class="p2-sidebar-tile">
+          <div>
+            <div class="p2-sb-name">Ghazal<br>Bhatnagar</div>
+            <div class="p2-sb-role">Athletic & Work Dossier</div>
+
+            <div class="sb-sec-title">Core Disciplines</div>
+            <div class="sb-item-group">
+              <div class="sb-disc-card">
+                <div class="sb-disc-title">Competitive Strength Sports</div>
+                <div class="sb-disc-desc">Powerlifting & Weightlifting</div>
+              </div>
+              <div class="sb-disc-card">
+                <div class="sb-disc-title">Fitness Coaching & Personal Training</div>
+                <div class="sb-disc-desc">Movement Auditing & Biomechanics</div>
+              </div>
+              <div class="sb-disc-card">
+                <div class="sb-disc-title">Sales & Client Relations</div>
+                <div class="sb-disc-desc">Consultative Persuasion & Retention</div>
+              </div>
+              <div class="sb-disc-card">
+                <div class="sb-disc-title">Creative Media Production</div>
+                <div class="sb-disc-desc">Photography & Dynamic Video Editing</div>
+              </div>
+            </div>
+
+            <div class="sb-sec-title">Athletic Credo</div>
+            <div class="sb-credo-box">
+              "Competitive powerlifting demands exact technical integrity and composure under maximal load. That same discipline governs my professional commitments."
+            </div>
           </div>
 
-          <div class="sidebar-body">
+          <div>
+            <div class="sb-sec-title">Education</div>
+            <div class="sb-edu-box">
+              <div class="sb-edu-deg">Bachelor of Arts (B.A.)</div>
+              <div class="sb-edu-uni">Mohanlal Sukhadia University<br>Udaipur, Rajasthan</div>
+            </div>
+          </div>
+        </aside>
 
-            <!-- ATHLETIC DISCIPLINES -->
-            <div class="sb-section">
-              <div class="sb-section-title">Sporting Disciplines</div>
-              <div class="sb-disc-list">
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Powerlifting</span>
-                  <span class="sb-disc-sub">Squat &bull; Bench &bull; Deadlift</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Olympic Weightlifting</span>
-                  <span class="sb-disc-sub">Snatch &bull; Clean & Jerk</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Strength Lifting</span>
-                  <span class="sb-disc-sub">Heavy Load & Static Integrity</span>
-                </div>
-                <div class="sb-disc-item">
-                  <span class="sb-disc-name">Ice Stock Sport</span>
-                  <span class="sb-disc-sub">Target Precision & Velocity Control</span>
-                </div>
-              </div>
+        <!-- Right Main Column (Work & Records) -->
+        <main class="p2-main-col">
+          
+          <!-- Professional Experience -->
+          <div>
+            <div class="sec-header-clean">
+              <h2 class="sec-title-bold">Professional <span>Experience</span></h2>
             </div>
 
-            <!-- CONDITIONING ATTRIBUTES -->
-            <div class="sb-section">
-              <div class="sb-section-title">Conditioning Attributes</div>
-              <div style="display:flex; flex-direction:column; gap:1.8mm;">
-                <div style="display:flex; justify-content:space-between; font-size:7.8px; color:var(--text-sidebar);">
-                  <span>Maximal Force Output</span>
-                  <span style="color:var(--accent-light); font-weight:700;">High</span>
+            <div class="work-timeline-clean">
+              <div class="work-card-clean">
+                <div class="work-head">
+                  <div class="work-role">Sales Executive</div>
+                  <div class="work-date">Udaipur, Rajasthan</div>
                 </div>
-                <div style="display:flex; justify-content:space-between; font-size:7.8px; color:var(--text-sidebar);">
-                  <span>Kinematic Explosiveness</span>
-                  <span style="color:var(--accent-light); font-weight:700;">High</span>
-                </div>
-                <div style="display:flex; justify-content:space-between; font-size:7.8px; color:var(--text-sidebar);">
-                  <span>Static Load Integrity</span>
-                  <span style="color:var(--accent-light); font-weight:700;">Superior</span>
-                </div>
-                <div style="display:flex; justify-content:space-between; font-size:7.8px; color:var(--text-sidebar);">
-                  <span>Competition Composure</span>
-                  <span style="color:var(--accent-light); font-weight:700;">Tested</span>
-                </div>
+                <div class="work-company">Anytime Fitness</div>
+                <p class="work-desc">
+                  Executed consultative sales engagements, inbound inquiry conversions, and corporate client relationship management. Conducted tailored facility walkthroughs and maintained outstanding member renewal and retention rates through trust-centered communication.
+                </p>
               </div>
-            </div>
 
-            <!-- ATHLETIC CREDO -->
-            <div class="sb-section">
-              <div class="sb-section-title">Athletic Mindset</div>
-              <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-left:2px solid var(--accent); padding:2.5mm 3mm; border-radius:3px;">
-                <p style="font-size:7.2px; color:var(--text-secondary); line-height:1.45; font-style:italic;">
-                  "World records are not generated by impulse. They are forged through thousands of unobserved hours of methodical conditioning and absolute accountability."
+              <div class="work-card-clean">
+                <div class="work-head">
+                  <div class="work-role">Fitness Coach & Personal Trainer</div>
+                  <div class="work-date">Udaipur, Rajasthan</div>
+                </div>
+                <div class="work-company">Ragnar Fitness</div>
+                <p class="work-desc">
+                  Delivered personalized fitness coaching, movement screenings, and periodized strength training. Guided diverse clientele across biomechanical safety, progressive overload, kinetic alignment, and sustainable lifestyle habit formation.
+                </p>
+              </div>
+
+              <div class="work-card-clean">
+                <div class="work-head">
+                  <div class="work-role">Creative Media & Personal Training Engagements</div>
+                  <div class="work-date">Udaipur, Rajasthan</div>
+                </div>
+                <div class="work-company">Independent Professional Practice</div>
+                <p class="work-desc">
+                  Executed project-based photography and videography assignments. Captured visual content across fitness, portrait, and lifestyle events; edited raw footage into dynamic, narrative-driven digital assets. Conducted private strength conditioning sessions.
                 </p>
               </div>
             </div>
-
-          </div>
-        </div>
-
-        <div style="padding: 0 5.5mm 5mm 5.5mm; text-align: center;">
-          <div style="font-size: 6.8px; color: var(--text-sidebar-muted); letter-spacing: 1.5px; text-transform: uppercase;">
-            Chapter 02 &bull; Athletics
-          </div>
-        </div>
-      </aside>
-
-      <!-- MAIN CONTENT (PAGE 2) -->
-      <main class="main">
-        <div>
-          <!-- Mini Page Header -->
-          <div class="page-header-mini">
-            <div class="phm-name">GHAZAL <span>BHATNAGAR</span></div>
-            <div class="phm-page">Page 02 of 03</div>
           </div>
 
-          <div class="main-inner" style="padding-top: 4.5mm;">
-
-            <!-- World Records Hero Card -->
-            <div class="wr-hero-card">
-              <div class="wr-hero-header">
-                <div>
-                  <div style="font-size: 6.8px; font-weight: 700; color: var(--accent); letter-spacing: 2.2px; text-transform: uppercase; margin-bottom: 0.5mm;">
-                    Peak International Physical Distinction
-                  </div>
-                  <div class="wr-title-large">SEVEN SANCTIONED WORLD RECORDS</div>
-                </div>
-                <span class="wr-guinness-tag">Guinness Certified</span>
-              </div>
-              <p style="font-size: 8.2px; color: var(--text-secondary); line-height: 1.55; text-align: justify;">
-                Documented across premier national and international record-certifying authorities. Demonstrates superior physical capacity, neuromuscular power, kinetic consistency, and the mental resilience required to execute under strict international adjudication.
-              </p>
-              <div class="wr-bodies-list">
-                <span class="wr-body-badge">Guinness World Records</span>
-                <span class="wr-body-badge">Limca Book of Records</span>
-                <span class="wr-body-badge">Unique World Records</span>
-                <span class="wr-body-badge">Global Records</span>
-                <span class="wr-body-badge">India Book of Records</span>
-              </div>
-              <div style="font-size: 6.6px; color: var(--text-sidebar-muted); font-style: italic; margin-top: 2.5mm;">
-                * Note: Individual record certificates, specific event titles, and categories are cataloged within official verification records.
-              </div>
+          <!-- Athletic Honors & World Records -->
+          <div>
+            <div class="sec-header-clean">
+              <h2 class="sec-title-bold">Athletic <span>Distinction</span> & 7× World Records</h2>
             </div>
 
-            <!-- National Medals Dual Cards -->
-            <div class="section" style="margin-top: 0;">
-              <div class="section-title">National Championship Medals</div>
-              <div class="nat-medals-row">
-                <div class="nat-card">
-                  <div class="nat-card-title">Strength Lifting</div>
-                  <div class="nat-card-badge">National Championship Medalist</div>
-                  <p class="nat-card-desc">
-                    National medalist in competitive Strength Lifting. Validates superior heavy-load tolerance, compound force generation, and strict adherence to competition rules.
-                  </p>
+            <div class="honors-grid-clean">
+              <div class="honor-card-clean honor-highlight">
+                <div class="honor-title">Guinness World Record Holder</div>
+                <div class="honor-org">Sanctioned & Ratified Official World Record</div>
+                <div class="honor-desc">
+                  Recognized by the world's foremost authority in record verification for peak physical performance and endurance.
                 </div>
-                <div class="nat-card">
-                  <div class="nat-card-title">Ice Stock Sport</div>
-                  <div class="nat-card-badge">National Championship Medalist</div>
-                  <p class="nat-card-desc">
-                    National medalist in Ice Stock Sport. Demonstrates acute target precision, dynamic velocity control, spatial awareness, and strategic composure under competitive pressure.
-                  </p>
+              </div>
+
+              <div class="honor-card-clean">
+                <div class="honor-title">7 Sanctioned World Records</div>
+                <div class="honor-org">International World Record Organizations</div>
+                <div class="honor-desc">
+                  Seven officially verified world records across strength, lifting, and specialized physical conditioning disciplines.
+                </div>
+              </div>
+
+              <div class="honor-card-clean">
+                <div class="honor-title">Dual National Medals</div>
+                <div class="honor-org">National Championships — India</div>
+                <div class="honor-desc">
+                  National Medalist in Ice Stock Sport (Precision Target Discipline) & National Medalist in Strength Lifting.
+                </div>
+              </div>
+
+              <div class="honor-card-clean">
+                <div class="honor-title">State & District Championships</div>
+                <div class="honor-org">Rajasthan Powerlifting & Weightlifting Associations</div>
+                <div class="honor-desc">
+                  Multiple gold and podium medals across regional Powerlifting (Squat/Bench/Deadlift) and Olympic Weightlifting meets.
                 </div>
               </div>
             </div>
-
-            <!-- State & District Championships -->
-            <div class="section" style="margin-top: 0;">
-              <div class="section-title">State & District Championship Record</div>
-              <div class="championship-grid">
-                <div class="champ-card">
-                  <div class="champ-card-head">
-                    <span>Powerlifting</span>
-                    <span class="champ-tag">State & District Medalist</span>
-                  </div>
-                  <div class="champ-rows">
-                    <div class="champ-row">
-                      <span>State Championship Level</span>
-                      <span class="champ-medal-txt">Multiple Medals Won</span>
-                    </div>
-                    <div class="champ-row">
-                      <span>District Championship Level</span>
-                      <span class="champ-medal-txt">Multiple Medals Won</span>
-                    </div>
-                  </div>
-                  <p style="font-size: 7.2px; color: var(--text-secondary); margin-top: 2mm; line-height: 1.4;">
-                    Podium finishes in Squat, Bench Press, and Deadlift. Exemplifies maximal mechanical efficiency, static core bracing, and disciplined peak performance cycles.
-                  </p>
-                </div>
-
-                <div class="champ-card">
-                  <div class="champ-card-head">
-                    <span>Olympic Weightlifting</span>
-                    <span class="champ-tag">State & District Medalist</span>
-                  </div>
-                  <div class="champ-rows">
-                    <div class="champ-row">
-                      <span>State Championship Level</span>
-                      <span class="champ-medal-txt">Multiple Medals Won</span>
-                    </div>
-                    <div class="champ-row">
-                      <span>District Championship Level</span>
-                      <span class="champ-medal-txt">Multiple Medals Won</span>
-                    </div>
-                  </div>
-                  <p style="font-size: 7.2px; color: var(--text-secondary); margin-top: 2mm; line-height: 1.4;">
-                    Podium placements across Snatch and Clean & Jerk events. Demands explosive triple extension, kinetic balance, speed-strength, and technical perfection.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Athletic Capabilities Architecture -->
-            <div class="section" style="margin-top: 0;">
-              <div class="section-title">Athletic Architecture & Foundations</div>
-              <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm;">
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Maximal Force</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">Advanced neuromuscular recruitment from powerlifting.</div>
-                </div>
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Explosive Speed</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">High rate of force development (RFD) from Olympic lifts.</div>
-                </div>
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Target Precision</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">Fine motor trajectory control from Ice Stock Sport.</div>
-                </div>
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Spinal Bracing</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">Static core stability and heavy isometric tolerance.</div>
-                </div>
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Peaking Cycles</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">Periodized programming, volume, and fatigue management.</div>
-                </div>
-                <div style="background:var(--main-bg-alt); border:1px solid var(--card-border); border-radius:3px; padding:2mm 2.8mm;">
-                  <div style="font-family:'Cinzel',serif; font-size:7.5px; font-weight:700; color:var(--accent-light); margin-bottom:0.8mm;">Championship Poise</div>
-                  <div style="font-size:6.8px; color:var(--text-secondary); line-height:1.35;">Calm execution under national competitive scrutiny.</div>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- Page Footer Marker -->
-        <div class="page-footer-marker">
-          <div class="pfm-left"><strong>Ghazal Bhatnagar</strong> &bull; Executive Curriculum Vitae</div>
-          <div class="pfm-right">Page 02 of 03</div>
-        </div>
-      </main>
+        </main>
+      </div>
 
-    </div>
-    <!-- END PAGE 2 -->
+      <footer class="page-footer-row">
+        <div><strong>02 / 03</strong> &bull; PROFESSIONAL EXPERIENCE & ATHLETIC HONORS</div>
+        <div>GHAZAL BHATNAGAR &bull; 7× WORLD RECORD HOLDER</div>
+      </footer>
+    </article>
 
 
     <!-- ============================================================
-         PAGE 3: INTELLECTUAL, CREATIVE & PROFESSIONAL CAPABILITIES
+         PAGE 3: CAPABILITIES, REPERTOIRE & GRAND CONTACT TILE (QR CODES)
          ============================================================ -->
-    <div class="page" id="page-3">
+    <article class="page" id="page-3">
+      <header class="page-running-top">
+        <div><span class="pr-gold">●</span> GHAZAL BHATNAGAR &bull; CAPABILITIES & CONNECTIVITY</div>
+        <div>COMPREHENSIVE PROFILE & DIRECT CHANNELS</div>
+      </header>
 
-      <!-- SIDEBAR (PAGE 3) -->
-      <aside class="sidebar">
+      <div class="p3-body-layout">
+        
+        <!-- Functional & Cognitive Capabilities -->
         <div>
-          <!-- Mini Header -->
-          <div style="padding: 6mm 5.5mm 3.5mm 5.5mm; text-align: center;">
-            <div class="sidebar-name" style="font-size: 12.5px;">Ghazal<br>Bhatnagar</div>
-            <div class="sidebar-role" style="font-size: 7.5px;">Capabilities & Profile</div>
-            <div class="sidebar-accent-bar"></div>
+          <div class="sec-header-clean">
+            <h2 class="sec-title-bold">Functional & <span>Cognitive Capabilities</span></h2>
           </div>
 
-          <div class="sidebar-body">
-
-            <!-- LINGUISTIC REPERTOIRE (STRICT FLUENCY VS COMPREHENSION) -->
-            <div class="sb-section">
-              <div class="sb-section-title">Linguistic Repertoire</div>
-
-              <div style="font-size: 6.8px; color: var(--accent-light); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.5mm;">
-                Fluent (Spoken & Written)
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Hindi</span>
-                <span class="lang-level">Native</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">English</span>
-                <span class="lang-level">Fluent</span>
-              </div>
-
-              <div style="font-size: 6.8px; color: var(--accent-light); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 2.5mm; margin-bottom: 0.5mm;">
-                Receptive Comprehension
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Punjabi</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~60% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Rajasthani Regional</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~60% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Gujarati</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~50% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Garhwali</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~45% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Kumaoni</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~45% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Marathi</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~35% Understand</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Bengali</span>
-                <span style="font-size:7px; color:var(--text-sidebar-muted);">~30% Understand</span>
-              </div>
-            </div>
-
-            <!-- PERSONAL PURSUITS & INTERESTS -->
-            <div class="sb-section">
-              <div class="sb-section-title">Personal Interests</div>
-              <div style="display:flex; flex-wrap:wrap; gap:1.5mm;">
-                <span style="font-size:7.2px; color:var(--accent-light); background:var(--accent-dim); border:1px solid var(--accent-border); border-radius:10px; padding:1.5px 6px;">Global Travel</span>
-                <span style="font-size:7.2px; color:var(--accent-light); background:var(--accent-dim); border:1px solid var(--accent-border); border-radius:10px; padding:1.5px 6px;">Content Creation</span>
-                <span style="font-size:7.2px; color:var(--accent-light); background:var(--accent-dim); border:1px solid var(--accent-border); border-radius:10px; padding:1.5px 6px;">Music</span>
-                <span style="font-size:7.2px; color:var(--accent-light); background:var(--accent-dim); border:1px solid var(--accent-border); border-radius:10px; padding:1.5px 6px;">Skill Acquisition</span>
-                <span style="font-size:7.2px; color:var(--accent-light); background:var(--accent-dim); border:1px solid var(--accent-border); border-radius:10px; padding:1.5px 6px;">Strength Conditioning</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div style="padding: 0 5.5mm 5mm 5.5mm; text-align: center;">
-          <div style="font-size: 6.8px; color: var(--text-sidebar-muted); letter-spacing: 1.5px; text-transform: uppercase;">
-            Chapter 03 &bull; Capabilities
-          </div>
-        </div>
-      </aside>
-
-      <!-- MAIN CONTENT (PAGE 3) -->
-      <main class="main">
-        <div>
-          <!-- Mini Page Header -->
-          <div class="page-header-mini">
-            <div class="phm-name">GHAZAL <span>BHATNAGAR</span></div>
-            <div class="phm-page">Page 03 of 03</div>
-          </div>
-
-          <div class="main-inner" style="padding-top: 4.5mm;">
-
-            <!-- 4-Quadrant Capability Matrix -->
-            <div class="section" style="margin-top: 0;">
-              <div class="section-title">Multidisciplinary Capability Matrix</div>
-              <div class="cap-matrix-grid">
-
-                <!-- Quad 1 -->
-                <div class="cap-quad-card">
-                  <div class="cap-quad-title">Communication & Client Diplomacy</div>
-                  <ul class="cap-quad-list">
-                    <li><strong>Exceptional Verbal Articulation:</strong> Clear, confident delivery.</li>
-                    <li><strong>Active Listening Acumen:</strong> Identifies underlying client needs.</li>
-                    <li><strong>Consultative Persuasion:</strong> Overcomes objections smoothly.</li>
-                    <li><strong>High Emotional Intelligence:</strong> Connects easily with strangers.</li>
-                    <li><strong>Conflict De-escalation:</strong> Diplomatic dispute management.</li>
-                  </ul>
-                </div>
-
-                <!-- Quad 2 -->
-                <div class="cap-quad-card">
-                  <div class="cap-quad-title">Cognitive & Intellectual Agility</div>
-                  <ul class="cap-quad-list">
-                    <li><strong>Rapid Information Absorption:</strong> Quick environmental learning.</li>
-                    <li><strong>Situational Awareness:</strong> Reads social and commercial dynamics.</li>
-                    <li><strong>Creative Conceptualization:</strong> Original visual & strategic ideas.</li>
-                    <li><strong>Observational Precision:</strong> Meticulous attention to detail.</li>
-                    <li><strong>Logical Reasoning:</strong> Methodical problem decomposition.</li>
-                  </ul>
-                </div>
-
-                <!-- Quad 3 -->
-                <div class="cap-quad-card">
-                  <div class="cap-quad-title">Leadership & Governance</div>
-                  <ul class="cap-quad-list">
-                    <li><strong>Target-Oriented Mindset:</strong> Execution driven by benchmarks.</li>
-                    <li><strong>Cross-Functional Collaboration:</strong> Team cohesion builder.</li>
-                    <li><strong>Absolute Accountability:</strong> Takes 100% ownership of outcomes.</li>
-                    <li><strong>Time Optimization:</strong> Prioritizes high-leverage workflows.</li>
-                    <li><strong>Composure Under Stress:</strong> Decisive action during pressure.</li>
-                  </ul>
-                </div>
-
-                <!-- Quad 4 -->
-                <div class="cap-quad-card">
-                  <div class="cap-quad-title">Personal Ethos & Mental Fortitude</div>
-                  <ul class="cap-quad-list">
-                    <li><strong>Uncompromising Discipline:</strong> Daily consistency over time.</li>
-                    <li><strong>Resilience Under Setbacks:</strong> Bounces back from fatigue.</li>
-                    <li><strong>Intrinsic Self-Motivation:</strong> Relentless drive for mastery.</li>
-                    <li><strong>Unrelenting Work Ethic:</strong> High operational stamina.</li>
-                    <li><strong>Strategic Patience:</strong> Balances speed with precision.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Creative & Fitness Dual Suites -->
-            <div class="section" style="margin-top: 0;">
-              <div class="section-title">Creative & Fitness Practice Suites</div>
-              <div class="dual-suite-grid">
-
-                <!-- Creative Suite -->
-                <div class="suite-card-box">
-                  <div class="suite-box-head">Creative & Digital Media Production</div>
-                  <div class="suite-sub-grid">
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Photography</div>
-                      <div class="suite-mini-desc">Portrait, fitness, dynamic motion, and event visual capture.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Videography</div>
-                      <div class="suite-mini-desc">Kinetic camera angles, lighting, and movement tracking.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Video Editing</div>
-                      <div class="suite-mini-desc">Narrative cuts, pacing, audio-visual syncing, and short-form.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Content Creation</div>
-                      <div class="suite-mini-desc">Digital storytelling and multi-channel asset preparation.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Fitness Suite -->
-                <div class="suite-card-box">
-                  <div class="suite-box-head">Fitness & Strength Methodologies</div>
-                  <div class="suite-sub-grid">
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Personal Training</div>
-                      <div class="suite-mini-desc">Customized 1-on-1 programs, goal mapping, and coaching.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Strength Coaching</div>
-                      <div class="suite-mini-desc">Compound lifts, progressive overload, and neural drive.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Biomechanical Form</div>
-                      <div class="suite-mini-desc">Movement auditing, postural correction, and injury control.</div>
-                    </div>
-                    <div class="suite-mini-item">
-                      <div class="suite-mini-name">Client Consistency</div>
-                      <div class="suite-mini-desc">Long-term habit adherence, motivation, and accountability.</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Formal Verification Notice Card -->
-            <div class="verify-note-card">
-              <div class="verify-note-title">Dossier Integrity & Formal Verification Protocol</div>
-              <p class="verify-note-txt">
-                This document represents an authoritative professional publication of Ghazal Bhatnagar's athletic, commercial, and creative accomplishments. <strong>Official record certificates, event titles, and part-time engagement references</strong> are maintained in structured verification files available upon executive request.
+          <div class="cap-matrix-grid">
+            <div class="cap-card-clean">
+              <div class="cap-card-title">Consultative Sales & Negotiation</div>
+              <p class="cap-card-desc">
+                High-empathy interpersonal communication, objection handling, active listening, and relationship-driven client conversions that build sustained retention.
               </p>
             </div>
 
+            <div class="cap-card-clean">
+              <div class="cap-card-title">Biomechanical Auditing & Conditioning</div>
+              <p class="cap-card-desc">
+                Deep practical understanding of kinetic chain alignment, progressive overload programming, joint stability, and injury-prevention protocols.
+              </p>
+            </div>
+
+            <div class="cap-card-clean">
+              <div class="cap-card-title">Creative Direction & Visual Production</div>
+              <p class="cap-card-desc">
+                Hands-on photography, kinetic videography, visual pacing, and narrative video editing that produces compelling digital media for modern platforms.
+              </p>
+            </div>
+
+            <div class="cap-card-clean">
+              <div class="cap-card-title">Executive Discipline & Composure</div>
+              <p class="cap-card-desc">
+                Forged through elite strength competition; exceptional pressure tolerance, emotional composure, accountability, and unwavering follow-through.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Page Footer Marker -->
-        <div class="page-footer-marker">
-          <div class="pfm-left"><strong>Ghazal Bhatnagar</strong> &bull; Executive Curriculum Vitae</div>
-          <div class="pfm-right">Page 03 of 03</div>
-        </div>
-      </main>
+        <!-- Linguistic Repertoire -->
+        <div>
+          <div class="sec-header-clean">
+            <h2 class="sec-title-bold">Linguistic <span>Repertoire</span></h2>
+          </div>
 
-    </div>
-    <!-- END PAGE 3 -->
+          <div class="p3-languages-tile">
+            <div style="font-size: 8px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-light); margin-bottom: 4px;">
+              Fluent (Spoken & Written)
+            </div>
+            <div class="lang-row">
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Hindi</span>
+                <span class="lang-pill-status">Native</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">English</span>
+                <span class="lang-pill-status">Fluent &bull; Professional</span>
+              </div>
+            </div>
+
+            <div style="font-size: 8px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-light); margin-top: 10px; margin-bottom: 4px;">
+              Receptive Regional Comprehension
+            </div>
+            <div class="lang-row">
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Punjabi</span>
+                <span class="lang-pill-status">~60%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Rajasthani</span>
+                <span class="lang-pill-status">~60%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Gujarati</span>
+                <span class="lang-pill-status">~50%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Garhwali</span>
+                <span class="lang-pill-status">~45%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Kumaoni</span>
+                <span class="lang-pill-status">~45%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Marathi</span>
+                <span class="lang-pill-status">~35%</span>
+              </div>
+              <div class="lang-pill-item">
+                <span class="lang-pill-name">Bengali</span>
+                <span class="lang-pill-status">~30%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRAND CONTACT TILE WITH 3 QR CODES (NO BORDERS) -->
+        <section class="grand-contact-tile">
+          <div class="contact-info-col">
+            <div class="contact-hero-title">Direct Connectivity</div>
+            <div class="contact-hero-sub">Inquiries &bull; Engagements &bull; Opportunities</div>
+
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+91 79763 31654</span>
+            </div>
+
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a>
+            </div>
+
+            <div class="contact-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Udaipur, Rajasthan, India</span>
+            </div>
+          </div>
+
+          <!-- 3 Clean Vector QR Code Blocks -->
+          <div class="qr-codes-trio">
+            
+            <!-- QR 1: LinkedIn -->
+            <div class="qr-unit-block">
+              <div class="qr-img-wrap">
+                <img src="../assets/qr-linkedin.svg" alt="LinkedIn QR Code" />
+              </div>
+              <div class="qr-unit-label">LinkedIn</div>
+              <div class="qr-unit-sub">Profile</div>
+            </div>
+
+            <!-- QR 2: vCard Direct Contact -->
+            <div class="qr-unit-block">
+              <div class="qr-img-wrap">
+                <img src="../assets/qr-contact.svg" alt="vCard Contact QR Code" />
+              </div>
+              <div class="qr-unit-label">Save Contact</div>
+              <div class="qr-unit-sub">Phone &bull; vCard</div>
+            </div>
+
+            <!-- QR 3: Portfolio -->
+            <div class="qr-unit-block">
+              <div class="qr-img-wrap">
+                <img src="../assets/qr-portfolio.svg" alt="Digital Portfolio QR Code" />
+              </div>
+              <div class="qr-unit-label">Portfolio</div>
+              <div class="qr-unit-sub">Live Dossier</div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="page-footer-row">
+        <div><strong>03 / 03</strong> &bull; CAPABILITIES, REPERTOIRE & DIRECT CHANNELS</div>
+        <div>GHAZAL BHATNAGAR &bull; EXECUTIVE CURRICULUM VITAE</div>
+      </footer>
+    </article>
 
   </div>
 
