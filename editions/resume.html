@@ -950,11 +950,11 @@
     /* Page 3 Bottom Tile (Enlarged Get In Touch & Horizontal Designer QRs) */
     .p3-bottom-tile {
       width: 100%;
-      height: 156mm;
+      height: 154mm;
       background: 
         radial-gradient(ellipse 80% 90% at 50% 0%, rgba(184, 134, 11, 0.22) 0%, transparent 72%),
         linear-gradient(180deg, #131926 0%, #101520 60%, #0d111a 100%);
-      padding: 6.5mm 18mm 6.5mm 18mm;
+      padding: 6mm 18mm 6mm 18mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1002,67 +1002,66 @@
       flex-shrink: 0;
     }
 
-    .p3-qr-subtitle {
+    /* Small badge tile on the side: Scan QR Codes For Direct Access */
+    .p3-qr-badge-tile {
       font-family: var(--font-mono), monospace;
-      font-size: 7.8px;
-      color: var(--accent-light);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: 8.5px;
       font-weight: 700;
+      color: var(--accent-light);
+      background: linear-gradient(135deg, #182233 0%, #1e293b 100%);
+      padding: 4px 12px;
+      border-radius: 5px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      border: none !important;
     }
 
-    /* Personal Information Tile */
+    /* Personal Information Tile (Tile-in-Tile) */
     .p3-personal-info-tile {
       background: linear-gradient(135deg, #151c2a 0%, #182233 100%);
-      padding: 3mm 5.5mm;
+      padding: 3mm 5mm 3.5mm 5mm;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
-      gap: 2mm;
+      align-items: center;
+      gap: 2.2mm;
       border: none !important;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
-    .p3-pi-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .p3-pi-name {
+    .p3-pi-name-center {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 900;
       color: #ffffff;
-      letter-spacing: 1.2px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      text-align: center;
     }
 
-    .p3-pi-tag {
-      font-family: var(--font-mono), monospace;
-      font-size: 7.8px;
-      font-weight: 700;
-      color: var(--accent-light);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .p3-pi-grid {
+    /* Subtiles: Tile in Tile */
+    .p3-pi-subtiles-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1.3fr 1.2fr 1.2fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 3mm;
-      background: rgba(0, 0, 0, 0.18);
-      padding: 2.2mm 3.5mm;
-      border-radius: 6px;
+      width: 100%;
     }
 
-    .p3-pi-item {
+    .p3-pi-subtile {
+      background: linear-gradient(135deg, #101622 0%, #131a28 100%);
+      padding: 2.2mm 3mm;
+      border-radius: 6px;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      align-items: center;
+      text-align: center;
+      gap: 1.5px;
+      border: none !important;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
     }
 
-    .p3-pi-label {
+    .p3-pi-sublabel {
       font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, sans-serif;
       font-size: 7.5px;
       font-weight: 800;
@@ -1071,15 +1070,16 @@
       text-transform: uppercase;
     }
 
-    .p3-pi-val {
+    .p3-pi-subval {
       font-family: var(--font-mono), monospace;
-      font-size: 9px;
+      font-size: 8.8px;
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      max-width: 100%;
     }
 
     /* 4 Designer QR Code Tiles Stacked Horizontally */
@@ -1552,38 +1552,45 @@
 
     </div>
 
-    <!-- FULL-WIDTH BOTTOM TILE (Enlarged Get In Touch + Personal Info + 4 Horizontal Designer QR Tiles) -->
+    <!-- FULL-WIDTH BOTTOM TILE (Enlarged Get In Touch + Centered Name + Tile-in-Tile + 4 Horizontal Designer QR Tiles) -->
     <div class="p3-bottom-tile">
       
-      <!-- Top Title: GET IN TOUCH -->
+      <!-- Top Title: GET IN TOUCH + Small Badge Tile on Side -->
       <div class="p3-qr-header">
         <div class="p3-qr-title">Get In Touch</div>
-        <div class="p3-qr-subtitle">Scan Designer QR Codes For Direct Access</div>
+        <div class="p3-qr-badge-tile">Scan QR Codes For Direct Access</div>
       </div>
 
-      <!-- One Vertical Tile: Personal Information -->
+      <!-- One Vertical Tile: Personal Information (Name Centered + Tile-in-Tile) -->
       <div class="p3-personal-info-tile">
-        <div class="p3-pi-header">
-          <div class="p3-pi-name">Ghazal Bhatnagar</div>
-          <div class="p3-pi-tag">7x World Record Holder &bull; National Medalist &bull; Fitness &amp; Media</div>
-        </div>
-        <div class="p3-pi-grid">
-          <div class="p3-pi-item">
-            <span class="p3-pi-label">Phone</span>
-            <a class="p3-pi-val" href="tel:+917976331654">+91 79763 31654</a>
+        <div class="p3-pi-name-center">Ghazal Bhatnagar</div>
+        
+        <div class="p3-pi-subtiles-grid">
+          
+          <!-- Subtile 1: Phone -->
+          <div class="p3-pi-subtile">
+            <span class="p3-pi-sublabel">Phone</span>
+            <a class="p3-pi-subval" href="tel:+917976331654">+91 79763 31654</a>
           </div>
-          <div class="p3-pi-item">
-            <span class="p3-pi-label">Email</span>
-            <a class="p3-pi-val" href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a>
+
+          <!-- Subtile 2: Email -->
+          <div class="p3-pi-subtile">
+            <span class="p3-pi-sublabel">Email</span>
+            <a class="p3-pi-subval" href="mailto:Livewithghazal@gmail.com">Livewithghazal@gmail.com</a>
           </div>
-          <div class="p3-pi-item">
-            <span class="p3-pi-label">Address</span>
-            <span class="p3-pi-val">Udaipur, Rajasthan, India</span>
+
+          <!-- Subtile 3: Address -->
+          <div class="p3-pi-subtile">
+            <span class="p3-pi-sublabel">Address</span>
+            <span class="p3-pi-subval">Udaipur, Rajasthan, India</span>
           </div>
-          <div class="p3-pi-item">
-            <span class="p3-pi-label">Status</span>
-            <span class="p3-pi-val" style="color: var(--accent-light);">Open to Opportunities</span>
+
+          <!-- Subtile 4: Status -->
+          <div class="p3-pi-subtile">
+            <span class="p3-pi-sublabel">Status</span>
+            <span class="p3-pi-subval" style="color: var(--accent-light);">Open to Opportunities</span>
           </div>
+
         </div>
       </div>
 
